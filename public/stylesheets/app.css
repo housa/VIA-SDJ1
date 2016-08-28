@@ -1,0 +1,27 @@
+body {
+    padding: 2em;
+}
+
+body>header {
+    margin-bottom: 2em;
+}
+
+.WeekdayCol {
+    width: 12%;
+}
+
+.SubjectCol {
+    width: 31%;
+}
+
+.LitteratureCol {
+    width: 31%;
+}
+
+.ExercisesCol {
+    width: 12%;
+}
+
+.AssignmentsCol {
+    width: 14%;
+}

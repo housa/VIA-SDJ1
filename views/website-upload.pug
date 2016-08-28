@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  section(class="column small-12")
+    p.callout
+      form(action="/handin/upload-webpage" method="post" enctype="multipart/form-data")
+        label(for="handinWebpage") Upload your solution:
+        input(type="file" id="handinWebpage" name="handinWebpage" required="true")
+        label(for="student").
+          Type your First-name here, using
+          #[strong only letters from the english alphabet (a-z) and no accents].
+        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
+        input(type="submit")

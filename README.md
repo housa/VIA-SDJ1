@@ -1,1 +1,1 @@
-# VIA-MOB-Course-Notes
+# VIA-SDJ1-Course-Notes

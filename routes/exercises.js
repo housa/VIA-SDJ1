@@ -8,7 +8,7 @@ var router = express.Router();
 
 [1].forEach((current, index) => {
     router.get('/day-' + current, function(req, res, next) {
-        res.render('slides/day-' + current, { title: 'Day ' + current });
+        res.render('exercises/day-' + current, { title: 'Day ' + current});
     });
 });
 

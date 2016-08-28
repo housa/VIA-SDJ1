@@ -22,6 +22,7 @@ var routes = require('./routes/index');
 var slides = require('./routes/slides');
 var notes = require('./routes/notes');
 var handin = require('./routes/handin');
+var exercises = require('./routes/exercises');
 
 // Expose files in 'public' folder to the public on the path /static
 app.use('/static', express.static(path.join(__dirname, 'public')));
@@ -30,6 +31,7 @@ app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use('/slides', slides);
 app.use('/notes', notes);
 app.use('/handin', handin);
+app.use('/exercises', exercises);
 app.use('/', routes);
 
 

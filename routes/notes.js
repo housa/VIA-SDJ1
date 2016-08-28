@@ -7,7 +7,7 @@ var router = express.Router();
 /* GET home page. */
 [1].forEach((current, index) => {
     router.get('/day-' + current, function(req, res, next) {
-        res.render('notes/day-' + current, { title: 'Day ' + current });
+        res.render('notes/day-' + current, { title: 'Day ' + current});
     });
 });
 

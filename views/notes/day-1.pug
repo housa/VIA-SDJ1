@@ -2,7 +2,7 @@ extends layout
 
 block header
   h2 Course page for: #[strong SDJ1]
-  
+
 block content
   section.column.small-12
     h2 Notes: day 1
@@ -16,4 +16,15 @@ block content
     p.
       Follow the guide #[a(href="http://macappstore.org/eclipse-java/" target="_blank") here]
     h5 For Windows
-    p.
+    p
+      ol
+        li Press "Win+R" and type "cmd" then press "enter"
+        li.
+          Paste the following snippet into the command prompt: #[br]
+          #[pre.cmd @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" &amp;&amp; SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"]
+        li Close the command prompt
+        li Open a command-prompt in administrator mode #[a(href="http://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/") as described here]
+        li Type in "cinst jdk8"
+        li Accept any prompts
+        li Type in "cinst eclipse"
+        li Accept any prompts

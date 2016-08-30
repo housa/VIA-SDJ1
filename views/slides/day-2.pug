@@ -7,11 +7,14 @@ block content
   section
     h2 Agenda
     ul
-      li Books
-      li Eclipse and Java
-      li About the course
-      li Object oriented programming with Java
-      li Exercises
+      li What makes a Java Program
+      li Java classes
+      li Output
+      li Variables
+      li Binary operators
+      li Terminology
+      li Arithmetics
+      li Naming convention
   section
     h2 What makes a Java Program
     ul
@@ -56,7 +59,7 @@ block content
       pre
         code.Java.
           public class Hello {
-            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;method parameters&gt;&gt;) {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
               // Do something here
             }
           }
@@ -174,7 +177,8 @@ block content
         li Java has both "local variables" and "fields"
         li Local variables are defined within a method's body, they improve the control-flow inside that method
         li Fields are defined within a class's body, they store the state of the instance of the class
-      pre
+      pre 
+        // TODO: Alexandra Field -> Attribute Class vs Object
         code.Java.
           public class Hello {
             // This is a field

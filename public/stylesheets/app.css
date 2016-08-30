@@ -6,6 +6,10 @@ body>header {
     margin-bottom: 2em;
 }
 
+.content-container {
+    margin-bottom: 3em;
+}
+
 .WeekdayCol {
     width: 12%;
 }
@@ -24,4 +28,12 @@ body>header {
 
 .AssignmentsCol {
     width: 14%;
+}
+
+img {
+    max-height: 30rem;
+}
+
+.exercises h4, .notes h4 {
+    margin-top: 1.5rem;
 }

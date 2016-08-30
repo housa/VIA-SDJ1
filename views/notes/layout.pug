@@ -8,10 +8,12 @@ html
   body
     header(class="row small-centered small-8 end")
       block header
-    div(class="row small-centered small-8 end")
-      block content
+    div.content-container
+      div(class="row small-centered small-8 notes end")
+        block content
     script(src="/static/javascripts/vendor/jquery.js")
     script(src="/static/javascripts/vendor/what-input.js")
     script(src="/static/javascripts/vendor/foundation.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.5.0/highlight.min.js")
+    script(src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML")
     script(src="/static/javascripts/app.js")

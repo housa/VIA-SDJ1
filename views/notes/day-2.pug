@@ -1,0 +1,175 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Notes: day 2
+    h4 Java classes
+    p.
+      A simple class declaration (or class header) looks like this:
+    pre
+      code.Java.
+        &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt;
+    p.
+      Where, visibility is a visibility classifier. Visibility only matters when you have more than one class, so you
+      should not worry about visibility for now, just use the keyword #[tt public]. #[br]
+      Classes are always followed by a body, which is enclosed by two braces. Example of a class:
+    pre
+      code.Java.
+        public class Hello {
+          // This is the class body
+        }
+    h4 Java methods
+    p.
+      A simple method declaration (or method header) looks like this:
+    pre
+      code.Java.
+        &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;)
+    p.
+      Where, visibility is a visibility classifier. Visibility only matters when you have more than one class, so you
+      should not worry about visibility for now, just use the keyword #[tt public]. #[br]
+      There are a range of different keywords you can use on a method, for example the #[tt static] keyword for now we 
+      wont describe any of them, so ignore until later. #[br]
+      Return-type can be any type, like #[tt String], #[tt int], #[tt double] etc. #[br]
+      Methods are always followed by a body, which is enclosed by two braces. Example of a method in a class:
+    pre
+      code.Java.
+        public class Hello {
+          public void foo(String bar, int a) {
+            // Do something here with the string bar and integer a
+          }
+        }
+    h4 The entry point (main method)
+    p.
+      In order for a Java program to start running, it needs an entry point. To this end, there exists the #[tt main]
+      method which is the method that is run when the program starts. Its header, has to look exactly like the following
+      example:
+    pre
+      code.Java.
+        public static void main(String[] args)
+    h4 Escaping characters
+    p.
+      Some characters can't be expressed through regular characters. For example, how would you express a double-quote
+      when double-quotes start and end the literal?
+    p.
+      Escaping characters is a way to express one character using a backslash, and another character. Some character
+      escapings are:
+    table
+      tbody
+        tr
+          td \n
+          td newline
+          td Adds a new line before continuing with printing
+        tr
+          td \t
+          td tab
+          td Causes the cursor to skip over the next tab stop
+        tr
+          td \\
+          td backslash
+          td Prints a backslash
+        tr
+          td \'
+          td single quote
+          td Prints a single quotation mark
+        tr
+          td \"
+          td double quote
+          td Prints a double quotation mark
+    h4 Numbers
+    p.
+      There are many different representations of numbers, you need to choose the right one. Usually, you will use int
+      and double
+    table
+      tbody
+        tr
+          td byte
+          td 1 byte
+          td Integers in the range #[span.number -128] to #[span.number +127]
+        tr
+          td short
+          td 2 bytes
+          td Integers in the range #[span.number -32,768] to #[span.number +32,767]
+        tr
+          td int
+          td 4 bytes
+          td Integers in the range #[span.number -2,147,483,648] to #[span.number +2,147,483,647]
+        tr
+          td long
+          td 8 bytes
+          td Integers in the range #[span.number -9,223,372,036,854,775,808] to #[span.number +9,223,372,036,854,775,807]
+        tr
+          td float
+          td 4 bytes
+          td Floating-point numbers in the range of \(\pm 3.4 \cdot 10^{-38}\) to \(\pm 3.4 \cdot 10^{38}\), with 7 digits of accuracy
+        tr
+          td double
+          td 8 bytes
+          td Floating-point numbers in the range of \(\pm 1.7 \cdot 10^{-308}\) to \(\pm 1.7 \cdot 10^{308}\), with 15 digits of accuracy
+    h4 Terminology
+    div.callout.primary
+      p #[strong Class declarations], or headers, looks like this:
+        pre
+          code.Java.
+            public class Hello
+    div.callout.primary
+      p #[strong Method declarations], or headers, looks like this:
+        pre
+          code.Java.
+            public void foo(String foo, int a)
+    div.callout.primary
+      p #[strong Bodies] are encapsulated by braces
+        pre
+          code.Java.
+            {}
+    div.callout.primary
+      p #[strong Variables] are identifiers that can be assigned some value.
+      p #[strong Local variables] are variables defined in a method.
+      p #[strong Fields] are variables defined in a class.
+      p #[strong Parameters] are variables that are defined in a method header
+      pre
+        code.Java.
+          public class Hello {
+            // This is a field
+            String field;
+
+            // This is a method with a String parameter
+            public void bar(String parameter) {
+              // This is a local variable
+              String local;
+            }
+          }
+    div.callout.primary
+      p #[strong Literals] are values that are stated explicitly in the code
+      pre
+        code.Java.
+          // In this example "ASD" is a literal
+          String foo = "ASD";
+          // In this example, the number 2 is a literal
+          int bar = 2;
+    div.callout.primary
+      p #[strong Operators] are a pre-defined set of symbols which has some function
+      p There are both #[strong Binary Operators] and #[strong Unary Operators]
+      pre
+        code.Java.
+          // Here, '+' is a binary operator
+          int bar = 2 + 3;
+          // Here, '-' is a unary operator
+          int foo = -bar;
+    div.callout.primary
+      p #[strong Identifiers] are case-sensitive names
+      p #[strong Programmer-defined identifiers] are identifiers that the programmer has chosen for:
+        ul
+          li Classes.
+          li Methods.
+          li Variables.
+          li Etc.
+      p #[strong Keywords] are identifiers that the Java language has reserved, for example:
+        ul
+          li int
+          li public
+          li class
+          li Etc.
+          

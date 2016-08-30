@@ -1,0 +1,82 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercises: day 2
+    h4 Exercise 2.01
+    p [Gaddis] Programming Challenge 1, p. 145
+    h4 Exercise 2.02
+    p [Gaddis] Programming Challenge 2, p. 145
+    h4 Exercise 2.03
+    p [Gaddis] Programming Challenge 3, p. 145
+    h4 Exercise 2.04
+    p [Gaddis] Programming Challenge 5, p. 146
+    h4 Exercise 2.05
+    p.
+      In  Denmark, the sales tax is \(25\%\). Write a program that calculates and prints
+      the tax and the total price of items that before the added tax cost \(80\), \(140\), and
+      \(230kr.\), respectively. 
+    h4 Exercise 2.06
+    p.
+      Write a program that calculates and prints the circumference and area of a
+      circle with radius \(22.5\). (Hint: The circumference of a circle is \(2 \pi r\), the area is \(\pi r^2\). 
+      The expression #[tt Math.PI] gives a value for \(\pi\)).
+    h4 Exercise 2.07
+    p.
+      Determine the order of evaluation of the operators in each of the following
+      Java statements, and try to figure out what the value of #[tt x], #[tt y], and #[tt z] will be.
+      Then check if you were right by implementing a Java program that prints
+      out the values after running the statements.
+    h5 A)
+    pre
+      code.Java.
+        x = 7 + 3 * 6 / 2 - 1;
+    h5 B)
+    pre
+      code.Java.
+        x = 7 + 3 * 6 / 2 - 1;
+    h5 C) 
+    pre
+      code.Java.
+        x = 7 + 3 * 6 / 2 - 1;
+    h4 Exercise 2.08
+    p.
+      What does the following code print? Think about it first, and then check if
+      you were right by implementing the statement. 
+    pre
+      code.Java.
+        System.out.println("*\n**\n***\n****\n*****" );
+    h4 Exercise 2.09
+    p.
+      What does the following code print? Think about it first, and then check if
+      you were right by implementing the statement. 
+    pre
+      code.Java.
+        System.out.print( "*" );
+        System.out.println( "***" );
+        System.out.println( "*****" );
+        System.out.print( "****" );
+        System.out.println( "**" );
+    h4 Exercise 2.10
+    p.
+      What will the following program print? Try to figure it out yourself before
+      running the program. 
+    pre
+      code.Java.
+        public class Expressions
+        {
+          public static void main(String[] args)
+          {
+            System.out.println(23 * 4.5 / 0.5 + 1);
+            System.out.println(23 * 4.5 / (0.5 + 1));
+            System.out.println(2 + 5 - 18 + 11);
+            System.out.println((2 + 5) - (18 + 11));
+            System.out.println(14 * 18 / 4 + 4);
+            System.out.println(14 * 18 / (4 + 4));
+          }
+        }
+        
+       

@@ -1,0 +1,490 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 2
+  section
+    h2 Agenda
+    ul
+      li Books
+      li Eclipse and Java
+      li About the course
+      li Object oriented programming with Java
+      li Exercises
+  section
+    h2 What makes a Java Program
+    ul
+      li Java code is simply text, which is compiled to bytecode
+      li That bytecode is interpreted by the Java Virtual Machine (JVM)
+      li The same bytecode can be run by different implementations of the JVM
+        ul
+          li So the same bytecode works on different platforms (Windows, OSX, Linux, etc.)
+  section
+    h2 Parts of a Java Program
+    ul
+      li The code is typically written in files with the extension #[tt .java]
+      li Each file represents a single Java #[tt class]
+        ul
+          li Thus, filename and classname should match
+          li Class named Hello should be in the file Hello.java, not in a file called class1.java or even hello.java
+      li Each file is compiled to .class files, e.g. Hello.java is compiled to Hello.class
+  section
+    section
+      h2 Java classes
+      p Comments start with two slashes, and indicates that the rest of the line should be ignored.
+      pre
+        code.Java.
+          // All of this text is ignored, so I can write anything
+      p.
+        Java is object oriented, so the basic Java program always start with a class. A class declaration generally 
+        looks like the following:
+      pre
+        code.Java.
+          &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+            // Class body in here
+          }
+      pre
+        code.Java.
+          public class Hello {
+          }
+    section
+      h2 Java methods
+      p. 
+        Inside the class body, we can have methods, methods are things that the instances of the class can do. A method
+        declaration generally looks like the following:
+      pre
+        code.Java.
+          public class Hello {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;method parameters&gt;&gt;) {
+              // Do something here
+            }
+          }
+      pre
+        code.Java.
+          public class Hello {
+            public void foo(String bar, int a) {
+              // Do something here with the string bar and integer a
+            }
+          }
+    section
+      h2 Starting a Java program
+      ul
+        li Classes are just definitions of types of objects
+        li If there are no actual objects, then the code is not doing anything
+        li We need an entry-point
+    section
+      h2 The main method
+      ul
+        li This is where the Java program starts
+        li Every Java application must have a main method, or nothing happens
+        li The method declaration has to look exactly like the following example:
+      pre
+        code.Java.
+            public static void main(String[] args)
+  section
+    section
+      h2 Output
+      ul
+        li Programs usually produce some sort of output
+        li Output can have many different formats
+        li You will usually want to display it
+    section
+      h2 Displaying output in the terminal
+      ul
+        li Displaying output in the terminal is the simplest way to display output
+        li Send the information to the "standard output" (stdout)
+        li Use a Java class stored in the #[em standard Java library] (also called the Java API)
+    section
+      h2 The System out stream
+      ul
+        li Inside the Java API, there is a class called #[em System]
+        li The #[em System] class has an #[tt out] object
+        li The #[tt out] object has the #[tt print] and #[tt println] methods
+      pre
+        code.Java.
+          System.out.println("Hello World!");
+    section
+      h2 println vs print
+      pre
+        code.Java.
+          System.out.println("Hello ");
+          System.out.println("World!");
+      p Prints:
+      div.stdout. 
+        Hello #[br]
+        World!
+      pre
+        code.Java.
+          System.out.print("Hello ");
+          System.out.print("World");
+          System.out.println("!");
+      p Prints:
+      div.stdout.
+        Hello World!
+    section
+      h2 Escape sequences
+      p Sometimes you need to enter a special character in a String, then you have to "escape" it
+      pre
+        code.Java.
+          System.out.println("\tHello World!\n\Hello \"World\"!");
+      p Prints:
+      div.stdout.
+        &emsp;Hello World! #[br]
+        Hello "World"!
+    section
+      table
+        tbody
+          tr
+            td \n
+            td newline
+            td Adds a new line before continuing with printing
+          tr
+            td \t
+            td tab
+            td Causes the cursor to skip over the next tab stop
+          tr
+            td \\
+            td backslash
+            td Prints a backslash
+          tr
+            td \'
+            td single quote
+            td Prints a single quotation mark
+          tr
+            td \"
+            td double quote
+            td Prints a double quotation mark
+  section
+    section
+      h2 Variables
+      ul
+        li Variables are identifiers with a type which you can assign a value
+        li A variable declaration generally looks like this:
+      pre
+        code.Java.
+          &lt;&lt;keywords&gt;&gt; &lt;&lt;type&gt;&gt; &lt;&lt;variablename&gt;&gt;;
+      p Example:
+      pre
+        code.Java.
+          String foo;
+    section
+      h2 Local variables versus fields
+      ul
+        li Java has both "local variables" and "fields"
+        li Local variables are defined within a method's body, they improve the control-flow inside that method
+        li Fields are defined within a class's body, they store the state of the instance of the class
+      pre
+        code.Java.
+          public class Hello {
+            // This is a field
+            String foo;
+            
+            public void bar() {
+              // This is a local variable
+              String foo;
+            }
+          }
+    section
+      h2 Local variables versus fields
+      ul
+        li Local variables are only accessible within the method they are defined in, the fields are accessible from
+        |  the whole class
+        li In contrast to local variables, fields should have a visibility keyword as well:
+        pre
+          code.Java.
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;type&gt;&gt; &lt;&lt;variablename&gt;&gt;;
+        pre
+          code.Java.
+            public String foo;
+  section
+    section
+      h2 Binary operators
+      ul
+        li Pre-defined set of symbols that computes something
+        li Consumes the expressions to left and right, to produce an output
+        li E.g. Standard arithmetic operators such as +, -, * and /
+    section
+      h2 Concatenating strings
+      ul
+        li The '+' operator usually adds numbers together
+        li However, if either the left or the right side is a string, it concatenates them.
+      pre
+        code.Java.
+          System.out.println("Hello " + "World");   // Prints: Hello World
+          System.out.println("Value: " + 5);        // Prints: Value 5
+          System.out.println("Value: " + 5 + 14);   // Prints: Value 514
+          System.out.println("Value: " + (5 + 14)); // Prints: Value 19
+    section
+      h2 Assigning values to variables
+      ul
+        li The '=' operator assigns a value to a variable
+      pre
+        code.Java.
+          String foo = "Hello";
+          String bar;
+          bar = " World!";
+          System.out.println(foo + bar);
+      p Prints:
+      div.stdout.
+        Hello World!
+  section
+    section
+      h2 Terminology
+      p #[em Class declarations], or headers, looks like this:
+      pre
+        code.Java.
+          public class Hello
+      p #[em Method declarations], or headers, looks like this:
+      pre
+        code.Java.
+          public void foo(String foo, int a)
+      p #[em Bodies] are encapsulated by braces 
+      pre
+        code.Java {}
+    section
+      h4 Terminology
+      ul
+        li #[em Variables] are identifiers that can be assigned some value.
+        li #[em Local] variables are variables defined in a method
+        li #[em Fields] are variables defined in a class
+        li #[em Parameters] are variables that are defined in a method header
+      pre
+        code.Java.
+          public class Hello {
+            // This is a field
+            String field;
+            
+            // This is a method with a String parameter
+            public void bar(String parameter) {
+              // This is a local variable
+              String local;
+            }
+          }
+    section
+      h4 Terminology
+      ul
+        li #[em Literals] are values that are stated explicitly in the code
+      pre
+        code.Java.
+          // In this example "ASD" is a literal
+          String foo = "ASD";
+          // In this example, the number 2 is a literal
+          int bar = 2;
+    section
+      h4 Terminology
+      ul
+        li #[em Operators] are a pre-defined set of symbols which has some function
+        li There are both #[em Binary Operators] and #[em Unary Operators]
+      pre
+        code.Java.
+          // Here, '+' is a binary operator
+          int bar = 2 + 3;
+          // Here, '-' is a unary operator
+          int foo = -bar;
+    section
+      h4 Terminology
+      ul
+        li #[em Identifiers] are case-sensitive names
+        li #[em Programmer-defined identifiers] are identifiers that the programmer has chosen for:
+          ul
+            li Classes
+            li Methods
+            li Variables
+            li Etc.
+        li #[em Keywords] are identifiers that the Java language has reserved for example:
+          ul
+            li int
+            li public
+            li class
+            li etc.
+    section
+      pre.
+        public class Hello {
+          String foo = "bar";
+        
+          public void foobar(String param) {
+            int a = 2;
+            int b = 3;
+            
+            System.out.println("Result was: " + (a + b) + param);
+          }
+        }
+    section
+      h3 Keywords
+      pre.
+        #[span.highlight public class] Hello {
+          String foo = "bar";
+
+          #[span.highlight public void] foobar(String param) {
+            #[span.highlight int] a = 2;
+            #[span.highlight double] b = 3;
+
+            System.out.println("Result was: " + (a + b) + param);
+          }
+        }
+    section
+      h3 Operators
+      pre.
+        public class Hello {
+          String foo #[span.highlight =] "bar";
+
+          public void foobar(String param) {
+            int a #[span.highlight =] 2;
+            int b #[span.highlight =] 3;
+
+            System.out.println("Result was: " #[span.highlight +] (a #[span.highlight +] b) #[span.highlight +] param);
+          }
+        }
+    section
+      h3 Separators
+      pre.
+        public class Hello {
+          String foo = "bar"#[span.highlight ;]
+
+          public void foobar(String param) {
+            int a = 2#[span.highlight ;]
+            int b = 3#[span.highlight ;]
+
+            System.out.println("Result was: " + (a + b) + param)#[span.highlight ;]
+          }
+        }
+    section
+      h3 Programmer-defined identifiers
+      pre.
+        public class #[span.highlight Hello] {
+          String #[span.highlight foo] = "bar";
+
+          public void #[span.highlight foobar](String #[span.highlight param]) {
+            int #[span.highlight a] = 2;
+            int #[span.highlight b] = 3;
+
+            System.out.println("Result was: " + (#[span.highlight a] + #[span.highlight b]) + #[span.highlight param]);
+          }
+        }
+    section
+      h3 Literals
+      pre.
+        public class Hello {
+          String foo = #[span.highlight "bar"];
+
+          public void foobar(String param) {
+            int a = #[span.highlight 2];
+            int b = #[span.highlight 3];
+
+            System.out.println(#[span.highlight "Result was: "] + (a + b) + param);
+          }
+        }
+  section
+    section
+      h2 Arithmetics
+      ul
+        li There are many different representations of numbers, you need to choose the right one.
+      table.narrowTable
+        tbody
+          tr
+            td byte
+            td 1 byte
+            td Integers in the range #[span.number -128] to #[span.number +127]
+          tr
+            td short
+            td 2 bytes
+            td Integers in the range #[span.number -32,768] to #[span.number +32,767]
+          tr
+            td int
+            td 4 bytes
+            td Integers in the range #[span.number -2,147,483,648] to #[span.number +2,147,483,647]
+          tr
+            td long
+            td 8 bytes
+            td Integers in the range #[span.number -9,223,372,036,854,775,808] to #[span.number +9,223,372,036,854,775,807]
+          tr
+            td float
+            td 4 bytes
+            td Floating-point numbers in the range of \(\pm 3.4 \cdot 10^{-38}\) to \(\pm 3.4 \cdot 10^{38}\), with 7 digits of accuracy
+          tr
+            td double
+            td 8 bytes
+            td Floating-point numbers in the range of \(\pm 1.7 \cdot 10^{-308}\) to \(\pm 1.7 \cdot 10^{308}\), with 15 digits of accuracy
+      p Usually, you will use int and double
+    section
+      h2 Arithmetic operators
+      table
+        thead
+          tr
+            th Operator
+            th Meaning
+        tbody
+          tr
+            td +
+            td Addition
+          tr
+            td -
+            td Subtraction
+          tr
+            td *
+            td Multiplication
+          tr
+            td /
+            td Division
+          tr
+            td %
+            td Modulus (or remainder)
+    section
+      h2 Integer division
+      ul
+        li Dividing integers can be tricky
+          ul
+            li What is the value of \(\frac{1}{2}\)?
+            li If stored in integers, the answer is: 0
+        li Integer divisions will always round down to the nearest integer (cut away any decimal)
+        li Either store the values in a floating-point data type (e.g. a double) before division or use casting
+    section
+      h2 Integer division and casting
+      pre
+        code.Java.
+          int x = 1;
+          int y = 2;
+          int z = x / y;
+          System.out.println(z);
+      p Prints:
+      div.stdout.
+        0
+      hr
+      pre
+        code.Java.
+          int x = 1;
+          int y = 2;
+          double z = x / y;
+          System.out.println(z);
+      p Prints:
+      div.stdout.
+        0.0
+    section
+      pre
+        code.Java.
+          int x = 1;
+          int y = 2;
+          double z = (double)x / y;
+          System.out.println(z);
+      p Prints:
+      div.stdout.
+        0.5
+  section
+    h2 Naming conventions
+    ul
+      li Class names should always use UpperCamelCase
+        p E.g. Hello, JavaProgramming or HelloWorld
+      li Variable names and method names should always use lowerCamelCase
+        p E.g. foo, fooBar or fooBarVar
+        p For methods: foo(), getFoo() or doSomeFooThing()
+  section
+    h2 Naming conventions
+    ul
+      li Java programs should be #[em self-documenting]
+      li That is, identifier names should be descriptive
+      li Goal is to make the code easier to read and understand
+    pre
+      code.Java.
+        double st = 0.25;
+        double salesTax = 0.25;

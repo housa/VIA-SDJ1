@@ -11,22 +11,18 @@ body>header {
 }
 
 .WeekdayCol {
-    width: 12%;
+    width: 14%;
 }
 
 .SubjectCol {
-    width: 31%;
+    width: 42%;
 }
 
 .LitteratureCol {
-    width: 31%;
+    width: 30%;
 }
 
 .ExercisesCol {
-    width: 12%;
-}
-
-.AssignmentsCol {
     width: 14%;
 }
 

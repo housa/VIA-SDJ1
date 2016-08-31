@@ -1,0 +1,196 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 3
+  section
+    h2 Agenda
+    ul
+      li Recap on variables and introducing constants
+      li Generics (primitive-type variables)
+      li Objects (class-type variables)
+      li Strings
+      li Recap on classes
+      li Scope
+      li Programming style
+      li Input
+  section
+    h2 Recap on variables and introducing constants
+    pre
+      code.Java.
+        &lt;&lt;keywords&gt;&gt; &lt;&lt;type&gt;&gt; &lt;&lt;variablename&gt;&gt;;
+    p Example of a variable:
+    pre
+      code.Java.
+        int number;
+    p Example of an instantiated variable:
+    pre
+      code.Java.
+        int number = 10;
+    p Example of a constant:
+    pre
+      code.Java.
+        final int number = 10;  
+  section
+    h2 Generics 
+    h3 (primitive-type variables)
+    ul
+      li boolean
+      li byte
+      li char
+      li double
+      li float
+      li int
+      li long
+      li short
+      li void (not a type)
+  section
+    h2 Objects 
+    h3 (class-type variables)
+    ul
+      li Created from classes
+      li The variable holds a pointer to the object, instead of the actual object
+      li Capitalized by convention
+      li Created using the keyword new
+  section
+    h2 Strings
+    ul
+      li Somewhere between generics and objects
+      li Some important String functions
+    pre
+      code.Java.
+        public void doStuffToString(String s) {
+          int length = s.length(); //number of characters in s
+          String upper = s.toUpperCase(); //all characters in s are converted to uppercase
+          String lower = s.toLowerCase(); //all characters in s are converted to lowercase
+          char letter = s.charAt(0); //first letter in string
+  section
+    section
+      h2 Recap on classes
+      p Comments
+      pre
+        code.Java.
+          // All of this text is ignored, so I can write anything
+      p.
+        Standard class declaration syntax:
+      pre
+        code.Java.
+          &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+            // Class body in here
+          }
+      p.
+        Example of a class
+      pre
+        code.Java.
+          public class Hello {
+          }
+    section
+      h2 Java methods
+      p Are declared inside the class body. 
+      p Standard method declaration syntax:
+      pre
+        code.Java.
+          public class Hello {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+              // Do something here
+            }
+          }
+      p.
+        Example of a method within a class
+      pre
+        code.Java.
+          public class Hello {
+            public void foo(String bar, int a) {
+              // Do something here with the string bar and integer a
+            }
+          }
+  section
+    h2 Scope
+    p.
+      The scope of a variable, is the part of the program that has access to the variable.
+    pre
+      code.Java.
+        public class Hello {
+          // This is a field (within the scope of the class)
+          String field;
+
+          // This is a method with a String parameter (within the scope of the method)
+          public void bar(String parameter) {
+            // This is a local variable (within the scope of the method, 
+            // but only after declared)
+            String local;
+          }
+        }
+  section
+    h2 Programming style
+    h4 Indent your code, otherwise no one can read it 
+    h5 Do this
+    pre
+      code.Java.
+        public class Average {
+          public static void main(String[] args) {
+            int shares = 220;
+            double averagePrice = 14.67;
+            System.out.println("There were " + shares
+                                + " shares sold at $"
+                                + averagePrice + " per share.");
+          }
+        }
+    h5 NOT this
+    pre
+      code.Java.
+        public class Average { public static void main(String[] args) {int 
+        shares = 220; double averagePrice = 14.67; System.out.println("There 
+        were " + shares + " shares sold at $" + averagePrice + " per share.");}}
+  
+  
+  
+  section
+    section
+      h2 Input
+      ul
+        li Programs often requires input
+        li We can read input from the keyboard using the Scanner class from the Java library
+        li To import the package we write in the very top of our file:
+      pre
+        code.Java.
+          import java.util.Scanner;
+    section
+      h2 The Scanner class
+      ul
+        li To create a scanner object use:
+      pre
+        code.Java.
+          Scanner scanner = new Scanner(System.in);
+      ul
+        li Methods for reading input:
+      pre
+        code.Java.
+          String s = scanner.nextLine();
+          int i = scanner.nextInt();
+          double d = scanner.nextDouble();
+    section
+      h2 Scanner example
+      pre
+        code.Java.
+          import java.util.Scanner;
+          
+          public class PayrollInput {
+          
+            public static void main(String[] args) {
+              String name; 
+              int hours; 
+              double payRate; 
+              double pay;
+              Scanner keyboard = new Scanner(System.in);
+              System.out.print("What is your name? ");
+              name = keyboard.nextLine();
+              System.out.print("How many hours did you work? ");
+              hours = keyboard.nextInt();
+              System.out.print("What is your hourly pay rate? ");
+              payRate = keyboard.nextDouble();
+              pay = hours * payRate;
+              System.out.println("Hello " + name + " your pay = " + pay);
+            }
+          }

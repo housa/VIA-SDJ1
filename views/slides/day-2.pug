@@ -40,7 +40,7 @@ block content
         code.Java.
           // All of this text is ignored, so I can write anything
       p.
-        Java is object oriented, so the basic Java program always start with a class. A class declaration generally 
+        Java is object oriented, so the basic Java program always start with a class. A class declaration generally
         looks like the following:
       pre
         code.Java.
@@ -53,7 +53,7 @@ block content
           }
     section
       h2 Java methods
-      p. 
+      p.
         Inside the class body, we can have methods, methods are things that the instances of the class can do. A method
         declaration generally looks like the following:
       pre
@@ -114,7 +114,7 @@ block content
           System.out.println("Hello ");
           System.out.println("World!");
       p Prints:
-      div.stdout. 
+      div.stdout.
         Hello #[br]
         World!
       pre
@@ -130,7 +130,7 @@ block content
       p Sometimes you need to enter a special character in a String, then you have to "escape" it
       pre
         code.Java.
-          System.out.println("\tHello World!\n\Hello \"World\"!");
+          System.out.println("\tHello World!\nHello \"World\"!");
       p Prints:
       div.stdout.
         &emsp;Hello World! #[br]
@@ -177,13 +177,13 @@ block content
         li Java has both "local variables" and "fields"
         li Local variables are defined within a method's body, they improve the control-flow inside that method
         li Fields are defined within a class's body, they store the state of the instance of the class
-      pre 
+      pre
         // TODO: Alexandra Field -> Attribute Class vs Object
         code.Java.
           public class Hello {
             // This is a field
             String foo;
-            
+
             public void bar() {
               // This is a local variable
               String foo;
@@ -243,7 +243,7 @@ block content
       pre
         code.Java.
           public void foo(String foo, int a)
-      p #[em Bodies] are encapsulated by braces 
+      p #[em Bodies] are encapsulated by braces
       pre
         code.Java {}
     section
@@ -258,7 +258,7 @@ block content
           public class Hello {
             // This is a field
             String field;
-            
+
             // This is a method with a String parameter
             public void bar(String parameter) {
               // This is a local variable
@@ -306,11 +306,11 @@ block content
       pre.
         public class Hello {
           String foo = "bar";
-        
+
           public void foobar(String param) {
             int a = 2;
             int b = 3;
-            
+
             System.out.println("Result was: " + (a + b) + param);
           }
         }

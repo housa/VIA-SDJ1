@@ -151,7 +151,11 @@ block content
         String s = scanner.nextLine();
         int i = scanner.nextInt();
             double d = scanner.nextDouble();
-
+    p.
+      Remember to close your scanner, when you are done reading input
+    pre
+      code.Java.
+        s.close();
     h4 Scanner example
     pre
       code.Java.
@@ -173,5 +177,6 @@ block content
             payRate = keyboard.nextDouble();
             pay = hours * payRate;
             System.out.println("Hello " + name + " your pay = " + pay);
+            keyboard.close();
           }
         }

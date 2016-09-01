@@ -1,0 +1,177 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Notes: day 3
+    h4 Recap on variables and introducing constants
+    p Remember the way to declare a variable
+    pre
+      code.Java.
+        &lt;&lt;keywords&gt;&gt; &lt;&lt;type&gt;&gt; &lt;&lt;variablename&gt;&gt;;
+    p Example of a variable:
+    pre
+      code.Java.
+        int number;
+    p Example of an instantiated variable:
+    pre
+      code.Java.
+        int number = 10;
+    p Example of a constant:
+    pre
+      code.Java.
+        final int number = 10;
+
+    h4 The generic types in Java
+    ul
+      li boolean
+      li byte
+      li char
+      li double
+      li float
+      li int
+      li long
+      li short
+
+    p.
+      When making methods one declares what type is returned, if a method returns nothing one uses void, to declare the
+      absence of a return type.
+
+    h4 Objects
+    p.
+      Objects are instances of classes, so when you write a class you can instantiate it as an object in another class,
+      and it hereby becomes a variable. Objects are instantiated using the keyword new.
+
+    h4 Strings
+    p Good string method to know
+    pre
+      code.Java.
+        public void doStuffToString(String s) {
+          int length = s.length(); //number of characters in s
+          String upper = s.toUpperCase(); //all characters in s are converted to uppercase
+          String lower = s.toLowerCase(); //all characters in s are converted to lowercase
+          char letter = s.charAt(0); //first letter in string
+    h4 Recap on classes
+    p Comments
+    pre
+      code.Java.
+        // All of this text is ignored, so I can write anything
+    p.
+      Standard class declaration syntax:
+    pre
+      code.Java.
+        &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+          // Class body in here
+        }
+    p.
+      Example of a class
+    pre
+      code.Java.
+        public class Hello {
+        }
+
+      h4 Java methods
+      p Are declared inside the class body.
+      p Standard method declaration syntax:
+      pre
+        code.Java.
+          public class Hello {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+              // Do something here
+            }
+          }
+      p.
+        Example of a method within a class
+      pre
+        code.Java.
+          public class Hello {
+            public void foo(String bar, int a) {
+              // Do something here with the string bar and integer a
+            }
+          }
+
+    h4 Scopes
+    p.
+      The scope of a variable, is the part of the program that has access to the variable.
+    pre
+      code.Java.
+        public class Hello {
+          // This is a field (within the scope of the class)
+          String field;
+
+          // This is a method with a String parameter (within the scope of the method)
+          public void bar(String parameter) {
+            // This is a local variable (within the scope of the method,
+            // but only after declared)
+            String local;
+          }
+        }
+
+    h4 Programming style
+    p.
+      Indent your code, otherwise no one can read it (not even yourself after some time.) Standard indentation is 2 or 4
+      spaces.
+    h5 Do this
+    pre
+      code.Java.
+        public class Average {
+          public static void main(String[] args) {
+            int shares = 220;
+            double averagePrice = 14.67;
+            System.out.println("There were " + shares
+                                + " shares sold at $"
+                                + averagePrice + " per share.");
+          }
+        }
+    h5 NOT this
+    pre
+      code.Java.
+        public class Average { public static void main(String[] args) {int
+        shares = 220; double averagePrice = 14.67; System.out.println("There
+        were " + shares + " shares sold at $" + averagePrice + " per share.");}}
+    h4 Input
+    p.
+      You often want to input something to your program, a way to handle keyborad input is by the use of the Scanner
+      class. First you have to import the package.
+    pre
+      code.Java.
+        import java.util.Scanner;
+
+    p.
+      To create a scanner object use:
+    pre
+      code.Java.
+        Scanner scanner = new Scanner(System.in);
+    p.
+      Methods for reading input:
+    pre
+      code.Java.
+        String s = scanner.nextLine();
+        int i = scanner.nextInt();
+            double d = scanner.nextDouble();
+
+    h4 Scanner example
+    pre
+      code.Java.
+        import java.util.Scanner;
+
+        public class PayrollInput {
+
+          public static void main(String[] args) {
+            String name;
+            int hours;
+            double payRate;
+            double pay;
+            Scanner keyboard = new Scanner(System.in);
+            System.out.print("What is your name? ");
+            name = keyboard.nextLine();
+            System.out.print("How many hours did you work? ");
+            hours = keyboard.nextInt();
+            System.out.print("What is your hourly pay rate? ");
+            payRate = keyboard.nextDouble();
+            pay = hours * payRate;
+            System.out.println("Hello " + name + " your pay = " + pay);
+          }
+        }

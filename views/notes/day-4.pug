@@ -1,0 +1,50 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Notes: day 4
+    h4 Constructors
+    p.
+      When we create an object (an instance of a class) the object often needs something to be in a valid state, all
+      the fields fx has to be instantiated. All this is done in the constructor.
+    p A constructor should look like this
+    pre
+      code.java.
+        &lt;&lt;visibility&gt;&gt; &lt;&lt;constructorname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+          // initialize your fields here
+        }
+    p.
+      The name of your constructor should be the same as the name of your class but in lowerCamelCase.
+    p.
+      The constructor should be placed in the class body below the fields, above the methods.
+    h4 The syntax of an entire class
+    pre
+      code.Java.
+        &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+          // fields
+          &lt;&lt;keywords&gt;&gt; &lt;&lt;type&gt;&gt; &lt;&lt;variablename&gt;&gt;;
+
+          // constructor
+          &lt;&lt;visibility&gt;&gt; &lt;&lt;constructorname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+            // initialize your fields here
+            }
+
+          //methods
+          &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+            // Do something here
+          }
+        }
+    p A short explanation of the example above
+    ul
+      li visibility: so far we have only used public (other possibilities are private and protected)
+      li classname: a name you choose yourself, should always be in UpperCamelCase
+      li keywords: fx final if you are declaring a constant, static if it's the main method
+      li type: the type of the variable (fx String, int double)
+      li variablename: the name you use to refer to your variable, chosen by you, should be in lowerCamelCase
+      li constructorname: should be the same as classname, but in lowerCamelCase
+      li parameters: have a type and a name, just as variables, you choose the name.
+      li returntype: the type of what is returned by a method. If nothing is returned use void
+      li methodname: a name you choose yourself, should always be in lowerCamelCase

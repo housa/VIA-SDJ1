@@ -1,0 +1,54 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 4
+  section
+    h2 Agenda
+    ul
+      li Recap on classes
+      li Constructors
+      li Recap on methods
+      li The bank account example
+  section
+    section
+      h2 Recap on classes
+      p Comments
+      pre
+        code.Java.
+          // All of this text is ignored, so I can write anything
+      p.
+        Standard class declaration syntax:
+      pre
+        code.Java.
+          &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+            // Class body in here
+          }
+    section
+      h2 Constructors
+      ul
+        li Have the same name as the class
+        li Initializes the data of the object
+        li A good constructor leaves the object in a valid state
+      p Syntax for a constructor
+      pre
+        code.java.
+          &lt;&lt;visibility&gt;&gt; &lt;&lt;classname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+            // initialize your fields here
+            }
+    section
+      h2 Recap on methods
+      p Are declared inside the class body. 
+      p Standard method declaration syntax:
+      pre
+        code.Java.
+          public class Hello {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+              // Do something here
+            }
+          }
+  section
+    h2 The bank account example
+    img(src="/static/images/bankAccountUML.png" width="60%")
+    p Remember to test your class in a test class with a main method

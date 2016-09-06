@@ -37,13 +37,18 @@ img {
 .uml-class {
     background: white;
     border: solid thin black;
+    display: inline-block;
 }
 
 .uml-class ul, .uml-class li {
     text-align: left;
     width: 100%;
     list-style: none;
-    font-size: 80%;
+    font-size: 1rem;
+}
+
+.reveal .uml-class ul, .reveal .uml-class li {
+    font-size: 1.3rem;
 }
 
 .uml-class li {
@@ -67,13 +72,18 @@ img {
 
 .uml-class .fields {
     border: solid thin black;
+    padding-right: 0.5em;
 }
 
 .uml-class .methods {
     border: solid thin black;
+    padding-right: 0.5em;
 }
 
 .uml-class .name {
     border: solid thin black;
     font-weight: bold;
+    padding-right: 0.5em;
+    text-align: center;
+    font-size: 1.5rem;
 }

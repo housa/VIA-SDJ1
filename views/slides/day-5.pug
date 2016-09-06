@@ -1,0 +1,154 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 5
+  section
+    h2 Agenda
+    ul
+      li Recap on classes
+      li Constructors
+      li Recap on methods
+      li The bank account example
+  section
+    h2 What are UML diagrams?
+    ul
+      li A graphic representation of code-structure
+      li A crude representation
+      li Says something about how the code interacts, and how to work together with the code
+      li Doesn't say much about what the code actually does, nor how it does it
+      li Language independent, the notation used is not specific to any particular programming language
+  section
+    section
+      h2 An example of a UML diagram
+      img(src="/static/images/simpleUML.png")
+    section
+      h2 What we will look at today
+      div.split-2-left
+        div.uml-class
+          div.name Class Name
+          div.fields Fields (Attributes)
+          div.methods Methods
+      div.split-2-right
+        ul
+          li UML notation for a single class
+          li Easy to convert into Java
+    section
+      h2 A simple example
+      section
+        div.split-2-left
+          div.uml-class
+            div.name Foo
+            div.fields
+              ul
+                li.private bar : double
+            div.methods
+              ul
+                li.public doFoobar() : void
+                li.protected doBarfoo() : void
+        div.split-2-right
+          ul
+            li Access modifiers
+            li #[span.highlight +] is public
+            li #[span.highlight -] is private
+            li #[span.highlight #] is protected
+  section
+    section
+      h2 Access modifiers
+      ul
+        li Access modifiers (or visibility keywords)
+        li How visible is some class, method, attribute etc.
+        li Should a specific field be seen from outside that class?
+        li There are three access modifiers in Java:
+          ul
+            li public - Anyone can access it
+            li private - Can only be accessed from within the specific class
+            li protected - We will look at this later
+    section
+      h2 Recap on classes
+      p Comments
+      pre
+        code.Java.
+          // All of this text is ignored, so I can write anything
+      p.
+        Standard class declaration syntax:
+      pre
+        code.Java.
+          &lt;&lt;visibility&gt;&gt; class &lt;&lt;classname&gt;&gt; {
+            // Class body in here
+          }
+    section
+      h2 Recap on methods
+      p Are declared inside the class body. 
+      p Standard method declaration syntax:
+      pre
+        code.Java.
+          public class Hello {
+            &lt;&lt;visibility&gt;&gt; &lt;&lt;keywords&gt;&gt; &lt;&lt;returntype&gt;&gt; &lt;&lt;methodname&gt;&gt;(&lt;&lt;parameters&gt;&gt;) {
+              // Do something here
+            }
+          }
+  section
+    section
+      h2 A simple example
+      section
+        div.split-2-left
+          div.uml-class
+            div.name Foo
+            div.fields
+              ul
+                li.private bar #[span.highlight : double]
+            div.methods
+              ul
+                li.public doFoobar() #[span.highlight : void]
+                li.protected doBarfoo() #[span.highlight : void]
+        div.split-2-right
+          ul
+            li Return types
+            li Placed after the field or method, separated by a colon
+    section
+      h2 A simple example
+      section
+        div.split-2-left
+          div.uml-class
+            div.name Bar
+            div.fields
+              ul
+                li.private foo : double
+            div.methods
+              ul
+                li.public doFoobar(#[span.highlight s : string]) : void
+        div.split-2-right
+          ul
+            li Method parameters are shown inside the parentheses
+            li Uses the same notation as fields
+    section
+      h2 Converting UML to code
+      div.split-2-3-left
+        div.uml-class
+          div.name BankAccount
+          div.fields
+            ul
+              li.private balance : double
+              li.private interestRate : double
+          div.methods
+            ul
+              li.public BankAccount(intRate : double)
+              li.public BankAccount(startBal : double, intRate : double)
+              li.public getBalance() : double
+              li.public getInterestRate() : double
+              li.public setInterestRate(intRate : double) : void
+              li.public deposit(amount : double) : void
+              li.public withdraw(amount : double) : void
+              li.public addInterest() : void
+      div.split-1-3-right.small-text
+        ol
+          li Create a new class with the class name
+          li Add the fields
+          li Add the constructors
+          li Add the methods, returning fake values.
+            ul
+              li If void, just leave the method empty
+              li If double, return #[span.highlight 0.0]
+              li If String or another object, return #[span.highlight null]

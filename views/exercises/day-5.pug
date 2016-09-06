@@ -1,0 +1,42 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 5.01
+    h5 UML class diagrams
+    p Create UML class diagrams for the classes created on monday
+    ul
+      li Create a UML class diagram for your Person class
+      li Create a UML class diagram for your MyDate class
+      li Create a UML class diagram for your Calculator class
+    h2 Exercise 5.02
+    h5 Adding Constructors with parameters
+    p Create a second constructor that initializes the fields to variables given as parameters to the constructor
+    ul
+      li In your Person class add a second constructor with name and birthday as parameters, and initialize your fields to these values.
+      li In your MyDate class add a second constructor with day, month and year as parameters, and initialize your fields to these values.
+    p Remember to test the new constructors in your test classes
+    h2 Exercise 5.03
+    h4 The Book class
+    p.
+      Create a UML class diagram for a class Book. Then implement it in Java and test it. The Book class should have the
+      following fields: author (String), title (String), price (double), and pages (int).
+    ul
+      li Create a 4-argument constructor initializing all fields
+      li Create get methods for all fields
+      li Create a set method for price
+      li Create a method toString() that returns a String containing author, title, price, pages. For the course book this would be "Tony Gaddis, Starting Out with Java, 700, 1228"
+      li Write a test program that creates two Book objects based on user input (use a Scanner object to input author, title, price, and pages), then lowers the price on both books by 20%, and finally prints out the information about the two books.
+    h2 Extra exercise
+    h4 Making a URL class diagram from a loose description
+    p Look at this at home and come up with a solution, we will look at these thursday
+    p.
+      A reservation system allows a faculty member to reserve rooms. When a faculty member comes to the administrator to
+      reserve a room in a given time period, he is shown a list of all rooms with their block and floor number, the
+      number of seats, and whether the room has a projector. The faculty member chooses a room, and the administrator
+      fills out a reservation receipt with the room number, the name of the faculty member, and the time period.
+    ul
+      li Design your classes and draw a UML class diagram with them.

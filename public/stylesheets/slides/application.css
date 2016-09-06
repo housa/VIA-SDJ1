@@ -71,6 +71,11 @@ section .highlight {
     font-weight: bold;
 }
 
+section .highlightb {
+    color: blue;
+    font-weight: bold;
+}
+
 section .small-text {
     font-size: 75%
 }

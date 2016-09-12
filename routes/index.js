@@ -9,8 +9,8 @@ router.get('/', function(req, res, next) {
     res.render('index', { title: 'Course page' });
 });
 
-router.get('/website-upload', function (req, res) {
-    res.render('website-upload', { title: 'Upload a file to your website' });
+router.get('/handin-upload', function (req, res) {
+    res.render('handin-upload', { title: 'Upload a file handin' });
 });
 
 router.get('/:studentName*', function (req, res) {

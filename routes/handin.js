@@ -58,7 +58,11 @@ router.post('/:handinNr', upload.single('handinPackage'), function(req, res, nex
     } catch (e) {
       fs.writeFileSync(handinFolder + j + "-" + req.file.originalname, req.file.buffer);
       console.log("[HandIn] : " + req.body.student + " uploaded file: " + j + "-" + req.file.originalname);
-      res.redirect('back');
+      res.render('upload-success', {
+        title: "File was successfully uploaded", 
+        originalName: req.file.originalname, 
+        fileLink: "/handin/get-" + req.body.student + "/" + req.params.handinNr
+      });
     }
   };
   tryRename(0);

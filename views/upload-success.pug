@@ -1,0 +1,11 @@
+extends layout
+
+block header
+  h2 Upload success!
+
+block content
+  section(class="column small-12")
+    div.callout.primary.
+      #{originalName} was succesfully uploaded.
+    p Verify the file via this link: 
+      a(href=fileLink) download file

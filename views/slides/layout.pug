@@ -9,7 +9,11 @@ html
     link(rel='stylesheet', href='/static/stylesheets/slides/theme/serif.css')
     link(rel='stylesheet', href='/static/stylesheets/highlight/railscasts.css')
     link(rel='stylesheet', href='/static/stylesheets/slides/application.css')
+    link(rel='stylesheet', href='/static/stylesheets/vendor/mermaid/mermaid.css')
+    link(rel='stylesheet', href='/static/stylesheets/vendor/mermaid/mermaid.dark.css')
     link(rel='stylesheet', href='/static/stylesheets/app.css')
+    
+    script(src="/static/javascripts/vendor/mermaid/mermaid.min.js")
 
     script.
       var link = document.createElement('link');
@@ -19,6 +23,10 @@ html
               ? '/static/stylesheets/slides/print/pdf.css'
               : '/static/stylesheets/slides/print/paper.css';
       document.getElementsByTagName('head')[0].appendChild(link);
+      mermaid.initialize({
+        startOnLoad: true,
+        logLevel: 1
+      });
   body
     div.reveal
       div.slides
@@ -28,6 +36,24 @@ script(src="/static/javascripts/vendor/head.min.js")
 script(src="/static/javascripts/vendor/reveal.js")
 
 script.
+  var dependencies = [
+    {src: '/static/javascripts/vendor/markdown/marked.js'},
+    {src: '/static/javascripts/vendor/markdown/markdown.js'},
+    {src: '/static/javascripts/vendor/math.js'},
+    {src: '/static/javascripts/vendor/notes/notes.js', async: true},
+    {
+      src: '/static/javascripts/vendor/highlight/highlight.js',
+      async: true,
+      callback: function () {
+        hljs.initHighlightingOnLoad();
+      }
+    }
+  ];
+  
+  if (!window.location.search.match(/present/gi)) {
+    dependencies.push({src: '/static/javascripts/vendor/search/search.js', async:true})
+  }
+  
   // More info https://github.com/hakimel/reveal.js#configuration
   Reveal.initialize({
     history: true,
@@ -42,17 +68,5 @@ script.
     backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
 
     // More info https://github.com/hakimel/reveal.js#dependencies
-    dependencies: [
-      {src: '/static/javascripts/vendor/markdown/marked.js'},
-      {src: '/static/javascripts/vendor/markdown/markdown.js'},
-      {src: '/static/javascripts/vendor/math.js'},
-      {src: '/static/javascripts/vendor/notes/notes.js', async: true},
-      {
-        src: '/static/javascripts/vendor/highlight/highlight.js',
-        async: true,
-        callback: function () {
-          hljs.initHighlightingOnLoad();
-        }
-      }
-    ]
+    dependencies: dependencies
   });

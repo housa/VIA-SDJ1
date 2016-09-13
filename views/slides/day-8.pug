@@ -1,0 +1,416 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 5
+  section
+    h2 Agenda
+    ul
+      li Relational operators
+      li
+  section
+    section
+      h2 Relational operators
+      table
+        thead
+          tr
+            th Relational operator
+            th Meaning
+        tbody
+          tr
+            td a  #[b &gt;] b
+            td is a greater than b?
+          tr
+            td a  #[b &lt;] b
+            td is a smaller than b?
+          tr
+            td a  #[b &gt;=] b
+            td is a greater than #[em or equal to] b?
+          tr
+            td a  #[b &lt;=] b
+            td is a smaller than #[em or equal to] b?
+          tr
+            td a  #[b ==] b
+            td is a equal to b?
+          tr
+            td a  #[b !=] b
+            td is a #[em not] equal to b?
+    section
+      h1 Relational operators
+      ul
+        li They are like arithmetic operators (+, -, *, etc.) but they return #[strong boolean] values
+        li Boolean expressions are variables or calculations that results in either #[tt true] or #[tt false]
+        li Boolean expressions often involve relational operators
+  section
+    section
+      h2 If-statements
+      ul
+        li The #[tt if] statement decides whether or not a section of code is executed
+        li The decision is made based on some #[em boolean expression]
+          ul
+            li #[tt true:] the next statement (or block of statements) is executed
+            li #[tt false:] the next statement (or block statements) is not executed
+      pre
+        code.Java.
+          if(expression)
+            statement;
+          if(expression) {
+            statement;
+          }
+    section
+      h2 If-statements
+      div.split-2-left
+        pre
+          code.Java.
+            if(expression) {
+              statement;
+            }
+      div.split-2-right
+        div.mermaid(style="height:auto;").
+          graph TD;
+          start(( ));
+          p1{ };
+          pIfTrue(statement);
+          p2{ };
+          en(( ));
+          start-->p1;
+          p1-- otherwise -->p2;
+          p2-->en;
+          p1-- expression is true -->pIfTrue;
+          pIfTrue-->p2;
+    section
+      h2 If-statements
+      p We can easily have multiple statements inside an if-condition
+      div.split-2-left
+        pre
+          code.Java.
+            if(expression) {
+              statement1;
+              statement2;
+            }
+      div.split-2-right
+        div.mermaid(style="height:auto;").
+          graph TD;
+          start(( ));
+          p1{ };
+          statement1(statement1);
+          statement2(statement2);
+          p2{ };
+          en(( ));
+          start-->p1;
+          p1-- otherwise -->p2;
+          p2-->en;
+          p1-- expression is true -->statement1;
+          statement1-->statement2;
+          statement2-->p2;
+    section
+      h4 If-statements
+      p Be wary of If-statements without curly-brackets
+      div.split-2-left
+        pre
+          code.Java.
+              if(expression)
+                statement1;
+                statement2;
+      div.split-2-right
+        div.mermaid.
+          graph TD;
+          start(( ));
+          p1{ };
+          statement1(statement1);
+          statement2(statement2);
+          p2{ };
+          en(( ));
+
+          start-->p1;
+          p1-- otherwise -->p2;
+          p1-- expression is true -->statement1;
+          statement1-->p2;
+          p2-->statement2;
+          statement2-->en;
+    section
+      h2 If-statements examples
+      pre
+        code.Java.
+          if(x > y)
+            System.out.println("'x' is greater than 'y'");
+
+          if(x == y) {
+            System.out.println("'x' is equal to 'y'");
+          }
+
+          if(x != y) {
+            System.out.println("'x' is not equal to 'y'");
+            x = y;
+            System.out.println("However, now it is.");
+          }
+  section
+    section
+      h2 If-Else-statements
+      p.
+        With an #[tt if-else] statement, we can also specify code that will be
+        executed when the #[tt if] condition is #[tt false].
+      div.split-2-left
+        pre
+          code.Java.
+            if(expression) {
+              statement1;
+            } else {
+              statement2;
+            }
+      div.split-2-right
+        div.mermaid.
+          graph TD;
+          start(( ));
+          p1{ };
+          statement1(statement1);
+          statement2(statement2);
+          p2{ };
+          en(( ));
+
+          start-->p1;
+          p1-- expression is true -->statement1;
+          p1-- otherwise -->statement2;
+          statement1-->p2;
+          statement2-->p2;
+          p2-->en;
+
+    section
+      h2 If-Else-statements example
+      pre
+        code.Java.
+          if(x == y) {
+            System.out.println("'x' is equal to 'y'");
+          } else {
+            System.out.println("'x' is not equal to 'y'");
+          }
+  section
+    section
+      h2 If-Else-If-statements
+      p An #[tt if-else-if] statement combines multiple conditions.
+      div.split-2-left
+        pre
+          code.Java.
+            if(expression1) {
+              statement1;
+            } else if(expression2) {
+              statement2;
+            } else {
+              statement3;
+            }
+        p.
+          The else block is optional, and will only be executed if the previous
+          expressions are false.
+      div.split-2-right
+        div.mermaid.
+          graph TD;
+          start(( ));
+          p1{ };
+          p2{ };
+          p3{ };
+          statement1(statement1);
+          statement2(statement2);
+          statement3(statement3);
+          en(( ));
+
+          start-->p1;
+          p1-- expression1 is true -->statement1;
+          p1-- otherwise -->p2;
+          p2-- expression2 is true -->statement2;
+          p2-- otherwise -->statement3;
+
+          statement1-->p3;
+          statement2-->p3;
+          statement3-->p3;
+
+          p3-->en;
+    section
+      div.mermaid(style="height:30em;").
+        graph TD;
+        start(( ));
+        p1{ };
+        p2{ };
+        p3{ };
+        p4{ };
+        p5{ };
+        p6{ };
+        statement1(statement1);
+        statement2(statement2);
+        statement3(statement3);
+        statement4(statement4);
+        statement5(statement5);
+        statement6(statement6);
+
+        en(( ));
+
+        start-->p1;
+        p1-- expression1 is true -->statement1;
+        p1-- otherwise -->p2;
+        p2-- expression2 is true -->statement2;
+        p2-- otherwise -->p3;
+        p3-- expression3 is true -->statement3;
+        p3-- otherwise -->p4;
+        p4-- expression4 is true -->statement4;
+        p4-- otherwise -->p5;
+        p5-- expression5 is true -->statement5;
+        p5-- otherwise -->statement6;
+
+        statement1-->p6;
+        statement2-->p6;
+        statement3-->p6;
+        statement4-->p6;
+        statement5-->p6;
+        statement6-->p6;
+
+        p6-->en;
+    section
+      h2 If-Else-If-statements example
+      pre
+        code.Java.
+          if(x == y) {
+            System.out.println("'x' is equal to 'y'");
+          } else if(x > y) {
+            System.out.println("'x' is greater than 'y'");
+          } else {
+            System.out.println("'x' is smaller than 'y'");
+          }
+  section
+    section
+      h2 Nested if-statements
+      p.
+        If an #[tt if] statement appears inside another #[tt if] statement, it
+        is called a #[em nested] #[tt if] statement
+      div.split-2-left
+        pre
+          code.Java.
+            if(expression1) {
+              if(expression2) {
+                statement1;
+              } else {
+                statement2;
+              }
+            } else {
+              statement3;
+            }
+      div.split-2-right
+        div.mermaid(style="height:22em;").
+          graph TD;
+          start(( ));
+          p1{ };
+          p2{ };
+          p3{ };
+          p4{ };
+          statement1(statement1);
+          statement2(statement2);
+          statement3(statement3);
+          en(( ));
+
+          start-->p1;
+          p1-- expression1 is true -->p2;
+          p1-- otherwise -->statement3;
+          p2-- expression2 is true -->statement1;
+          p2-- otherwise -->statement2;
+          p3-->p4;
+          p4-->en;
+
+          statement1-->p3;
+          statement2-->p3;
+          statement3-->p4;
+    section
+      h2 Nested if-statements example
+      pre
+        code.Java.
+          if(x == y) {
+            System.out.println("'x' is equal to 'y'");
+            if(x == 42) {
+              System.out.println("Both 'x' and 'y' is equal to 42");
+            }
+          } else {
+            System.out.println("'x' is smaller than 'y'");
+          }
+  section
+    section
+      h2 Logical operators
+      ul
+        li.
+          Java provvides two #[em logical operators] (#[tt &&] and #[tt ||])
+          which combines #[tt boolean] expressions (like +, *, -, etc.).
+        li.
+          Java also provides one #[em logical operator] (#[tt !]) which inverses
+          the value of a #[tt boolean] expression.
+    section
+      table
+        thead
+          tr
+            th Operator
+            th Meaning
+            th Effect
+        tbody
+          tr
+            td #[tt &&]
+            td AND
+            td.
+              Returns true, if the left and the right is true.
+              Otherwise it returns false
+          tr
+            td #[tt ||]
+            td OR
+            td.
+              Returns true if either the left, the right or both are true.
+              Returns false if both the left and the right are false.
+          tr
+            td #[tt !]
+            td NOT
+            td.
+              Is applied in front of a boolean expression. Returns true if the
+              expression is false, and returns false if the expression is true.
+    section
+      h2 The #[tt &&] operator
+      p.
+        The AND operator #[tt &&] takes two operands, that must both be
+        #[tt boolean] expressions.
+      pre
+        code.Java.
+          if(x == 2 && y == 4) {
+            z = 42;
+          }
+      p The result is #[tt true], if (and #[em only] if) both operands are true
+      pre
+        code.Java.
+          true && true // Is true
+          false && true // Is false
+          true && false // Is false
+          false && false // Is false
+    section
+      h2 The #[tt ||] operator
+      p.
+        The OR operator #[tt &&] takes two operands, that must both be
+        #[tt boolean] expressions.
+      pre
+        code.Java.
+          if(x == 2 || y == 4) {
+            z = 42;
+          }
+      p The result is #[tt true], if either operand is true
+      pre
+        code.Java.
+          true && true // Is true
+          false && true // Is true
+          true && false // Is true
+          false && false // Is false
+    section
+      h2 The #[tt !] operator
+      p.
+        The NOT operator #[tt !] is a unary operator and affects the next
+        #[tt boolean] expression on the right.
+      pre
+        code.Java.
+          if(!(x == 2)) {
+            System.out.println("'x' is not equal to 2");
+          }
+      p The result is #[tt true], if the expression is false
+      pre
+        code.Java.
+          !true // Is false
+          !false // Is true

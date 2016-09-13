@@ -79,3 +79,7 @@ section .highlightb {
 section .small-text {
     font-size: 75%
 }
+
+.reveal .mermaid {
+    font-size: 1.3rem;
+}

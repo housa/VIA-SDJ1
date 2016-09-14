@@ -1,0 +1,77 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 8.01
+    p.
+      Write a program that reads an age (int) from the keyboard and the prints a message. The message should depend on
+      the typed value in the following way:
+    ul
+      li If the age is less than 0 display the message: "Error in age value"
+      li If the age is between 0 and 12 (both included) display the message: "Child"
+      li If the age is between 13 and 19 (both included) display the message: "Teenager"
+      li If the age is between 20 and 65 (both included) display the message: "Adult"
+      li If the age is larger than 65 display the message: "Senior citizen"
+    p.
+      Test the program by running it at least 5 times to be sure that it will print out the correct message for each
+      age group
+    h2 Exercise 8.02
+    p.
+      Write a program that reads a gender (char 'M' or 'F') and an age (int) from the keyboard and then prints a
+      message (Hint: for some reason there is no nextChar() method when using a Scanner object, so first read a String
+      with the nextLine() method and then use charAt(0) on the String to extract the first char).
+    p.
+      The message should depend on the typed values, in the following way:
+    ul
+      li If gender is neither 'M' nor 'F' or age is less than 0 display the message: "Error in typed values"
+      li If gender is 'M' and age is less than 18 display the message: "Boy"
+      li If gender is 'M' and age is greater than or equal to 18 display the message: "Man"
+      li If gender is 'F' and age is less than 18, display the message: "Girl"
+      li If gender is 'F' and age is greater than or equal to 18 display the message: "Woman"
+    p.
+      As in the first exercise, test the program by running it multiple times and entering different values
+    h2 Exercise 8.03
+    p.
+      Write a program that reads a grade from the Danish 7-scale from keyboard (as an int) and prints the equivalent
+      grade from the international grade scale.
+    p.
+      The Danish 7-scale grades are the following: {12, 10, 7, 4, 2, 0, -3} and the international grades are:
+      {A, B, C, D, E, Fx, F}
+    p.
+      The grades are converted as: 12=A, 10=B, 7=C, 4=D, 2=E, 0=Fx and -3=F
+    h2 Exercise 8.04
+    p Sort numbers
+    ul
+      li Write a program that asks the user to enter two numbers and prints the smallest of the numbers
+      li Write a program that asks the user to enter two numbers and prints the numbers in sorted order (smallest number first)
+      li Write a program that asks the user to enter three numbers and prints the numbers in sorted order (smallest number first)
+      li (Optional) Write a program that asks the user to enter four numbers and prints the numbers in sorted order (largest number first)
+    h2 Exercise 8.05
+    p MyDate class revisited
+    p.
+      We have a leap year when the year can be divided by 4 (1996, 2008, 2010, etc.), except for the years that can
+      also be divided by 100, unless they can also be divided by 400 (i.e. 1600, 2000 and 2400 are leap years, while
+      1800, 1900, and 2100 are not)
+    p.
+      Extend the MyDate class that you made in an earlier exercise with a new method called isLeapYear(), that will
+      return true if the year stored is a leap year, and false if it is not. Hint: the following boolean expression
+      will be true if year is dividable by four:
+    pre
+      code.java.
+        year%4==0
+    h2 Exercise 8.06
+    p In math a quadratic equation is given as: \(ax^2 + bx + c = 0\)
+    p.
+      For such an equation the determinant \(D\) is defined as \(D = b^2 − 4ac\) and the solution to
+      the equation can then be calculated as:
+    ul
+      li If \(D<0\), there is no solution
+      li If \(D=0\), there is one solution: \(x = - \frac{b}{2a}\)
+      li If \(D>0\), there are two solutions: \(x_1 = \frac{−b + \sqrt{D}}{2a}\) and \(x_2 = \frac{−b − \sqrt{D}}{2a}\)
+    p.
+      Create a program that asks the user to input values for a, b and c, then calculates the solutions (if any) to a
+      quadratic equation defined by those values, and prints them out. Remember that in Java the square root of a
+      number is found by: Math.sqrt(number)

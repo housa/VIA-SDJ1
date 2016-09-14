@@ -1,0 +1,51 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 9.01
+    p.
+      Write a program that asks a user to enter a number within the range 1-10. The program should then display the
+      Roman numeral version of the entered number. If the number is outside the range 1-10, the program should display
+      an error message of your choice. The first ten Roman numerals are {I, II, III, IV, V, VI, VII, VIII, IX, X}.
+    h2 Exercise 9.02
+    p.
+      Further modify your MyDate class from the last session by adding a method daysInMonth() that returns the number
+      of days in the month (e.g. for January it should return 31).
+    p.
+      Remember: If year is a leap year February has 29 days (unlike the usual 28 days), so you can use the isLeapYear()
+      method you made previously to calculate the number of days properly
+    h2 Exercise 9.03
+    p.
+      Write a program that asks the user to enter a username, a password and a confirmation password. Then print out
+      the username, and a message about whether or not the entered password and confirmation password are identical.
+    h2 Exercise 9.04
+    p.
+      Add a method getMonthName() to the MyDate class, that uses a switch statement to return the name of the current
+      month (1 = January, 2 = February, etc.).
+    h2 Exercise 9.05
+    p.
+      Implement a class Clock holding information of a time as hour, minute and second. The following class diagram has
+      to be implemented:
+    div.uml-class
+      div.name Clock
+      div.fields
+        ul
+          li.private hour : int
+          li.private minute : int
+          li.private second : int
+      div.methods
+        ul
+          li.public Clock(h : int, m : int, s : int)
+          li.public Clock(totalTimeinSeconds : int)
+          li.public set(h : int, m : int, s : int) : void
+          li.public getHour() : int
+          li.public getMinute() : int
+          li.public getSecond() : int
+          li.public tic() : void
+          li.public convertToSeconds() : int
+          li.public isBefore(time : Clock) : boolean
+          li.public timeInSecondsTo(time : Clock) : Clock
+          li.public toString() : String

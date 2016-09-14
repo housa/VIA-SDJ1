@@ -1,0 +1,94 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 8
+  section
+    h2 Agenda
+    ul
+      li Comparing objects
+      li Switch statements
+  section
+    section
+      h2 Comparing objects
+      ul
+        li We can't use relational operators to compare objects, like we do with primitive data types
+          ul
+            li Reference variables only contain the address of the object they represent
+            li Unless the references point to the exact same object, the relational operators will not return true
+        li This is the case for variables of type String
+    section
+      h2 Comparing objects
+      ul
+        li To compare objects we either use the equals() method
+          ul
+            li Returns true if the 2 objects contain the same data i.e. if 2 strings are composed of the same characters
+        li Or the compareTo() method
+          ul
+            li Returns an integer indicating whether two objects are the same, or whether one is less than or greater than the other
+        li You will mostly have to use equals()
+    section
+      h2 The equals method
+      ul
+        li Syntax
+      pre
+        code.java.
+          variable1.equals(variable2);
+      ul
+        li the above expression returns a boolean
+          ul
+            li true if variable1 and variable2 are equal
+            li false if variable1 and variable2 are not equal
+  section
+    section
+      h2 Switch statements
+      ul
+        li Can be used instead of if-else-if statements, to save time and work
+        li The switch statement can evaluate a variable (or an expression resulting in a value) and make decisions based on its value
+        li If there is an associated case statement with a value that matches the one in the variable, then the program will jump to that case statement
+    section
+      h2 Switch statements
+      ul
+        li Often each case will end with a break statement
+          ul
+            li If a case does not contain a break (or a return), then the program will continue into the next case and run the statements there
+        li An optional default section can be added, which will be executed if none of our cases match the switch variable
+    section
+      h2 Switch statements
+
+      div.split-2-left
+        p Syntax for switch statement
+        pre
+          code.java.
+            switch(variable) {
+              case a:
+                statementA;
+                break;
+              case b:
+                statementB;
+                break;
+              case c:
+                statementC;
+                break;
+              default:
+                statementDefault;
+            }
+      div.split-2-right
+        p The equivalent using if statements
+        pre
+          code.java.
+            if(variable == a) {
+              statementA;
+            } else if(variable == b) {
+              statementB;
+            } else if(variable == c) {
+              statementC;
+            } else {
+              statementDefault
+            }
+    section
+      h2 Example of a switch statement
+      ul
+        li Exercise 8.03 solved using switch statement
+        li Live coded in eclipse

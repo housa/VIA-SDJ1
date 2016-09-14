@@ -1,0 +1,75 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Hand-in-1
+    
+    h4 Part 1: The code
+    p.
+      The first part of this hand-in, should be very familiar to you, as you have done all of this before.
+    
+    p Implement the following class:
+    div.uml-class
+      div.name Student
+      div.fields
+        ul
+          li.private name : String
+          li.private grade : int
+      div.methods
+        ul
+          li.public Student(name : String)
+          li.public getName() : String
+          li.public getGrade() : int
+          li.public setGrade(grade : int) : void
+    
+    p. 
+      Create a Test class, which creates a new instance of the Student class, sets the grade to 7 and prints out
+      the name and grade of the student. For example:
+    div.stdout.
+      Lukas got grade: 7
+    
+    h4 Part 2: The report
+    p.
+      The second part of this hand-in is, perhaps, the most important part. A long with the code, we ask you to hand in
+      a 1-2 pages report, where you describe and explain, every single line and word you have written into your code.
+    ul
+      li Why did you write that specific word?
+      li What does the word do?
+    p.
+      For example, for the lines:
+    pre
+      code.Java.
+        int a = 2;
+    p I would write something along the lines of:
+    p
+      i.
+        In this line, I wanted to store the number 2 in a variable. First, I wrote "int" in order to specify that I 
+        wanted to declare a variable with the type int, which is an integer. Next I gave it the name "a" and then I 
+        wrote " = 2;" in order to assign the newly created variable "a" the value 2.
+    
+    h4 The purpose
+    p.
+      The purpose of this exercise is:
+    ul
+      li To give us an idea of how much of the code you actually understand
+      li Give you an idea on where your pit-falls are
+      li To make you go back and look at some of the fundamental theory of Java programming that you might have missed
+    
+    h4 Handing in
+    p.
+      You have to hand-in on Monday, 19. September. You are not allowed to work together, and we will not tolerate
+      plagiarism. You can use any other means of help you need, like reading the book, looking at the slides, etc.
+
+    h2 Hand-in form
+    div.callout
+      form(action="/handin/2" method="post" enctype="multipart/form-data")
+        label(for="handinPackage") Upload your solution:
+        input(type="file" id="handinPackage" name="handinPackage" required="true")
+        label(for="student").
+          Type your First-name here, using
+          #[strong only letters from the english alphabet (a-z) and no accents].
+        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
+        input(type="submit")

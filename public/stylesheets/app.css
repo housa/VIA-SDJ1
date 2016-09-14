@@ -87,3 +87,15 @@ img {
     text-align: center;
     font-size: 1.5rem;
 }
+
+.stdout {
+    text-align: left;
+    background: #efefaf;
+    border: solid thin #a1a173;
+}
+
+.reveal .stdout {
+    font-size: 0.55em;
+    margin: 20px auto;
+    width: 90%;
+}

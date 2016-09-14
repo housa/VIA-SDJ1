@@ -12,4 +12,10 @@ var router = express.Router();
     });
 });
 
+[1].forEach((current, index) => {
+    router.get('/hand-in-' + current, function(req, res, next) {
+        res.render('exercises/hand-in-' + current, { title: 'Day ' + current});
+    });
+});
+
 module.exports = router;

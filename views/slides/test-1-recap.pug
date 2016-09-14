@@ -1,0 +1,145 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Test 1 recap
+  section
+    h2 In general
+    ul
+      li Lack of proper formatting
+      li Improper use of lowerCamelCase and UpperCamelCase
+    pre
+      code.Java.
+        public class SomeClassNameHere {
+          public static void main(String[] args) { 
+            Scanner scanner = new Scanner(System.in);
+              System.out.println("Write an integer:");
+              int somelocalVariableName = scanner.nextInt();
+              scanner.close();
+              System.out.println("Integer inputted was: " + someLocalVariableName);
+          }
+        }
+  section
+    h2 In general
+    ul
+      li Indentations define scopes, i.e. variable defined inside that scope will die when it ends.
+    pre
+      code.Java.
+        public class SomeClassNameHere {
+          public static void main(String[] args) { 
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("Write an integer:");
+            int someLocalVariableName = scanner.nextInt();
+            scanner.close();
+            System.out.println("Integer inputted was: " + someLocalVariableName);
+          }
+        }
+  section
+    h2 Question 1
+    ul
+      li Forgetting to close the Scanner
+      li Scanner closed at the end instead of immediately after use
+  section
+    h2 Course.java
+    ul
+      li Not writing 'private' in front of fields
+    pre
+      code.Java.
+        public class Course {
+          private String name;
+          private int numberOfStudents;
+          private boolean electiveCourse;
+          
+          // ... Rest of class here ...
+        }
+  section
+    h2 Course.java
+    ul
+      li Lack of constructors
+      li Not using the parameters in the constructors
+    pre
+      code.Java.
+        public class Course {
+
+          private String name;
+          private int numberOfStudents;
+          private boolean electiveCourse;
+
+          public Course(String name, int numberOfStudents, boolean electiveCourse) {
+          }
+           
+          public Course(String name, boolean electiveCourse) {
+            this.numberOfStudents = 0;
+          }
+           
+          public Course() {
+            this.name = "SDJ1";
+            this.numberOfStudents = 0;
+            this.electiveCourse = false;
+          }
+
+          // ... Rest of class here ...
+        }
+  section
+    h2 Course.java
+    pre
+      code.Java.
+        public class Course {
+
+          private String name;
+          private int numberOfStudents;
+          private boolean electiveCourse;
+
+          public Course(String name, int numberOfStudents, boolean electiveCourse) {
+            this.name = name;
+            this.numberOfStudents = numberOfStudents;
+            this.electiveCourse = electiveCourse;
+          }
+
+          public Course(String name, boolean electiveCourse) {
+            this.name = name;
+            this.electiveCourse = electiveCourse;
+            this.numberOfStudents = 0;
+          }
+
+          public Course() {
+            this.name = "SDJ1";
+            this.numberOfStudents = 0;
+            this.electiveCourse = false;
+          }
+
+          // ... Rest of class here ...
+        }
+  section
+    h2 Course.java
+    ul
+      li Incorrect implementations of getters and setters
+    pre
+      code.Java.
+        public class Course {
+
+          private String name;
+          private int numberOfStudents;
+          private boolean electiveCourse;
+
+          // ... Constructors ...
+
+          public String getName() {
+            return name;
+          }
+        
+          public void setName() { // Wrong, no parameter
+            this.name = name;
+          }
+        
+          public void setNumberOfStudents(int numberOfStudents) {
+            // Do something with the parameter
+          }
+        
+          public void setElectiveCourse(boolean electiveCourse) {
+            this.electiveCourse = electiveCourse; // Yay!
+          }
+        
+          // ... Rest of class here ...
+        }

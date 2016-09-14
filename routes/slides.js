@@ -12,4 +12,10 @@ var router = express.Router();
     });
 });
 
+[1].forEach((current, index) => {
+    router.get('/test-' + current + '-recap', function(req, res, next) {
+        res.render('slides/test-' + current + '-recap', { title: 'Day ' + current });
+    });
+});
+
 module.exports = router;

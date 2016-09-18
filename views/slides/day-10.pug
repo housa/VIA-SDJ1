@@ -1,0 +1,259 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 10
+  section
+    h2 Agenda
+    ul
+      li Incrementing and decrementing
+      li
+  section
+    section
+      h2 Incrementing and decrementing numbers
+      pre
+        code.Java.
+          number1 = number1 + 1;
+          number2 = number2 - 1;
+      p Can also be written as:
+      pre
+        code.Java.
+          number1++;
+          number2--;
+    section
+      h2 Example
+      pre
+        code.Java.
+          public static void main(String[] args) {
+            int number = 23;
+            System.out.println(number);
+            number++;
+            System.out.println(number);
+            number--;
+            System.out.println(number);
+          }
+      p Outputs:
+      pre.stdout.
+        23
+        24
+        23
+  section
+    section
+      h2 Loops
+      ul
+        li Sometimes you might want to do something over and over in your code
+        ul
+          li You can have repeat some statements by putting thme inside a #[em loop]
+          li.
+            In Java, we have a few different loop structures, here we will look
+            at the following two:
+          ul
+            li The #[tt while] loop
+            li The #[tt for] loop
+    section
+      h2 The while loop
+      p The #[tt while] loop has the form:
+      pre
+        code.Java.
+          while(condition) {
+            statements;
+          }
+      ul
+        li.
+          Similar to #[tt if]-statements, while loops has a condition and as
+          long as the condition evaluates to #[tt true], the statements are
+          executed.
+    section
+      h2 The while loop
+      p We can model the #[tt while] loop as a diagram:
+      div.mermaid.
+        graph TD;
+        start(( ));
+        statements(statements);
+        p1{ };
+        p2{ };
+        en(( ));
+        start-->p1;
+        p1-->p2;
+        p2-->en;
+        p2-- true -->statements;
+        statements-->p1;
+    section
+      h2 Infinite Loops
+      ul
+        li What if the condition never becomes false?
+        li Loops that do not end, are called infinite loops
+      pre
+        code.Java.
+          int x = 20;
+          while(x > 0) {
+            System.out.println("x is greater than 0!");
+          }
+      p.
+        The #[tt x] variable never gets decremented, so it is always greater
+        than 0, so the program will keep printing forever.
+    section
+      h2 Avoiding infinite loops
+      pre
+        code.Java.
+          int x = 20;
+          while(x > 0) {
+            System.out.println("x is greater than 0!");
+            x--; // Increment x with 1
+          }
+      ul
+        li Now the #[tt x] variable gets decremented by 1 each time
+        li "x is greater than 0!" will get printed 20 times
+    section
+      h2 Example of the while loop
+      pre
+        code.Java.
+          public class PrintHello {
+            public static void main(String[] args) {
+              int x = 1;
+
+              while(x <= 5) {
+               System.out.println("Hello");
+               x++;
+              }
+
+              System.out.println("Goodbye");
+            }
+          }
+      pre.stdout.
+        Hello
+        Hello
+        Hello
+        Hello
+        Hello
+        Goodbye
+  section
+    section
+      h2 The #[tt for] loop
+      ul
+        li The #[tt for] loop has the form:
+      pre
+        code.Java.
+          for(initialization; test; update) {
+            statements;
+          }
+      ul
+        li.
+          The #[tt for] loop allows as us to initialize a counter variable,
+          test for the condition and modify it, all in one line of code
+        li The #[tt while] loop can do the same, but usually in multiple lines of code
+    section
+      h2 The #[tt for] loop
+      p The #[tt for] loop would be modeled as:
+      div.mermaid(style="height:25em;").
+        graph TD;
+        start(( ));
+        statements(statements);
+        initialize(initialize);
+        update(update);
+        p1{ };
+        p2{ };
+        en(( ));
+        start-->initialize;
+        initialize-->p1;
+        p2-- test is true -->statements;
+        statements-->update;
+        p2-- test is false -->en;
+        p1-->p2;
+        update-->p1;
+    section
+      h2 The #[tt for] loop - example
+      pre
+        code.Java.
+          public class PrintNumbers {
+            public static void main(String[] args) {
+              for(int i = 0; i <= 10; i++) {
+                System.out.print(i + " ");
+              }
+            }
+          }
+      pre.stdout.
+        0 1 2 3 4 5 6 7 8 9 10
+    section
+      h2 The #[tt for] loop - example2
+      pre
+        code.Java.
+          public class PrintNumbers {
+            public static void main(String[] args) {
+              for(int i = 10; i >= 0; i--) {
+                System.out.print(i + " ");
+              }
+            }
+          }
+      pre.stdout.
+        10 9 8 7 6 5 4 3 2 1 0
+    section
+      h2 The #[tt for] loop - example2
+      pre
+        code.Java.
+          public class PrintEvenNumbers {
+            public static void main(String[] args) {
+              for(int i = 0; i <= 0; i+=2) {
+                System.out.print(i + " ");
+              }
+            }
+          }
+      pre.stdout.
+        0 2 4 6 8 10
+  section
+    section
+      h2 Nested loops
+      ul
+        li Like #[tt if]-statements, loops can also be nested
+        li.
+          If a loop is nested, the inner loop will be execute all of its
+          iterations for each time the outer loop executes once.
+      pre
+        code.Java.
+          for(int i = 0; i < 3; i++) {
+            for(int j = 0; j < 3; j++) {
+              System.out.println("Hey!");
+            }
+          }
+      p This example, will print "Hey!", \(3 \cdot 3 = 9\) times
+  section
+    section
+      h2 The #[tt break] and #[tt continue] statements
+      ul
+        li The #[tt break] statement
+        ul
+          li Used to immediately terminate a loop, even if the condition is not false
+        li The #[tt continue] statement
+        ul
+          li Used to interrupt the current iteration and start the next one.
+    section
+      h2 #[tt break] - example
+      pre
+        code.Java.
+          for(int i = 0; i < 5; i++) {
+            if(i == 2) {
+              break;
+            }
+
+            System.out.println("Index is: " + i);
+          }
+      pre.stdout.
+        Index is: 0
+        Index is: 1
+  section
+    h2 #[tt continue] - example
+    pre
+      code.Java.
+        for(int i = 0; i < 5; i++) {
+          if(i == 2) {
+            continue;
+          }
+
+          System.out.println("Index is: " + i);
+        }
+    pre.stdout.
+      Index is: 0
+      Index is: 1
+      Index is: 3
+      Index is: 4

@@ -1,0 +1,75 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 10.01
+    p.
+      Write a program that asks the user to input an #[tt int], \(n\), and then
+      prints out the following:
+    ol
+      li All the numbers \(1, 2, 3, \dots, n\)
+      li All the numbers \(2, 4, 6, \dots, 2n\)
+      li All the numbers \(1, 4, 9, \dots, n^2\)
+
+    h2 Exercise 10.02
+    p.
+      Our current concept of leap years was started in \(1582\), when the Gregorian calendar was
+      introduced. From previous exercises you should have a #[tt MyDate] class with an
+      #[tt isLeapYear()] method. Use that for the following:
+    ol
+      li.
+        Create a program with a main method that uses a #[tt for]-loop and a #[tt MyDate] object
+        to calculate how many leap years there have been since \(1582\), and then prints out
+        the result. Hint: set the #[tt MyDate] object to all the years, and check which ones are
+        leap years.
+      li.
+        Modify the program by adding a #[tt Scanner] object, allowing the user to input a
+        start year and an end year. Then the program should calculate the number of leap
+        years within that range.
+
+    h2 Exercise 10.03
+    p.
+      Add another method to your #[tt MyDate] class called #[tt nextDay()]. The method should
+      change the date to one day later than the current date. Then in your test class create a
+      #[tt MyDate] object with the date of your birthday, and use a loop and the #[tt nextDay()]
+      method to find out how many days it has been since you were born.
+
+    h2 Exercise 10.04
+    p.
+      The Fibonacci numbers is a special sequence of numbers. They are defined so that the
+      first two numbers are \(1\), and all following numbers are the sum of the two preceding
+      numbers. E.g.
+    ul
+      li The \(0^{th}\) Fibonacci number is \(1\).
+      li The \(1^{st}\) Fibonacci number is also \(1\).
+      li The \(2^{nd}\) Fibonacci number is \(1 + 1 = 2\).
+      li The \(3^{rd}\) Fibonacci number is \(1 + 2 = 3\).
+      li The \(4^{th}\) Fibonacci number is \(2 + 3 = 5\).
+      li Etc.
+    p Write a program that prints out the first \(20\) Fibonacci numbers, in the following format:
+    b Output:
+    div.stdout
+      pre.
+        Fibonacci(0) = 1
+        Fibonacci(2) = 2
+        Fibonacci(1) = 1
+        Fibonacci(3) = 3
+        Fibonacci(4) = 5
+        Fibonacci(5) = 8
+        Fibonacci(6) = 13
+      p \(\quad \vdots\)
+      pre Fibonacci(20) = 6765
+
+    h2 Exercise 10.05
+    p.
+      Write a program that prompts the user for a string, and prints its reverse. E.g. the string
+      #[tt "Hello"] typed on the keyboard will be printed out as #[tt "olleH"]. Keep doing this over
+      and over, until the user enters the string #[tt "quit"].
+    p.
+      Note that the method #[tt charAt(index)] in the #[tt String] class can be used to get the
+      character at a specific index in the string, and the method #[tt length()] can be used to get
+      the number of characters in the string. When comparing strings, the method #[tt equals()]
+      might be useful.

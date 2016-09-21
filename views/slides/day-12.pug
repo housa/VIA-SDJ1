@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 12
+  section
+    h2 Agenda
+    ul
+      li UML class diagrams
+  section
+    h2 UML class diagram
+    div.uml-class
+      div.name Room
+      div.fields
+        ul
+          li.private number : int
+          li.private capacity : int
+          li.private occupied : boolean
+      div.methods
+        ul
+          li.public Room(number : int, capacity : int)
+          li.public setNumber(int : number) : void
+          li.public getNumber() : int
+          li.public setCapacity(capacity : int) : void
+          li.public getCapacity() : int
+          li.public occupy() : boolean
+          li.public unOccupy() : void
+          li.public isOccupied() : boolean
+          li.public toString() : String
+    p.
+      occupy() should return weather or not occupying the room went well (you cannot occupy an already occupied room)

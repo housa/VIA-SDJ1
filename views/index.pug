@@ -129,16 +129,16 @@ block content
     h4 Test 2
     p Will be held on monday September 26. The test will start at 12.15 and last 70 minutes.
     p.
-      This test will determine if you have to participate in mandatory programming workshops. (The workshops will most
-      likely be held wednesdays 12.30 - 16.30) First workshop is wednesday September 28.
-    //  section(class="column small-12")
-    //    h2 Test hand-in
-    //    div.callout
-    //      form(action="/handin/1" method="post" enctype="multipart/form-data")
-    //        label(for="handinPackage") Upload your solution:
-    //        input(type="file" id="handinPackage" name="handinPackage" required="true")
-    //        label(for="student").
-    //          Type your First-name here, using
-    //          #[strong only letters from the english alphabet (a-z) and no accents].
-    //        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
-    //        input(type="submit")
+      This test will determine if you have to participate in mandatory programming workshops. The workshops will be held
+      wednesdays 13.05 - 16.05. First workshop is wednesday September 28.
+  section(class="column small-12")
+    h2 Test hand-in
+    div.callout
+      form(action="/handin/3" method="post" enctype="multipart/form-data")
+        label(for="handinPackage") Upload your solution:
+        input(type="file" id="handinPackage" name="handinPackage" required="true")
+        label(for="student").
+          Type your First-name here, using
+          #[strong only letters from the english alphabet (a-z) and no accents].
+        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
+        input(type="submit")

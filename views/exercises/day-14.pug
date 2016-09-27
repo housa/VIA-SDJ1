@@ -1,0 +1,79 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 14.01
+    p Modify your MyDate class so that you:
+    ul
+      li Add an equals method that will return true if the object given as argument has the same values for day, month and year. The method signature should be: public boolean equals(MyDate obj)
+      li Add a copy method, public MyDate copy(), that will return a new MyDate object with the same date (day, month and year)
+      li Add a copy constructor, public MyDate(MyDate obj), that sets the fields to the same values as those in the MyDate object given as argument
+    p Then write a test class to test the new constructor and methods.
+    h2 Exercise 14.02
+    p.
+      Add a new method nextDays(int days) to your MyDate class. The method is similar to the nextDay() method you have
+      made previously, but instead of only increasing the date by one day, it should increase the date by the number of
+      days given as argument.
+    h2 Exercise 14.03
+    p.
+      Add a static method named today() to your MyDate class. The method should return a MyDate object that is always
+      set to the current date.
+    p.
+      To find out what date it is today you can use Java’s built-in GregorianCalendar class. So, first import that
+      class:
+    p import java.util.GregorianCalendar;
+    p.
+      Then you can get the current day, month, and year like this:
+    ul
+      li GregorianCalendar currentDate = new GregorianCalendar();
+      li int currentDay = currentDate.get(GregorianCalendar.DATE);
+      li int currentMonth = currentDate.get(GregorianCalendar.MONTH)+1;
+      li int currentYear = currentDate.get(GregorianCalendar.YEAR);
+    p.
+      When you are finished, then also modify the no-argument constructor in the MyDate class, so it always sets the
+      date to the current date.
+    h2 Exercise 14.04
+    p.
+      Add yet another method isBefore(MyDate date2) to your MyDate class. The method should return true if the date is
+      before date2 that is given as argument, and if not then the method should return false.
+    h2 Exercise 14.05
+    p Implement the following UML class diagram
+    div.uml-class
+      div.name Car
+      div.fields
+        ul
+          li.private make : String
+          li.private model : String
+          li.private colour : String
+          li.private licenceNumber : String
+          li.private year : int
+      div.methods
+        ul
+          li.public Car(make : String, model : String, colour : String, licenceNumber : String, year : int)
+          li.public Car(make : String, model : String, colour : String, year : int)
+          li.public getMake() : String
+          li.public getModel() : String
+          li.public getColour() : String
+          li.public getLicenceNumber() : String
+          li.public getYear() : int
+          li.public setColour(colour : String) : void
+          li.public setLicenceNumber(licenceNumber : String) : void
+          li.public copy() : Car
+          li.public toString() : String
+          li.public equals(car : Car) : boolean
+    p.
+      The 4 argument constructor should set the licenceNumber to some value indicating that the car
+      has no licence number.
+    p.
+      copy should return a reference to a Car-object with the same values for
+      the 5 instance variables.
+    p.
+      equals should return true if the object passed as argument is a car with the
+      same values of all 5 instance variables.
+    h2 Exercise 14.06
+    p.
+      Take a look at the test from monday, and see if you can implement everything so it works as it should. The test
+      can be found on the frontpage.

@@ -1,0 +1,70 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 15.01
+    p.
+      Update the equals methods you did in Exercise 14.01 and Exercise 14.05, so they both get a parameter of the type
+      Object, rather than MyDate and Car.
+    h2 Exercise 15.02
+    p.
+      Implement a class Person as described by the class diagram below, the field birthday should now be of type MyDate
+      as described by the diagram. Make sure your MyDate class matches the class diagram.
+    div.mermaid(style="height:40em;").
+      classDiagram
+          Person *-- MyDate
+          Person : String name
+          Person : String address
+          Person : MyDate birthday
+          Person : Person(String name, String address, MyDate birthday)
+          Person : Person(String name, MyDate birthday)
+          Person : Person(Mydate birthday)
+          Person : String getName()
+          Person : void setName(String name)
+          Person : String getAddress()
+          Person : void setAddress(String address)
+          Person : MyDate getBirthday()
+          Person : int getAge()
+          Person : String toString()
+          Person : boolean equals(Object obj)
+          MyDate : int day
+          MyDate : int month
+          MyDate : int year
+          MyDate : MyDate(int day, int month, int year)
+          MyDate : MyDate(MydDate obj)
+          MyDate : MyDate()
+          MyDate : int getDay()
+          MyDate : void setDay(int day)
+          MyDate : int getMonth()
+          MyDate : void setMonth(int month)
+          MyDate : int getYear()
+          MyDate : void setYear(int year)
+          MyDate : boolean isLeapYear()
+          MyDate : int daysInMonth()
+          MyDate : String getMonthName()
+          MyDate : void nextDay()
+          MyDate : void nextDays(int days)
+          MyDate : boolean isBefore(MyDate date2)
+          MyDate : String toString()
+          MyDate : MyDate copy()
+          MyDate : boolean equals(Object obj)
+    p Make a test class to test the functionality.
+    h2 Exercise 15.03
+    p Implement a class Garage representing a garage that can hold up to two cars. It should have:
+    ul
+      li 2 instance variables of type Car (from Exercise 14.05), representing the two cars parked in the garage.
+      li A no-argument constructor. Set the two Car-object references to something representing no cars in the garage (null).
+      li A boolean method isParkingAreaTaken(int position) that returns true if a car is parked at the position given by the argument passed to the method (position can only be 1 or 2).
+      li A void method park(Car car, int position) that parks a car in the position given by the parameter (position can only be 1 or 2). If there is already a car parked in that position the car cannot be parked there.
+      li A method leaveGarage(int position) that simulates driving a car from the parking area leaving the position empty. The method should return the reference to the Car-object that was on the position given by the parameter. If there is no car parked in that position the method return null.
+      li A toString method returning all information in a string.
+      li An equals method returning true if the object passed as argument is a Garage objectwith the same set of cars parked there, otherwise false. Note: references to objects could be null.
+    h2 Exercise 15.04
+    p Implement a test class with a main method and test your solution for Garage and Car.
+    h2 Exercise 15.05
+    p.
+      Draw a UML Class Diagram of the classes Car and Garage. What should the relationship between the two classes be?
+      Association, aggregation, or composition? (this can be done by hand on a piece of paper)

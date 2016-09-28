@@ -1,0 +1,102 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 15
+  section
+    h2 Agenda
+    ul
+      li The equals method revisited
+      li Combining classes
+      li Class relationsships
+        ul
+          li Navigability
+          li Multiplicity
+      li Example
+      li null
+  section
+    h2 The equals method revisited
+    ul
+      li We would like all equals methods to have the same signature
+    pre
+      code.java.
+        public boolean equals(Object obj) {
+          //check for equality
+        }
+    ul
+      li Object is the parent class of all classes in Java, so objects of any class can now be used with the method
+      li Inside the equals method we can cast the obj reference into its actual type, and use it like we have done so far
+      li Before anything else we should however check if obj is an instance
+      of the class we expect by using the instanceof operator
+  section
+    h2 equals method example
+    pre
+      code.java.
+        public class Clock {
+          //rest of class
+          public boolean equals(Object obj) {
+            if(!(obj instanceof Clock)) {
+              return false;
+            }
+          Clock other = (Clock)obj;
+
+          //here you do the comparison as seen yesterday
+          }
+        }
+  section
+    h2 Combining classes
+    ul
+      li Creating an instance of one class inside another class creates a relationship between the two classes
+    div.mermaid(style="height:40em;").
+      classDiagram
+          Person *-- MyDate
+          Person : String name
+          Person : String address
+          Person : MyDate birthday
+          MyDate : int day
+          MyDate : int month
+          MyDate : int year
+  section
+    h2 Class relationships - Navigability
+    img(src="/static/images/navigability.png" width="20%")
+    div.small-text
+      ul
+        li Association - "has a" relationship
+          ul
+            li a person has a car
+        li Aggregation - "is part of" relationship
+          ul
+            li an engine is part of a car
+        li Composition - stronger form of aggregation, whole and part can't exist without each other
+          ul
+            li a brain is a part of a human, and a human can't exist without a brain
+  section
+    h2 Class relationships - Multiplicity
+    ul
+      li We can indicate how many objects of a class are involved in the relasionship
+      li Examples
+        ul
+          li 0..1 (zero or 1)
+          li 1..* (one or more)
+          li * (any number)
+          li 1 (exactly one)
+          li 2 (exactly two)
+
+  section
+    h2 Example
+    p drawn on board, with classes
+    ul
+      li Car
+      li Wheel
+      li Engine
+      li Door
+      li Person
+      li Brain
+  section
+    h2 Null references
+    ul
+      li A null reference is a reference variable that points to nothing
+      li If a reference is null, then no operations can be performed on it
+      li If we try it anyway we will get an exception, (NullPointerException) and our application will exit (we will learn to handle this later)
+      li References can be tested to see if they point to null before we try to use them using if statements

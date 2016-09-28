@@ -1,0 +1,78 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        public class Clock {
+        	private int hour;
+        	private int minute;
+        	private int second;
+
+        	public Clock(int hour, int minute, int second) {
+        		this.hour = hour;
+        		this.minute = minute;
+        		this.second = second;
+        	}
+
+        	public Clock(int timeInSeconds) {
+        		this.hour = (timeInSeconds / 60) / 60;
+        		this.minute = (timeInSeconds / 60) % 60;
+        		this.second = timeInSeconds % 60;
+        	}
+
+        	public Clock(Clock clock) {
+        		this.hour = clock.getHour();
+        		this.minute = clock.getMinute();
+        		this.second = clock.getSecond();
+        	}
+
+        	public Clock() {
+        		this.hour = 0;
+        		this.minute = 0;
+        		this.second = 0;
+        	}
+
+        	public int getHour() {
+        		return hour;
+        	}
+
+        	public int getMinute() {
+        		return minute;
+        	}
+
+        	public int getSecond() {
+        		return second;
+        	}
+
+        	public void setTime(int hour, int minute, int second) {
+        		this.hour = hour;
+        		this.minute = minute;
+        		this.second = second;
+        	}
+
+        	public void setTime(int timeInSeconds) {
+        		this.hour = (timeInSeconds / 60) / 60;
+        		this.minute = (timeInSeconds / 60) % 60;
+        		this.second = timeInSeconds % 60;
+        	}
+
+        	public String toString() {
+        		return "hour: " + this.hour + ", minute: " +
+        						  this.minute + ", second: " + this.second;
+        	}
+
+        	public boolean equals(Clock other) {
+        		return this.hour == other.getHour()
+        				&& this.minute == other.getMinute()
+        				&& this.second == other.getSecond();
+        	}
+
+        	public Clock copy() {
+        		Clock c = new Clock(this);
+        		return c;
+        	}
+        }

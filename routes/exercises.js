@@ -18,4 +18,12 @@ var router = express.Router();
     });
 });
 
+[1].forEach((current, index) => {
+    router.get('/code-example-' + current, function(req, res, next) {
+        res.render('examples/code-example-' + current, { title: 'Day ' + current});
+    });
+});
+
+
+
 module.exports = router;

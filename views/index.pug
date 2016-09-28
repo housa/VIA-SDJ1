@@ -15,7 +15,7 @@ block content
       We are two lecturers running this course, Lukas and Alexandra. We both study Computer Science at Aarhus University.
       Alexandra will be in charge of the lectures Monday and thursday, and Lukas will be in charge on Wednesdays.
       Furthermore Lukas will be in charge of the exam. Questions can be directed to
-      #[a(href="mailto:alexandra.hou@gmail.com") alexandra.hou@gmail.com]
+      #[a(href="mailto:alho@via.dk") alho@via.dk]
   section(class="column small-12")
     h2 Literature and Software
     p.
@@ -83,7 +83,7 @@ block content
       tbody
         tr
           td Monday
-          td Test
+          td Test 1
           td [Gaddis] 2-3
           td #[a(href="notes/day-7") test info]
         tr
@@ -117,9 +117,38 @@ block content
           td #[a(href="exercises/day-11") day 11], #[a(href="exercises/code-example-1") Clock.java]
         tr
           td Thursday
+          td Recap, #[a(href="slides/day-12" target="_blank") slides]
           td
+          td #[a(href="exercises/day-12") day 12]
+    h4 Week 5
+    table
+      thead
+        tr
+          th.WeekdayCol Weekday
+          th.SubjectCol Subjects
+          th.LitteratureCol Literature
+          th.ExercisesCol Exercises
+      tbody
+        tr
+          td Monday
+          td Test 2
+          td [Gaddis] 2-5
           td
+        tr
+          td Wednesday
+          td Classes and objects revisited, #[a(href="slides/day-14" target="_blank") slides]
+          td [Gaddis] 6.1-6.8
+          td #[a(href="exercises/day-14") day 14]
+        tr
+          td Thursday
+          td Classes and objects revisited
+          td [Gaddis] 6.9-6.11
           td
+  section(class="column small-12")
+    h2 Workshops
+    p.
+      workshops are every wednesday 13.05-16.05, and are a part of the course, you have to participate in the workshops,
+      and your attendace will be checked each time.
   section(class="column small-12")
     h2 Tests
     h4 Test 1
@@ -127,18 +156,16 @@ block content
       The first test can be found #[a(href="/static/documents/Test1.pdf") here]. A possible solution can be found
       #[a(href="/static/documents/test1.zip") here]
     h4 Test 2
-    p Will be held on monday September 26.
     p.
-      This test will determine if you have to participate in mandatory programming workshops. (The workshops will most
-      likely be held wednesdays 12.30 - 16.30) First workshop is wednesday September 28.
-    //  section(class="column small-12")
-    //    h2 Test hand-in
-    //    div.callout
-    //      form(action="/handin/1" method="post" enctype="multipart/form-data")
-    //        label(for="handinPackage") Upload your solution:
-    //        input(type="file" id="handinPackage" name="handinPackage" required="true")
-    //        label(for="student").
-    //          Type your First-name here, using
-    //          #[strong only letters from the english alphabet (a-z) and no accents].
-    //        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
-    //        input(type="submit")
+      The second test can be found #[a(href="/static/documents/Test2.pdf") here].
+  //section(class="column small-12")
+    h2 Test hand-in
+    div.callout
+      form(action="/handin/3" method="post" enctype="multipart/form-data")
+        label(for="handinPackage") Upload your solution:
+        input(type="file" id="handinPackage" name="handinPackage" required="true")
+        label(for="student").
+          Type your First-name here, using
+          #[strong only letters from the english alphabet (a-z) and no accents].
+        input(type="text" id="student" name="student" pattern="[a-zA-Z]*")
+        input(type="submit")

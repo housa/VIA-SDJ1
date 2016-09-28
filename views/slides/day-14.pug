@@ -1,0 +1,165 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 14
+  section
+    h2 Test
+    p Common pitfalls
+    div.split-2-left.small-text
+      h5 Primechecker
+      ul
+        li using while to only accept a valid input from the scanner
+        li checking whether or not an integer is a prime number
+    div.split-2-right.small-text
+      h5 HotelRoom
+      ul
+        li comparing strings
+        li initializing all fields in the constructor
+        li isAvailable method (you can't use the method you are trying to implement)
+        li checkIn() and checkOut() are mutator not acessor methods
+
+  section
+    h2 Agenda
+    ul
+      li The static keyword
+      li static fields
+      li static methods
+      li Overloaded methods
+        ul
+          li toString
+          li equals
+          li copy
+      li The Clock example
+
+  section
+    section
+      h2 Static fields
+      ul
+        li Do not belong to a single instance of a class
+        li Are shared among all instances
+        li Invoked on the class rather than on the instance itself
+    section
+      h2 Static fields
+      ul
+        li Declared using the static keyword
+        li Initialized only once, even if there are created multiple instances of the class
+    section
+      h2 Example
+      pre
+        code.Java.
+          public class StaticTest {
+            public static void main(String[] args) {
+              Foo foo1 = new Foo();
+              Foo foo2 = new Foo();
+              Foo foo3 = new Foo();
+
+              foo2.setValue(7);
+              System.out.println(foo3.getValue());
+              foo3.setValue(42);
+              System.out.println(foo1.getValue());
+            }
+          }
+  section
+    section
+      h2 Static methods
+      ul
+        li Methods can also be declared static
+        li Static methods do not need an instance of the class
+      pre
+        code.Java.
+          int foo = Calculator.add(2,3);
+    section
+      h1 Example
+
+  section
+    section
+      h2 Overloaded methods
+      ul
+        li Two or more methods may have the same name
+        li They just have to differ on the parameters
+      pre
+        code.Java.
+          public class MyMath {
+            public int square(int number) {
+              return number * number;
+            }
+            public double square(double number) {
+              return number * number;
+            }
+          }
+    section
+      h2 Overloaded methods
+      ul
+        li.
+          Java distinguishes methods based on their signature:
+          method name as well as type and order of parameters
+        li Return type is not part of the signature
+      pre
+        code.Java.
+          public class MyMath {
+            public int square(int number) {
+              return number * number;
+            }
+            public double square(int num) {
+              return (double)number * number;
+            }
+          }
+  section
+    section
+      h2 Passing objects as arguments
+      ul
+        li Objects can be passed as arguments
+        li A reference to the object is passed
+        li It's not a copy of the object
+        li Generics like int, double and boolean are not objects
+        li String is a class, therefore Strings are objects
+  section
+    section
+      h2 Generic methods
+      ul
+        li All objects share the same "parent", the Object class
+        li All objects have 3 basic methods in common
+        ul
+          li toString
+          li equals
+          li copy
+    section
+      h2 toString
+      ul
+        li Used when a String representation of the object is needed
+        li Can either be called explicitly or implicitly
+    section
+      h2 equals
+      ul
+        li The == operator only works well for generics
+        li For objects it tests whether two objects are the same
+        li It doesn't look at the content of the object (e.g. String)
+        li Use the equals method to compare the content
+    section
+      h2 copy
+      ul
+        li Sometimes, you want to make a copy of an object
+        li Use the copy method for this
+
+  section
+    h2 The Clock example
+    div.uml-class
+      div.name Clock
+      div.fields
+        ul
+          li.private hour : int
+          li.private minute : int
+          li.private second : int
+      div.methods
+        ul
+          li.public Clock(hour : int, min : int, sec : int)
+          li.public Clock(timeInSeconds : int)
+          li.public Clock(obj : Clock)
+          li.public Clock()
+          li.public setTime(hour : int, min : int, sec : int) : void
+          li.public setTime(timeInSeconds : int) : void
+          li.public toString() : String
+          li.public equals(obj : Clock) : boolean
+          li.public copy() : Clock

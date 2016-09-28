@@ -1,0 +1,54 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 12.01
+    p.
+      Convert the UML diagram to code (return fake values in the factorial(), negateNumber(), reverseString(),
+      negateBool() methods)
+    p.
+      The toString method should return a meaningfull string representation of the state of the object.
+    div.uml-class
+      div.name FunStuff
+      div.fields
+        ul
+          li.private number : int
+          li.private string : String
+          li.private bool : boolean
+      div.methods
+        ul
+          li.public FunStuff(number : int, string : String, bool : boolean)
+          li.public FunStuff()
+          li.public setNumber(int : number) : void
+          li.public getNumber() : int
+          li.public setString(string : String) : void
+          li.public getString() : String
+          li.public setBool(bool : boolean) : void
+          li.public getBool() : boolean
+          li.public factorial() : int
+          li.public negateNumber() : int
+          li.public reverseString() : String
+          li.public negateBool() : boolean
+          li.public toString() : String
+    h2 Exercise 12.02
+    p.
+      Implement the factorial method using a for loop. The method should calculate the factorial of the number fx if
+      number is 3 it should return 6 because \(3 \cdot 2 \cdot 1 = 6\)
+    h2 Exercise 12.03
+    p.
+      Implement the negateNumber() method, it should return the negative of number (if number is 17 it should return
+      -17)
+    h2 Exercise 12.03
+    p.
+      Implement the reverseString() method using a for loop. The method should return the reverse of string, so if
+      string is "Hello" it should return "olleH" (if you have already done this in an earlier exercise, see if you can
+      do it again without looking at your previous solution)
+    h2 Exercise 12.04
+    p.
+      Implement the negateBool() method. The method should return the opposite of bool.
+    h2 Exercise 12.05
+    p.
+      Create a testclass with a main method that tests all the methods of the FunStuff class, without using a scanner.

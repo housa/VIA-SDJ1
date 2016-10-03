@@ -1,0 +1,60 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 16
+  section
+    h2 Agenda
+    ul
+      li Implementation of a UML class diagram
+  section
+    h2 UML class diagram
+    div(style="height: 15em; overflow-y:auto;")
+      div.mermaid(style="height:40em;").
+        classDiagram
+            Person --> Car
+            Car o-- Wheel
+            Car *-- Date
+            Person : - String name
+            Person : - Car car
+            Person : + Person(String name)
+            Person : + String getName()
+            Person : + void setName(String name)
+            Person : + void buyCar(Car car)
+            Person : + void sellCar()
+            Person : + String toString()
+            Car : - String make
+            Car : - String model
+            Car : - String colour
+            Car : - Wheel wheel1
+            Car : - Wheel wheel2
+            Car : - Wheel wheel3
+            Car : - Wheel wheel4
+            Car : - Date manufactureDate
+            Car : + Car(String make, String model, String colour, Date manufactureDate)
+            Car : + String getMake()
+            Car : + String getModel()
+            Car : + String getColour()
+            Car : + void setColour(String colour)
+            Car : + Wheel getWheel(int position)
+            Car : + void setWheel(Wheel wheel, int position)
+            Car : + Date getManufactureDate()
+            Car : + String toString()
+            Wheel : - int diameter
+            Wheel : - int width
+            Wheel : + Wheel(int diameter, int width)
+            Wheel : + int getDiameter()
+            Wheel : + int getWidth()
+            Wheel : + boolean equals(Object obj)
+            Wheel : + String toString()
+            Date : - int day
+            Date : - int month
+            Date : - int year
+            Date : + Date(int day, int month, int year)
+            Date : + int getDay()
+            Date : + int getMonth()
+            Date : + int getYear()
+            Date : + Date copy()
+            Date : + boolean equals(Objecy obj)
+            Date : + String toString()

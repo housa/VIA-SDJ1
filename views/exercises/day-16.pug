@@ -1,0 +1,50 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 16.01
+    p Implement the class brain as described below
+    div.uml-class
+      div.name Brain
+      div.fields
+        ul
+          li.private activeMemoryItem : String
+          li.private passiveMemoryItemOne : String
+          li.private passiveMemoryItemTwo : String
+      div.methods
+        ul
+          li.public Brain()
+          li.public getIQ() : int
+          li.public isBrainDamaged() : boolean
+          li.public remember(info : String) :void
+          li.public refreshMemory(info : String) : void
+          li.public recall(info : String) : boolean
+          li.public recall() : String
+          li.public toString() : String
+          li.public equals(obj : Object) : boolean
+    p.
+      In the constructor memory items should be initialized as empty strings
+    p.
+      The more complex items are stored the higher the IQ
+    ul
+      li IQ = 130 if at least one of the items has more than 20 characters and the rest more than 10
+      li IQ = 100 if all items have at least 10 characters
+      li IQ = 70 if one or more memory items are null or have less than 10 characters
+    p.
+      isBrainDamaged: returns true if any of the memory items are true
+    p.
+      remember: stores the info in active memory, but before doing that passive one is moved to passive two
+      and active is moved to passive one.
+    p.
+      refreshMemory: if info is already stored in passive memory, move it to active memory, and move the existing
+      active memory to passive memory
+    p.
+      recall(info): returns true if the info is stored in active or passive memory
+    p.
+      recall: returns the active memory item
+    p.
+      When you are done implementing the brain create a test class to test the Brain class,
+      make at least two brain objects.

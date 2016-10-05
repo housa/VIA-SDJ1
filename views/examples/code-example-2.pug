@@ -1,0 +1,55 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        public class ClockTest {
+        	public static void main(String[] args) {
+        		// Create a new instance, c1, of the Clock class
+        		Clock c1 = new Clock(2, 3, 4);
+        		// Create a new instance, c2, of the Clock class
+        		//  c2 is a copy of c1.
+        		Clock c2 = c1.copy();
+
+        		// Print out the contents of c1
+        		System.out.println(c1);
+        		// Set the time on the c2 instance
+        		c2.setTime(3, 4, 5);
+        		// Observe that the time on c1 did not change
+        		System.out.println(c1);
+
+        		// Observe the results of the comparisons
+        		//  between the two instances
+        		if(c1 == c2) {
+        			System.out.println("1 - The same!");
+        		}
+        		if(c1.equals(c2)) {
+        			System.out.println("2 - The same!");
+        		}
+
+        		c2.setTime(2, 3, 4);
+        		if(c1 == c2) {
+        			System.out.println("3 - The same!");
+        		}
+        		if(c1.equals(c2)) {
+        			System.out.println("4 - The same!");
+        		}
+
+        		c1 = c2;
+        		if(c1 == c2) {
+        			System.out.println("5 - The same!");
+        		}
+
+        		// Observe how comparisons of generics is
+        		//  different from objects
+        		int i1 = 2;
+        		int i2 = 2;
+        		if(i1 == i2) {
+        			System.out.println("6 - The same!");
+        		}
+        	}
+        }

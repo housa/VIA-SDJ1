@@ -1,0 +1,142 @@
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 18
+  section
+    h2 Agenda
+    ul
+      li Introduction to arrays
+      li Creating arrays
+      li Accessing array elements
+      li Exceptions in relation to arrays
+      li Array length
+      li Copying arrays
+      li Comparing arrays
+      li When arrays contains objects
+  section
+    h2 Introduction to arrays
+    ul
+      li An array is an object containing a whole list of values
+      li Arrays can be used to store any type of data, but just only one type of data in each array
+      li Square-brackets [ ] are used to show that something is an array
+      li The values inside arrays can be accessed through a numerical index - starting from 0 for the first element
+  section
+    h2 Creating arrays
+    ul
+      li To create an array to hold integers we write
+    pre
+      code.java.
+        int[] i;
+    ul
+      li Initializing arrays by size
+    pre
+      code.java.
+        i = new int[5];
+    ul
+      li By using an initialization list
+    pre
+      code.java.
+        i = {1, 2, 3, 4, 5};
+  section
+    h2 Accessing array elements
+    div.small-text
+      ul
+        li To get access to an array element we use:
+          ul
+            li The name of the array variable
+            li An index inside the square-brackets identifying which element to access
+        li E.g. to store the value 19 at the first array position:
+      pre
+        code.java.
+          int[] numbers = new int[3];
+          numbers[0] = 19;
+      ul
+        li To print the value of the first position in the array, we access it the same way
+      pre
+        code.java.
+          System.out.println(numbers[0]);
+      ul
+        li For loops can be used to run through all the elements in an array.
+  section
+    h2 Exceptions
+    div.small-text
+      ul
+        li ArrayIndexOutOfBoundsException
+          ul
+            li This usually happens when you are trying to access an array with an index that does not exist.
+            li It’s a common mistake, and is often caused when using loops and being “off-by-one”:
+      pre
+        code.java.
+          int[] numbers = new int[100];
+             for (int i = 0; i <= 100; i++)
+             {
+                numbers[i] = 19;
+             }
+      ul
+        li.
+          Since arrays start at 0, then the last index in this array is 99, not 100, so the loop will run one iteration
+          too many, resulting in the exception
+        li Using either i < 100 or i <= 99 would fix the problem
+  section
+    h2 Array length
+    ul
+      li Arrays have a public field named length containing the length of the array
+    pre
+      code.java.
+        double[] hours = new double[42];
+        int size = hours.length;
+    ul
+      li Note:
+        ul
+          li Unlike with Strings length is a field not a method
+  section
+    h2 Copying arrays
+    ul
+      li We need to copy the individual elements one by one to another array
+      li we can do this using loops
+    pre
+      code.java.
+        int[] array1 = {2, 4, 6, 8, 10};
+           int[] array2 = new int[array1.length];
+           for (int i = 0; i < array1.length; i++)
+           {
+             array2[i] = array1[i];
+        }
+  section
+    h2 Comparing arrays
+    div.small-text
+      ul
+        li.
+          Arrays are objects so using the == operator will not compare their contents - we also have to do that one element at a time:
+    pre
+      code.java.
+        int[] array1 = { 2, 4, 6};
+        int[] array2 = { 2, 4, 6};
+        boolean arraysEqual = true;
+        if(array1.length != array2.length) {
+           arraysEqual = false;
+        }
+        else {
+          for(int i = 0; i < array1.length; i++)  {
+            if (array1[i] != array2[i]) {
+              arraysEqual = false;
+              break;
+            }
+          }
+        if (arraysEqual) {
+          System.out.println("The arrays are equal.");
+        }
+        else {
+          System.out.println("The arrays are not equal.");
+        }
+  section
+    h2 When arrays contains objects
+    ul
+      li You can do the excact same operations on that object
+    pre
+      code.java.
+        Car[] garage = new Car[2];
+        garage[0] = new Car("Peugeot", "207", "AM97565", 2010);
+        String licencePlate = garage[0].getLicenceNumber;

@@ -99,10 +99,9 @@ block content
     pre
       code.java.
         int[] array1 = {2, 4, 6, 8, 10};
-           int[] array2 = new int[array1.length];
-           for (int i = 0; i < array1.length; i++)
-           {
-             array2[i] = array1[i];
+        int[] array2 = new int[array1.length];
+        for (int i = 0; i < array1.length; i++) {
+          array2[i] = array1[i];
         }
   section
     h2 Comparing arrays
@@ -139,4 +138,4 @@ block content
       code.java.
         Car[] garage = new Car[2];
         garage[0] = new Car("Peugeot", "207", "AM97565", 2010);
-        String licencePlate = garage[0].getLicenceNumber;
+        String licencePlate = garage[0].getLicenceNumber();

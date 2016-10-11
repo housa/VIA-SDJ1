@@ -1,0 +1,34 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 20.01
+    p.
+      Implement the classes #[tt Note] and #[tt Notebook] shown in the class diagram below. The
+      multiplicity on the composition indicates that a #[tt Notebook] object can store multiple #[tt Note]
+      objects, so we use an array (#[tt Note][]) as instance variable in class #[tt Notebook]. In the
+      #[tt Notebook] class the #[tt numberOfNotes] instance variable indicates how many notes are
+      currently in the notebook, while the #[tt maxNumberOfNotes] parameter in the constructor is
+      used to set the size of the array. Since the relationship between the classes is a composition, and not an aggregation (the diamond is solid black),
+      then remember to make copies of the #[tt Note] objects when getting and setting them.
+    object(data="/static/images/NoteUML.svg", type="image/svg+xml")
+
+    h2 Exercise 20.02
+    p.
+      Update the #[tt Notebook] class from Exercise 19.03 so that it now uses an
+      ArrayList<Note> instead of a regular array to store the notes.
+      Make a no-argument constructor that creates a notebook that can store 5 notes.
+      Then also create a one-argument constructor used to specify the size of the notebook.
+      Even though an ArrayList can expand its size dynamically, make sure that the notebook
+      never contains more notes than it should.
+
+    h2 Exercise 20.03 (Exam question example)
+    object(data="/static/images/ExamQuestion1ServiceBook.svg", type="image/svg+xml")
+    h4
+      a(href="/static/documents/ExamQuestion1Test.zip") Test file
+
+    h2 Exercise 20.04 (Exam question example)
+    object(data="/static/images/ExamQuestion2ColourPalette.svg", type="image/svg+xml")

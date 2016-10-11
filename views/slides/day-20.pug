@@ -1,0 +1,120 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 20
+  section
+    h2 Agenda
+    ul
+      li ArrayLists
+      li Exam preparation
+  section
+    h2 The ArrayList class
+    ul
+      li Part of the Java API
+      ul
+        li We need to #[tt import java.util.ArrayList;]
+      li Like an array
+      li Difference to arrays:
+      ul
+        li Can #[em only] store objects - not primitive types
+        li Will automatically increase and reduce its size as needed
+      li In most cases we will create ArrayLists with the no-arg constructor
+    pre
+      code.Java.
+        ArrayList strlist = new ArrayList();
+  section
+    h2 Using an ArrayList
+    ul
+      li To add items, we will call the #[tt add] method, which will add an item to the end of the list
+      pre
+        code.Java.
+          strlist.add("Just");
+          strlist.add("some");
+          strlist.add("strings");
+      li To get the current size of the list (the number of stored items), we call the #[tt size] method
+      pre
+        code.Java.
+          strlist.size(); // Will return 3
+      li To access an item, we will use the get method with the index of the item we wish to access (starts from 0).
+      pre
+        code.Java.
+          strlist.get(1); // Will return "some"
+  section
+    h2 Using an ArrayList
+    ul
+      li We can also include an index to the add method, to insert the item somewhere
+      pre
+        code.Java.
+          strlist.add("Just");
+          strlist.add("strings");
+          strlist.add(1, "some"); // Will insert "some" at index 1, i.e. between the two.
+      li To replace an item at a given index, use the #[tt set] method
+      pre
+        code.Java.
+          strlist.set(1, "three"); // Will replace "some" with "three"
+  section
+    h2 Using an ArrayList
+    ul
+      li We can also remove stuff from the list with the #[tt remove] method
+      li We can remove at an index:
+      pre
+        code.Java.
+          strlist.remove(1); // Will remove "some"
+      li Or remove a specific item:
+      pre
+        code.Java.
+          strlist.remove("Just"); // Will remove "Just"
+  section
+    h2 Using an ArrayList
+    ul
+      li Uses an array internally
+      li Has a capacity as well as a size
+      li Increasing or reducing that capacity is slow
+      li Not an issue in our programs
+  section
+    h2 Using cast with the get method
+    ul
+      li An #[tt ArrayList] is not #[em typed]
+      li #[tt ArrayList] can not tell you the type, it is just #[tt Object] so you have to #[em cast] it:
+      pre
+        code.Java.
+          ArrayList strlist = new ArrayList();
+          strlist.add("Foo");
+          String str = (String)strlist.get(0);
+  section
+    h2 Using generics
+    ul
+      li In order to avoid casting, we can use generics to specify which kind of objects the ArrayList can store:
+      pre
+        code.Java.
+          ArrayList<Type> listName = new ArrayList<Type>();
+      li For Strings:
+      pre
+        code.Java.
+          ArrayList<String> strList = new ArrayList<String>();
+      li With generics, Java knows which type of objects the list contains, so we don't need the cast:
+      pre
+        code.Java.
+          String str = strList.get(0);
+      li Now we will also get type errors at compile-time instead of run-time
+  section
+    h2 The toArray method
+    ul
+      li The #[tt toArray] method that takes an #[tt ArrayList] and converts it to an array of Objects.
+      pre
+        code.Java.
+          Object[] newArray = strList.toArray();
+      li We can't cast an entire array, so if we need e.g. a String[] we're out of luck
+      li Fortunately, #[tt toArray] can return a String[] if we just pass it an empty String[]:
+      pre
+        code.Java.
+          String[] newArray = new String[strList.size())];
+          newArray = strList.toArray(newArray);
+      li The size of newArray doesn't matter, I just use strList.size() for good measure
+  section
+    h2 A few videos
+    p
+      a(href="http://allanhenriksen.dk/via/sdj/videos/AssociationAggregationCompositionArray.html") Videos

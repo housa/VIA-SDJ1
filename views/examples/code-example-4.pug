@@ -1,0 +1,64 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        import java.util.ArrayList;
+
+        public class Kindergarten {
+        	private int countTeachers;
+        	private ArrayList<Child> children;
+
+        	public Kindergarten() {
+        		countTeachers = 0;
+        		children = new ArrayList<Child>();
+        	}
+
+        	public void addChild(Child c) {
+        		children.add(c);
+        	}
+
+        	public void removeChild(Child c) {
+        		children.remove(c);
+        	}
+
+        	public void hireTeachers(int count) {
+        		countTeachers += count;
+        	}
+
+        	public void fireTeacher() {
+        		countTeachers--;
+        	}
+
+        	public int countChildren() {
+        		return children.size();
+        	}
+
+        	public int countTeachers() {
+        		return countTeachers;
+        	}
+
+        	public double getAverageChildAge() {
+        		int totalAges = 0;
+        		for(int i = 0; i < children.size(); i++) {
+        			totalAges += children.get(i).getAge();
+        		}
+        		return totalAges / children.size();
+        	}
+
+        	public double getNorm() {
+        		return children.size() / countTeachers;
+        	}
+
+        	public void celebrateBirthday(String name) {
+        		for(int i = 0; i < children.size(); i++) {
+        			if(children.get(i).getName().equals(name)) {
+        				System.out.println("Congratulations " + name + " on getting age " + children.get(i).getAge());
+        			}
+        		}
+        	}
+        }

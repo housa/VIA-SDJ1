@@ -1,0 +1,48 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        public class Note {
+            // Fields
+            private String message;
+            private boolean highPriority;
+
+            // Constructor
+            public Note(String message) {
+                this.message = message;
+            }
+
+            public String getMessage() {
+                return message;
+            }
+
+            public boolean isHighPriority() {
+                return highPriority;
+            }
+
+            public void setToHighPriority() {
+                this.highPriority = true;
+            }
+
+            public void setToLowPriority() {
+                this.highPriority = false;
+            }
+
+            public Note copy() {
+                Note n = new Note(message);
+                if(highPriority) {
+                    n.setToHighPriority();
+                }
+                return n;
+            }
+
+            @Override
+            public String toString() {
+                return "{message: " + message + ", highPriority: " + highPriority + "}";
+            }
+        }

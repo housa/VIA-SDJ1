@@ -1,0 +1,100 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        import java.util.ArrayList;
+
+        public class NoteBook {
+            // Fields
+            private ArrayList<Note> notes;
+
+            // Constructor
+            public NoteBook(int maxNumberOfNotes) {
+                // We don't need to give ArrayList the maxNumberOfNotes here, but we might as well
+                notes = new ArrayList<>(maxNumberOfNotes);
+            }
+
+            // The ArrayList will be able to count the number of notes for us!
+            public int getNumberOfNotes() {
+                return notes.size();
+            }
+
+            // We have to use .get since we can't use square bracket to index, like with the arrays
+            public Note getNote(int index) {
+                return notes.get(index);
+            }
+
+            // notes.get(index) returns a Note object, so we can call .getMessage() on the Note object
+            public String getMessage(int index) {
+                return notes.get(index).getMessage();
+            }
+
+            // ArrayList will handle the adding of the note for us!
+            public void addNote(Note note) {
+                notes.add(note);
+            }
+
+            public void addNote(String message) {
+                // Create a new note with the given message and add it
+                addNote(new Note(message));
+            }
+
+            public void addHighPriorityNote(String message) {
+                // Create a new note with the given message, set it to high priority and add it
+                Note n = new Note(message);
+                n.setToHighPriority();
+                addNote(n);
+            }
+
+            // ArrayList will handle the removal of the note for us!
+            public void removeNote(int index) {
+                notes.remove(index);
+            }
+
+            // Pass a Note[] to the toArray method to return a Note[]
+            public Note[] getAllNodes() {
+                return notes.toArray(new Note[notes.size()]);
+            }
+
+            public int getNumberOfHighPriorityNotes() {
+                // Create a local integer variable for storing the current count
+                int count = 0;
+                // For each note in our NoteBook
+                for (int i = 0; i < notes.size(); i++) {
+                    // If the note at index i is high priority
+                    if(notes.get(i).isHighPriority()) {
+                        // Increment our count by one
+                        count++;
+                    }
+                }
+                // Return the amount of high priority notes
+                return count;
+            }
+
+            public Note[] getAllHighPriorityNotes() {
+                // Same procedure as getNumberOfHighPriorityNotes, but we also save the high priority notes into an array
+                int count = 0;
+                Note[] highPriorityNotes = new Note[getNumberOfHighPriorityNotes()];
+                for (int i = 0; i < notes.size(); i++) {
+                    if(notes.get(i).isHighPriority()) {
+                        highPriorityNotes[count] = notes.get(i);
+                        count++;
+                    }
+                }
+                return highPriorityNotes;
+            }
+
+            @Override
+            public String toString() {
+                String notesString = "Number of notes: " + notes.size();
+                for (int i = 0; i < notes.size(); i++) {
+                    notesString += "\t" + notes.get(i) + "\n";
+                }
+                return notesString;
+            }
+        }

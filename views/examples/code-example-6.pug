@@ -1,0 +1,118 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    pre
+      code.Java.
+        public class NoteBook {
+            // Fields
+            private int numberOfNotes;
+            private Note[] notes;
+
+            // Constructor
+            public NoteBook(int maxNumberOfNotes) {
+                // Since the NoteBook in initially empty (there aren't any notes in it) the number of notes is 0
+                numberOfNotes = 0;
+                // Create a new array with room for the max number of notes
+                notes = new Note[maxNumberOfNotes];
+            }
+
+            public int getNumberOfNotes() {
+                // Just return the number of notes
+                return numberOfNotes;
+            }
+
+            public Note getNote(int index) {
+                // Simply return the note at the given index
+                return notes[index];
+            }
+
+            public String getMessage(int index) {
+                // Return the message of the note at the given index
+                return notes[index].getMessage();
+            }
+
+            public void addNote(Note note) {
+                // If there are 2 notes, they will fill up index 0 and 1. That means we have to store the new note at index 2
+                //  which incidentally is also the amount of notes in the notebook!
+                //  So we just have to store the new note at index "numberOfNotes"
+                notes[numberOfNotes] = note;
+                // Increment the number of notes by one
+                numberOfNotes++;
+            }
+
+            public void addNote(String message) {
+                // Create a new note with the given message and add it
+                addNote(new Note(message));
+            }
+
+            public void addHighPriorityNote(String message) {
+                // Create a new note with the given message, set it to high priority and add it
+                Note n = new Note(message);
+                n.setToHighPriority();
+                addNote(n);
+            }
+
+            public void removeNote(int index) {
+                // To avoid holes in our array, we move all the notes from index to number of notes one to the left. Thereby
+                //  overriding the note we want to remove with the note to the right
+                for (int i = index; i < numberOfNotes - 1; i++) {
+                    notes[i] = notes[i + 1];
+                }
+                // Finally set the right-most note to null, as it has now been moved one to the left
+                notes[numberOfNotes] = null;
+                // Decrement number of notes by one
+                numberOfNotes--;
+            }
+
+            public Note[] getAllNodes() {
+                // We want to get all notes, but we don't want the empty spaces in our array.
+                //  So we create a new array which only has space for the actual amount of notes.
+                Note[] allNotes = new Note[numberOfNotes];
+                // Copy all of our notes into this smaller array
+                for (int i = 0; i < numberOfNotes; i++) {
+                    allNotes[i] = notes[i];
+                }
+                return allNotes;
+            }
+
+            public int getNumberOfHighPriorityNotes() {
+                // Create a local integer variable for storing the current count
+                int count = 0;
+                // For each note in our NoteBook
+                for (int i = 0; i < numberOfNotes; i++) {
+                    // If the note at index i is high priority
+                    if(notes[i].isHighPriority()) {
+                        // Increment our count by one
+                        count++;
+                    }
+                }
+                // Return the amount of high priority notes
+                return count;
+            }
+
+            public Note[] getAllHighPriorityNotes() {
+                // Same procedure as getNumberOfHighPriorityNotes, but we also save the high priority notes into an array
+                int count = 0;
+                Note[] highPriorityNotes = new Note[getNumberOfHighPriorityNotes()];
+                for (int i = 0; i < numberOfNotes; i++) {
+                    if(notes[i].isHighPriority()) {
+                        highPriorityNotes[count] = notes[i];
+                        count++;
+                    }
+                }
+                return highPriorityNotes;
+            }
+
+            @Override
+            public String toString() {
+                String notesString = "Number of notes: " + numberOfNotes;
+                for (int i = 0; i < numberOfNotes; i++) {
+                    notesString += "\t" + notes[i] + "\n";
+                }
+                return notesString;
+            }
+        }

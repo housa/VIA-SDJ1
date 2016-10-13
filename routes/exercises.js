@@ -18,7 +18,7 @@ var router = express.Router();
     });
 });
 
-[1, 2, 3, 4].forEach((current, index) => {
+[1, 2, 3, 4, 5, 6, 7].forEach((current, index) => {
     router.get('/code-example-' + current, function(req, res, next) {
         res.render('examples/code-example-' + current, { title: 'Day ' + current});
     });

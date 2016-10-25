@@ -1,0 +1,36 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 23.01
+    p.
+      Implement the classes shown in the class diagram below. Then create a test class to test the functionality.
+    object(data="/static/images/exercise2301.svg", type="image/svg+xml")
+
+    h2 Exercise 23.02
+    p.
+      Based on the examples seen today, then create the class hierarchy shown in the class diagram below:
+    object(data="/static/images/exercise2302.svg", type="image/svg+xml")
+    p.
+      You are supposed to construct the UML class diagram with the hierarchical structure as seen above, but including
+      all instance variables, constructors, and relevant get and set methods.
+    p.
+      All classes should have a toString method and an equals method.
+    p.
+      If you lack inspiration then look at the slides, there should be hints to some of these classes,  but for the
+      others you should try and come up with some relevant instance variables yourself, and then create get and set
+      methods for them. For those suffering from a lack of imagination, then a few suggestions for some of the new
+      classes could be:
+    ul
+      li In class Teacher: String[] courses
+      li In class ITSupporter: String workArea (e.g. “software” or “hardware”)
+      li In class HeadOfDepartment: String department
+    h2 Exercise 23.03
+    p.
+      When you're sure your UML diagram from exercise 23.02 is good (get this checked otherwise this exercise has the
+      potential to be awful) implement the classes in Java.
+    p.
+      Also create a test class to test the functionality.

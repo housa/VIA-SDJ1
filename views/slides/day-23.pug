@@ -1,0 +1,257 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 23
+  section
+    h2 Agenda
+    ul
+      li Catching up on the exam
+      li Exam set
+      li Inheritance
+  section
+    section
+      h2 Inheritance
+      ul
+        li Inheritance is used to base a new class on an existing class
+        li The existing class is usually called the #[em superclass] and the new class the #[em subclass]
+          ul
+            li The subclass is said to #[em extend] the superclass
+        li The subclass inherits the fields and methods from the superclass and can also add its own functionality
+          ul
+            li Allows for reuse of code
+        li The relationship between a superclass and a subclass is called "implementation" but you can think of it as the "#[strong is a]" relationship
+    section
+      h2 Inheritance, fields and methods
+      ul
+        li Members of the superclass marked as #[em public]:
+          ul
+            li Are inherited by the subclass
+            li May be directly accessed from the subclass
+        li Members of the superclass marked as #[em private]: 
+          ul
+            li Are not directly inherited by the subclass
+              ul
+                li Exist in memory when the object of the subclass is created
+            li May only be accessed from the subclass by the public methods of the superclass (e.g. get and set methods)
+  section
+    section
+      h2 Inheritance example
+      object(data="/static/images/TeacherStudent.svg", type="image/svg+xml")
+      p(style="color:red;") Lots of redundant code - twice as many chances to make mistakes
+    section
+      h2 Inheritance example
+      object(data="/static/images/Person.svg", type="image/svg+xml")
+      p(style="color:red;").
+        Superclass with everything that’s shared by both types of persons, plus a toString
+        method to print out Person info and an equals method to compare Person objects
+    section
+      h2 Inheritance example
+      object(data="/static/images/TeacherStudentPerson.svg", type="image/svg+xml")
+      p(style="color:red; font-size: 80%;margin-top:-3%;").
+        Teacher and Student inherits from the Person class and contains
+        the attributes and methods that are specific for the two classes 
+    section
+      h2 Inheritance example
+      img(src="/static/images/TeacherStudentPersonAndMore.svg", style="height:12em;")
+      p(style="color:red; font-size: 80%;margin-top:-2%;").
+        There can be many
+        levels of inheritance,
+        but each class can
+        only have one direct
+        superclass
+  section
+    section
+      h2 Inheritance in Java
+      ul
+        li In Java we use the #[tt extends] keyword to specify inheritance:
+      pre
+        code.Java(data-noescape).
+          public class Teacher <span class="force-red">extends Person</span> {
+            // Class body
+          }
+      span Or
+      pre
+        code.Java(data-noescape).
+          public class ExchangeStudent <span class="force-red">extends Student</span> {
+            // Class body
+          }
+    section
+      h2 Inheritance and constructors
+      ul
+        li When we create an object of a subclass, the first the constructor in the superclass must be executed
+        li If the superclass has a constructor with no arguments, then that is the default
+    section
+      ul
+        li If the superclass' constructor takes some arguments, then this constructor must be explicitly called from the subclass constructor with the proper arguments
+          ul
+            li This can be done using the keyword #[em super], which refers to an object's superclass (like #[em this] is used to refer to the current object)
+            li Calling the superclass' constructor #[u must] be the first Java statement in the subclass constructors
+    section
+      h2 Inheritance example: Person
+      pre
+        code.Java.
+          public class Person {
+            private String name;
+            private String address;
+          
+            public Person(String name, String address) {
+              this.name = name;
+              this.address = address;
+            }
+          
+            // Rest of class here
+          }
+    section
+      h2 Inheritance example: Student
+      pre
+        code.Java(data-noescape).
+          import java.util.ArrayList;
+          
+          public class Student <span class="force-red">extends Person</span> {
+            private inst studentNo;
+            private private ArrayList<String> grades;
+          
+            public Student(String name, String address, int studentNo) {
+              // First call the superclass constructor to set the name and address
+              <span class="force-red">super(name, address);</span> 
+              // Now initialize the class' own fields
+              this.studentNo = studentNo;
+              grades = new ArrayList<String>();
+            }
+          
+            // Rest of class here
+          }
+  section
+    section
+      h2 Overriding superclass methods
+      ul
+        li A subclass is allowed to have a method with the same signature as a superclass method
+        li The subclass method is then said to #[em override] the superclass method
+          ul
+            li When the method is called on an object of the subclass, the method in the subclass is executed, not the one in the superclasss
+    section
+      ul
+        li In a subclass we can however always still call the overridden superclasss method, by using the #[tt super] keyword:
+      pre
+        code.java.
+          super.methodName();
+    section
+      h2 Example: overriding toString
+      pre
+        code.Java.
+          public class Person {
+            private String name;
+            private String address;
+            
+            // Rest of class here
+            
+            public String toString() {
+              return "Name: " + name + ", Address: " + address;
+            }
+          }
+    section
+      h2 Example: overriding toString
+      pre
+        code.Java(data-noescape).
+          import java.util.ArrayList;
+          
+          public class Student extends Person {
+            private int studentNo;
+            private ArrayList&lt;String&gt; grades;
+          
+            // Rest of class here
+          
+            public String toString() {
+              return <span class="force-red">super.toString()</span> + ", StudentNo: " + studentNo
+                                            + ", Grades :" + grades;
+            }
+          }
+    section
+      h2 Example: overriding toString
+      pre
+        code.Java(data-noescape).
+          public class Test {
+            public static void main(String[] args) {
+              Student stud = new Student("Bob", "Somewhere", 8871);
+              stud.addGrade("A");
+              stud.addGrade("B");
+              stud.addGrade("C");
+          
+              <span class="force-red">System.out.println(stud);</span>
+            }
+          }
+      pre.stdout.
+        Name: Bob, Address: Somewhere, StudentNo: 8871, Grades :[A, B, C]
+        \                           /\                                  /
+         \                         /  \                                /
+              From Person class               From Student class
+      
+    section
+      h2 Example: overriding equals
+      pre
+        code.Java.
+          public class Person {
+            private String name;
+            private String address;
+
+            // Rest of class here
+
+            public boolean equals(Object obj) {
+              if (!(obj instancof Person)) {
+                return false;
+              }
+              Person other = (Person) obj;
+              return name.equals(other.getName()) && 
+                      address.equals(other.getAddress());
+            }
+          }
+    section
+      h2 Example: overriding equals
+      pre
+        code.Java(data-noescape).
+          import java.util.ArrayList;
+          
+          public class Student extends Person {
+            private int studentNo;
+            private ArrayList&lt;String&gt; grades;
+          
+            // Rest of class here
+            public boolean equals(Object obj) {
+              if (!(obj instancof Student)) {
+                return false;
+              }
+              Student other = (Student) obj;
+              return <span class="force-red">super.equals(other)</span> && studentNo == other.getStudentNo() && 
+                                    grades.equals(other.getGrades());
+            }
+          }
+  section
+    section
+      h2 The Object class
+      ul
+        li All Java classes will directly or indirectly inherit from a class called #[tt Object]
+          ul
+            li Any class that we don't set to inherit from a specific class with the #[tt extends] keyword is automatically set to inherit from #[tt Object]
+      pre
+        code.Java.
+          public class Person {
+            // Class body
+          }
+      p Is actually the same as:
+      pre
+        code(data-noescape).Java.
+          public class Person <span class="force-red">extends Object</span> {
+            // Class body
+          }
+    section
+      h2 The Object class
+      ul
+        li Two of the important methods that all our classes inherit from the #[tt Object] class are #[tt toString] and #[tt equals]
+        li If our own classes do not contain #[tt toString] and #[tt equals] then the ones in #[tt Object] are used instead.
+        li In the #[tt Object] class, #[tt toString] returns the object's class name and its hash code, separated by a @ sign.
+          ul
+            li E.g. #[tt Person@4f1d0d]
+        li The #[tt equals] method in the Object class simply acts as ==

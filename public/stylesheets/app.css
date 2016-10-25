@@ -99,3 +99,11 @@ img {
     margin: 20px auto;
     width: 90%;
 }
+
+.force-red, .force-red .hljs-class .hljs-keyword, .force-red .hljs-keyword {
+    color: red !important;
+}
+
+.reveal tt{
+    font-family: monospace, monospace;
+}

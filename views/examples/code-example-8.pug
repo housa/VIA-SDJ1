@@ -1,0 +1,144 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Files
+    p
+      a(href="#roomjava") Room.java
+    p
+      a(href="#housejava") House.java
+    p
+      a(href="#housetestjava") HouseTest.java
+  section.column.small-12
+    h2(id="roomjava") Room.java
+    pre
+      code.Java.
+        public class Room {
+        	private String type;
+        	private boolean containsPlumbing;
+
+        	public Room(String type) {
+        		this.type = type;
+        		containsPlumbing = false;
+        	}
+
+        	public String getType() {
+        		return type;
+        	}
+
+        	public void setType(String type) {
+        		this.type = type;
+        	}
+
+        	public boolean hasPlumbing() {
+        		return containsPlumbing;
+        	}
+
+        	public void addPlumbing() {
+        		containsPlumbing = true;
+        	}
+
+        	public void removePlumbing() {
+        		containsPlumbing = false;
+        	}
+
+        	public boolean equals(Object obj) {
+        		if(!(obj instanceof Room)) {
+        			return false;
+        		}
+        		Room other = (Room) obj;
+        		return type.equals(other.getType()) &&
+        				containsPlumbing == other.hasPlumbing();
+        	}
+
+        	public String toString() {
+        		return "{type: " + type + ", containsPlumbing: " + containsPlumbing + "}";
+        	}
+
+        	public Room copy() {
+        		Room copy = new Room(type);
+        		if(containsPlumbing) {
+        			copy.addPlumbing();
+        		}
+        		return copy;
+        	}
+        }
+  section.column.small-12
+    h2(id="housejava") House.java
+    pre
+      code.Java.
+        import java.util.ArrayList;
+
+        public class House {
+        	private double size;
+        	private ArrayList<Room> rooms;
+
+        	public House(double size) {
+        		this.size = size;
+        		rooms = new ArrayList<Room>();
+        	}
+
+        	public double getSize() {
+        		return size;
+        	}
+
+        	public Room getRoom(int index) {
+        		return rooms.get(index);
+        	}
+
+        	public void addPlainRoom(String type) {
+        		rooms.add(new Room(type));
+        	}
+
+        	public void addRoomWithPlumbing(String type) {
+        		Room newRoom = new Room(type);
+        		newRoom.addPlumbing();
+        		rooms.add(newRoom);
+        	}
+
+        	public int getNumberOfRooms() {
+        		return rooms.size();
+        	}
+
+        	public int getNumberOfRoomsWithPlumbing() {
+        		int counter = 0;
+        		for(int i = 0; i < rooms.size(); i++) {
+        			Room room = rooms.get(i);
+        			if(room.hasPlumbing()) {
+        				counter++;
+        			}
+        		}
+        		return counter;
+        	}
+
+        	public String toString() {
+        		return "{size: " + size + ", rooms: " + rooms + "}";
+        	}
+        }
+
+  section.column.small-12
+    h2(id="housetestjava") HouseTest.java
+    pre
+      code.Java.
+        public class HouseTest {
+        	public static void main(String[] args) {
+        		House h1 = new House(33.3);
+        		System.out.println(h1.getSize());
+        		House h2 = new House(22.2);
+        		System.out.println(h2.getSize());
+        		h1.addPlainRoom("fisk");
+        		System.out.println(h1.getRoom(0));
+        		h1.addPlainRoom("fisk2");
+        		System.out.println(h1.getRoom(0));
+        		System.out.println(h1.getRoom(1));
+        		System.out.println(h1.getNumberOfRooms());
+        		System.out.println(h1.getNumberOfRoomsWithPlumbing());
+        		h1.addRoomWithPlumbing("plumb");
+        		System.out.println(h1.getNumberOfRooms());
+        		System.out.println(h1.getNumberOfRoomsWithPlumbing());
+        		System.out.println(h1);
+        	}
+        }

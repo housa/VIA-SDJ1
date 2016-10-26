@@ -74,11 +74,11 @@ block content
 
         public class House {
         	private double size;
-        	private ArrayList<Room> rooms;
+        	private ArrayList&lt;Room&gt; rooms;
 
         	public House(double size) {
         		this.size = size;
-        		rooms = new ArrayList<Room>();
+        		rooms = new ArrayList&lt;Room&gt;();
         	}
 
         	public double getSize() {
@@ -105,7 +105,7 @@ block content
 
         	public int getNumberOfRoomsWithPlumbing() {
         		int counter = 0;
-        		for(int i = 0; i < rooms.size(); i++) {
+        		for(int i = 0; i &lt; rooms.size(); i++) {
         			Room room = rooms.get(i);
         			if(room.hasPlumbing()) {
         				counter++;

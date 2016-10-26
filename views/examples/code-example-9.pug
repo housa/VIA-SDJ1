@@ -1,0 +1,89 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Files
+    p
+      a(href="#vehiclejava") Vehicle.java
+    p
+      a(href="#bicyclejava") Bicycle.java
+  section.column.small-12
+    h2(id="vehiclejava") Vehicle.java
+    pre
+      code.Java.
+        public class Vehicle {
+
+        	private String owner;
+        	private double price;
+
+        	public Vehicle(String owner, double price) {
+        		this.owner = owner;
+        		this.price = price;
+        	}
+
+        	public String getOwner() {
+        		return owner;
+        	}
+
+        	public void setOwner(String owner) {
+        		this.owner = owner;
+        	}
+
+        	public double getPrice() {
+        		return price;
+        	}
+
+        	public void setPrice(double price) {
+        		this.price = price;
+        	}
+
+        	public boolean equals(Object obj) {
+        		if(!(obj instanceof Vehicle)) {
+        			return false;
+        		}
+        		Vehicle other = (Vehicle)obj;
+        		return other.getOwner().equals(owner)
+        				&& other.getPrice() == price;
+        	}
+
+        	public String toString() {
+        		return "Owner: " + owner + ", Price: " + price;
+        	}
+        }
+
+  section.column.small-12
+    h2(id="bicyclejava") Bicycle.java
+    pre
+      code.Java.
+        public class Bicycle extends Vehicle {
+        	private int gears;
+
+        	public Bicycle(String owner, double price, int gears) {
+        		super(owner, price);
+
+        		this.gears = gears;
+        	}
+
+        	public int getGears() {
+        		return gears;
+        	}
+
+        	public void setGears(int gears) {
+        		this.gears = gears;
+        	}
+
+        	public boolean equals(Object obj) {
+        		if(!(obj instanceof Bicycle)) {
+        			return false;
+        		}
+        		Bicycle other = (Bicycle)obj;
+        		return super.equals(other) && gears == other.getGears();
+        	}
+
+        	public String toString() {
+        		return super.toString() + ", Gears: " + gears;
+        	}
+        }

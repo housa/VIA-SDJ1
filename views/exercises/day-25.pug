@@ -1,0 +1,67 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 25.01
+    p.
+      Look at the following class, and initialize the fields and implement the methods:
+    pre
+      code.Java.
+        public class Animal {
+          private double size;
+          private final int age;
+        
+          public Animal(double size, int age) {
+            // Implement me!
+          }
+          
+          public double getSize() {
+            // Implement me!
+            return 0.0;
+          }
+        
+          public void setSize(double size) {
+            // Implement me!
+          }
+        
+          public int getAge() {
+            // Implement me!
+            return 0;
+          }
+        }
+    p.
+      Can you implement a setAge method? Why or why not?
+    p.
+      Can you think of a way to change the age of the Animal?
+    
+    h2 Exercise 25.02
+    p.
+      Implement the classes in the UML diagram below. Place the animals in the package "animals", place the #[tt AnimalSurgeon]
+      in the package "doctors", place the #[tt AnimalAnimalSurgeon] in the package "animals" along with the animals.
+    p.
+      Start with implementing the Animals, then implement the #[tt AnimalAnimalSurgeon]. Lastly implement the 
+      #[tt AnimalSurgeon] what is the difference between implementing the two different surgeons? What impact did the 
+      #[tt protected] keyword have?
+    object(data="/static/images/AnimalsAndSurgeons.svg", type="image/svg+xml")
+      
+    h2 Exercise 25.03
+    p.
+      The following is an image of a flat LEGO brick:
+    img(src="/static/images/flat-lego-brick.jpg", style="height: 200px;")
+    p.
+      The following is an image of a standard LEGO brick:
+    img(src="/static/images/lego-brick.jpg", style="height: 200px;")
+    p.
+      The following is an image of a sloped LEGO brick:
+    img(src="/static/images/sloped-lego-brick.jpg", style="height: 200px;")
+    p.
+      Implement the following UML diagram:
+    object(data="/static/images/LegoBricks.svg", type="image/svg+xml")
+    p.
+      What is the difference between implementing #[tt getHeight()] for the different classes?
+    p.
+      Could you have avoided implementing #[tt getHeight()] for one of the classes?
+    

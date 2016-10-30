@@ -1,0 +1,289 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 25
+  section
+    h2 Agenda
+    ul
+      li The #[tt final] keyword
+      li The #[tt protected] keyword
+      li Polymorphism
+  section
+    section
+      h2 The #[tt final keyword]
+      ul
+        li The #[tt final] keyword means that after something has been defined, it can never be changed.
+        li We can use it on fields, to make sure we only set the value once.
+      pre
+        code(data-noescape).Java.
+          public class foo {
+            private <span class="force-red">final</span> String val;
+          
+            public void setVal(String s) {
+              val = s; // Compiler error
+            }
+          }
+          
+          public class foo {
+            private <span class="force-red">final</span> String val;
+          
+            public foo(String val) {
+              this.val = val; // This is ok, constructor is only ever called once
+            }
+          }
+    section
+      h2 Final methods
+      ul
+        li When a method is final, subclasses may not overwrite it
+      pre
+        code(data-noescape).Java.
+          public class A {
+            public <span class="force-red">final</span> String foo() {
+              return "Foo";
+            }
+          }
+          
+          public class B {
+            public <span class="force-red">final</span> String foo() { // Compiler error
+              return "Bar";
+            }
+          }
+    section
+      h2 Final classes
+      ul
+        li When a class is final, subclasses may not overwrite it
+      pre
+        code(data-noescape).Java.
+          public <span class="force-red">final</span> class A { /* Body .. */ }
+          
+          public class B extends A { /* Body .. */ }
+  section
+    section
+      h2 The #[tt protected] keyword
+      ul
+        li Besides #[tt private] and #[tt public] we have a third access modifier called #[tt protected]
+        li A #[tt protected] class member's access rules, is somewhere between #[tt private] and #[tt public]
+        li I.e. it can be accessed from subclasses and from classes in the same #[em package]
+    section
+      h2 #[tt protected] - example
+      pre
+        code.Java.
+          package foo;
+          public class A {
+            protected String foo;
+          }
+      pre
+        code.Java.
+          package foo;
+          public class B extends A {
+            public String bar() {
+              return foo;
+            }
+          }
+      pre
+        code.Java.
+          package foo;
+          public class C {
+            private A a;
+          
+            // ... Rest of class here ...
+          
+            public String baz() {
+              return a.foo;
+            }
+          }
+    section
+      h2 Protected vs. private
+      ul
+        li Using #[tt protected] instead of #[tt private] might make some tasks easier
+        li Often it would make sense to allow only subclasses 
+        li However, in most cases it's usually better to just have all fields #[tt private] as usual
+        li If no access modifier is given, the class member is given package access by default
+        li Any class member in the same package can access, but subclasses in other packages do not have access
+    section
+      h2 Protected in UML diagrams
+      img(src="/static/images/PersonProt.svg")
+    section
+      h2 All access modifiers
+      table.border-table
+        thead.small-text
+          tr
+            th Access modifiers
+            th UML
+            th Accessible inside own class
+            th Accessible from all classes in the same package
+            th Accessible from subclasses (even outside package)
+            th Accessible from any class anywhere
+        tbody
+          tr
+            td #[tt public]
+            td +
+            td Yes
+            td Yes
+            td 
+              span.fragment.current-visible ?? 
+              span.fragment Yes
+            td Yes
+          tr
+            td #[tt protected]
+            td #
+            td Yes
+            td Yes
+            td
+              span.fragment.current-visible ?? 
+              span.fragment Yes
+            td No
+          tr
+            td #[em no modifier]
+            td ~
+            td Yes
+            td Yes
+            td
+              span.fragment.current-visible ?? 
+              span.fragment No
+            td No
+          tr
+            td #[tt private]
+            td -
+            td Yes
+            td No
+            td
+              span.fragment.current-visible ?? 
+              span.fragment No
+            td No
+  section
+    section 
+      h2 Polymorphism
+      ul
+        li Poly = many
+        li Morph = form/shape
+        li Polymorphism = Having many forms
+        li In Java:
+          ul
+            li A reference variable is #[em polymorphic] because it can hold a reference to objects of many different types, as long as those types are subclasses of its own type
+    section
+      h2 Polymorphism
+      div.split-2-3-left
+        img(src="/static/images/PersonStuTeaComp.svg")
+        pre
+          code.Java.
+            Person p1 = new Person("Alice", "Adr1");
+            Person p2 = new Student("Bob", "Adr2");
+            Person p3 = new Teacher("Charlie", "Adr3");
+      div.split-1-3-right
+        ul.small-text
+          li A reference variable for a class can also reference objects of classes that inherit from the class
+          li Student #[strong is a] Person
+          li Teacher #[strong is a] Person
+    section
+      h2 Polymorphism
+      ul
+        li It doesn't work the other way around
+        li Student is more than a Person - we expect all students to have a grade, but if we assign a Person to a Student variable, then it will not have a grade.
+      pre
+        code.Java.
+          Student p4 = new Person("Bob", "Adr1"); // Compiler error
+    section
+      h2 Polymorphism
+      ul
+        li Class #[tt Person] only has the following methods:
+          ul.small-text
+            li #[tt getName(), setName(), getAddress(), setAddress(), toString(), equals()]
+        li So those are the only methods that can be called on a #[tt Person] variable, #[u regardless of its actual type].
+      pre
+        code.Java.
+          Person p1 = new Student("Bob", "Adr", 12345);
+          p1.setName("Charlie");
+          p1.setAddress("Home");
+          p1.addGrade("A"); // Compiler error, Person does not know about grades
+      p What is the #[emph actual type] of p1? What is the reference variable type?
+    section
+      h2 Polymorphism - Casting
+      ul
+        li We know #[tt p1] is actually a #[tt Student] object, but Java doesn't
+        li We can cast #[tt p1] to a #[tt Student] object first:
+      pre
+        code.Java.
+          Person p1 = new Student("Bob", "Adr", 12345);
+          Student s1 = (Student)p1;
+          s1.addGrade("A"); // No error
+      ul
+        li Or inline:
+      pre
+        code.Java.
+          ((Student)p1).addGrade("A");
+    section
+      h2 Casting between objects
+      ul
+        li When we cast objects, #[u we] take the responsibility for keeping track of the right types
+      pre
+        code.Java.
+          Person p1 = new Teacher("Lukas", "Adr", 250.0, 37.5);
+          Student s1 = (Student)p1;
+          s1.addGrade("A"); // No compiler error
+      ul
+        li The #[tt p1] variable is #[tt Teacher], it is not a #[tt Student], but Java trusts that we know what we are doing.. Which we obviously don't..
+        li If we try to run it:
+      pre.stdout.
+        Exception in thread "main" java.lang.ClassCastException:
+        Teacher cannot be cast to Student
+    section
+      h2 The #[tt instanceof] operator
+      ul
+        li When casting, the #[tt instanceof] operator allows us to test the type of a reference variable:
+      pre
+        code.Java.
+          Person p1 = new Teacher("Lukas", "Adr", 250.0, 37.5);
+          
+          if (p1 instanceof Student) {
+            Student s1 = (Student) p1;
+            s1.addGrade("A");
+          } else if (p1 instanceof Teacher) {
+            Teacher t1 = (Teacher) p1;
+            t1.setPayRate(280.0);
+          } // No compiler or runtime errors
+    section
+      h2 Dynamic binding
+      ul
+        li A subclass can override a method in the superclass
+          ul
+            li E.g. #[tt toString] in #[tt Student] overrides #[tt toString] in #[tt Person]
+        li So, which version of #[tt toString] will be called here:
+      pre
+        code.Java.
+          Person p1 = new Student("Bob", "Adr", 12345);
+          System.out.println(p1);
+      ul
+        li The on in the reference variable (#[tt Person]), or the one in the referenced object (#[tt Student])?
+        li Which would you expect?
+        li.fragment Answer: The one in #[tt Student]
+    section
+      h2 Dynamic binding
+      ul
+        li Java performs #[emph dynamic binding] (also known as #[emph late binding]) when a variable contains a polymorphic reference
+        li The Java Virtual Machine (JVM) determines at runtime which method to call, depending on the type of object that the variable references at that time
+    section
+      h2 Testing polymorphism
+      pre
+        code.Java.
+          public class PolyTest {
+            public static void main(String[] args) {
+              Person[] persons = new Person[4];
+              persons[0] = new Student("Alice", "Adr1", 12345);
+              persons[1] = new Person("Bob", "Adr2");
+              persons[2] = new Teacher("Lukas", "Adr3", 250.0, 37.5);
+              persons[3] = new ExchangeStudent("Charlie", "Adr4", 54321, 7);
+          
+              for (int i = 0; i < persons.length; i++) {
+                System.out.println(persons[i]);
+              }
+            }
+          }
+      pre.stdout.
+        Name: Bob, Address: Adr1, StudentNo: 12345, Grades: []
+        Name: Joe, Address: Adr2
+        Name: Allan, Address: Adr3, PayRate: 250.0, Hours: 37.5
+        Name: Bob2, Address: Adr4, StudentNo: 54321, Grades: [], GroupNo: 7

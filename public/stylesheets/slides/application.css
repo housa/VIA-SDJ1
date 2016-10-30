@@ -71,6 +71,27 @@ section .small-text {
     font-size: 75%
 }
 
+section .tiny-text {
+    font-size: 50%
+}
+
 .reveal .mermaid {
     font-size: 1.3rem;
+}
+
+.reveal section img {
+    border: none;
+}
+
+.reveal section table.border-table {
+    border: solid 1px;
+}
+
+.reveal section table.border-table td, .reveal section table.border-table th {
+    border: solid 1px;
+    text-align: center;
+}
+
+.reveal section table.border-table tr:nth-child(even) {
+    background: #CCC;
 }

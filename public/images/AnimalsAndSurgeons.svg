@@ -10,7 +10,7 @@
         <path d="M5 -297 L1072 -297 L1072 142 L5 142 L5 -297 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath3">
-        <path d="M243 -244 L243 -120 L422 -120 L422 -244 Z"/>
+        <path d="M243 -244 L243 -120 L462 -120 L462 -244 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath4">
         <path d="M35 -74 L35 0 L303 0 L303 -74 Z"/>
@@ -36,21 +36,21 @@
       <rect x="20" y="-281.3765" clip-path="url(#clipPath2)" fill="none" width="626" stroke-dasharray="6,2" rx="4" ry="4" height="408.3765"/>
     </g>
     <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-5,297)" stroke="rgb(204,255,204)">
-      <rect x="244" width="177" height="122" y="-243" clip-path="url(#clipPath2)" stroke="none"/>
+      <rect x="244" width="217" height="122" y="-243" clip-path="url(#clipPath2)" stroke="none"/>
       <rect x="243" y="-244" clip-path="url(#clipPath2)" fill="white" width="1" height="124" stroke="none"/>
-      <rect x="244" y="-244" clip-path="url(#clipPath2)" fill="white" width="177" height="1" stroke="none"/>
+      <rect x="244" y="-244" clip-path="url(#clipPath2)" fill="white" width="217" height="1" stroke="none"/>
       <rect x="244" y="-121" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="178" height="1" stroke="none"/>
-      <rect x="421" y="-244" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="1" height="123" stroke="none"/>
+      <rect x="461" y="-244" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="1" height="123" stroke="none"/>
     </g>
     <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,-5,297)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
       <text x="283.1582" xml:space="preserve" y="-225.9302" clip-path="url(#clipPath3)" stroke="none">StandardAnimal</text>
     </g>
     <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-5,297)">
-      <line y2="-218" fill="none" x1="244" clip-path="url(#clipPath3)" x2="421" y1="-218"/>
+      <line y2="-218" fill="none" x1="244" clip-path="url(#clipPath3)" x2="461" y1="-218"/>
       <text stroke-linecap="butt" x="248.5" y="-201.0093" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve"># age : int</text>
       <text stroke-linecap="butt" x="248.5" y="-186.3081" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve"># sex : String</text>
-      <line y2="-178" fill="none" x1="244" clip-path="url(#clipPath3)" x2="421" y1="-178"/>
-      <text stroke-linecap="butt" x="248.5" y="-161.6069" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ Animal(age : int, sex : String)</text>
+      <line y2="-178" fill="none" x1="244" clip-path="url(#clipPath3)" x2="461" y1="-178"/>
+      <text stroke-linecap="butt" x="248.5" y="-161.6069" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ StandardAnimal(age : int, sex : String)</text>
       <text stroke-linecap="butt" x="248.5" y="-146.9058" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getAge() : int</text>
       <text stroke-linecap="butt" x="248.5" y="-132.2046" clip-path="url(#clipPath3)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getSex() : String</text>
       <rect x="36" y="-73" clip-path="url(#clipPath2)" fill="rgb(204,255,204)" width="266" height="72" stroke="none"/>

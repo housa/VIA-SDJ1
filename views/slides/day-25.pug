@@ -21,15 +21,15 @@ block content
         code(data-noescape).Java.
           public class foo {
             private <span class="force-red">final</span> String val;
-          
+
             public void setVal(String s) {
               val = s; // Compiler error
             }
           }
-          
+
           public class foo {
             private <span class="force-red">final</span> String val;
-          
+
             public foo(String val) {
               this.val = val; // This is ok, constructor is only ever called once
             }
@@ -45,8 +45,8 @@ block content
               return "Foo";
             }
           }
-          
-          public class B {
+
+          public class B extends A {
             public <span class="force-red">final</span> String foo() { // Compiler error
               return "Bar";
             }
@@ -58,8 +58,8 @@ block content
       pre
         code(data-noescape).Java.
           public <span class="force-red">final</span> class A { /* Body .. */ }
-          
-          public class B extends A { /* Body .. */ }
+
+          public class B extends A { /* Body .. */ } // Compiler error
   section
     section
       h2 The #[tt protected] keyword
@@ -88,9 +88,9 @@ block content
           package foo;
           public class C {
             private A a;
-          
+
             // ... Rest of class here ...
-          
+
             public String baz() {
               return a.foo;
             }
@@ -99,7 +99,7 @@ block content
       h2 Protected vs. private
       ul
         li Using #[tt protected] instead of #[tt private] might make some tasks easier
-        li Often it would make sense to allow only subclasses 
+        li Often it would make sense to allow only subclasses
         li However, in most cases it's usually better to just have all fields #[tt private] as usual
         li If no access modifier is given, the class member is given package access by default
         li Any class member in the same package can access, but subclasses in other packages do not have access
@@ -123,8 +123,8 @@ block content
             td +
             td Yes
             td Yes
-            td 
-              span.fragment.current-visible ?? 
+            td
+              span.fragment.current-visible ??
               span.fragment Yes
             td Yes
           tr
@@ -133,7 +133,7 @@ block content
             td Yes
             td Yes
             td
-              span.fragment.current-visible ?? 
+              span.fragment.current-visible ??
               span.fragment Yes
             td No
           tr
@@ -142,7 +142,7 @@ block content
             td Yes
             td Yes
             td
-              span.fragment.current-visible ?? 
+              span.fragment.current-visible ??
               span.fragment No
             td No
           tr
@@ -151,11 +151,11 @@ block content
             td Yes
             td No
             td
-              span.fragment.current-visible ?? 
+              span.fragment.current-visible ??
               span.fragment No
             td No
   section
-    section 
+    section
       h2 Polymorphism
       ul
         li Poly = many
@@ -237,7 +237,7 @@ block content
       pre
         code.Java.
           Person p1 = new Teacher("Lukas", "Adr", 250.0, 37.5);
-          
+
           if (p1 instanceof Student) {
             Student s1 = (Student) p1;
             s1.addGrade("A");
@@ -276,14 +276,14 @@ block content
               persons[1] = new Person("Bob", "Adr2");
               persons[2] = new Teacher("Lukas", "Adr3", 250.0, 37.5);
               persons[3] = new ExchangeStudent("Charlie", "Adr4", 54321, 7);
-          
+
               for (int i = 0; i < persons.length; i++) {
                 System.out.println(persons[i]);
               }
             }
           }
       pre.stdout.
-        Name: Bob, Address: Adr1, StudentNo: 12345, Grades: []
-        Name: Joe, Address: Adr2
-        Name: Allan, Address: Adr3, PayRate: 250.0, Hours: 37.5
-        Name: Bob2, Address: Adr4, StudentNo: 54321, Grades: [], GroupNo: 7
+        Name: Alice, Address: Adr1, StudentNo: 12345, Grades: []
+        Name: Bob, Address: Adr2
+        Name: Lukas, Address: Adr3, PayRate: 250.0, Hours: 37.5
+        Name: Charlie, Address: Adr4, StudentNo: 54321, Grades: [], GroupNo: 7

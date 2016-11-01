@@ -1,0 +1,56 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercise 26.01
+    p.
+      The classes shown in the UML class diagram below represents an Animal hierarchy. Class
+      #[tt Animal] is abstract defining the abstract method #[tt speak()] which will return the sound of the
+      animal (A frog says #[tt “Ribbit”], a bee #[tt “Bzzz”] a dog #[tt “Woof”] and a cat #[tt “Meow”])
+    object(data="/static/images/AnimalTree.svg", type="image/svg+xml")
+    ol(type="a")
+      li Implement class #[tt Animal], an abstract class with the abstract method #[tt speak()]
+      li Implement class #[tt Pet], an abstract sub class to #[tt Animal] (not implementing the method #[tt speak()])
+      li Implement classes #[tt Frog], #[tt Bee], #[tt Dog] and #[tt Cat]
+      li Add the necessary constructors to all classes, even though they are not in the diagram
+      li Create a test class with a main method, in which you create a variable of type #[tt Animal[]] and let 
+      | each array position reference one of the subclasses to #[tt Animal].
+      | In a loop, call #[tt speak()] for all elements/animals
+      li Add get and set methods, a #[tt toString] method, and an #[tt equals] method to all the classes. Then test 
+      | these methods in the test class as well
+      
+    h2 Exercise 26.02
+    p.
+      The following code throws an exception if the user enters 0 for y. Change the code so that the
+      exception is caught and a message is displayed. Make sure the program still prints the three other
+      results in case of an exception. Run the program without any error handling first, to find out exactly
+      which exception is thrown when y is 0.
+    pre
+      code.Java.
+        import java.util.Scanner;
+        public class MathTest {
+          public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            
+            System.out.println("Enter x: ");
+            int x = scanner.nextInt();
+            
+            System.out.println("Enter y: ");
+            int y = scanner.nextInt();
+            
+            System.out.println("x + y = " + (x + y));
+            System.out.println("x - y = " + (x - y));
+            System.out.println("x / y = " + (x / y));
+            System.out.println("x * y = " + (x * y));
+          }
+        }
+    h2 Exercise 26.03
+    p.
+      This class diagram represents a student with a grade from the Danish 7-point scale:
+    object(data="/static/images/StudentGrade.svg", type="image/svg+xml")
+    ol(type="a")
+      li Implement the Student class, and make the class throw a #[tt IllegalArgumentException] if the grade is not a valid grade in the constructor and in the #[tt setGrade()] method
+      li Make a test program that tests your class. Remember to catch the #[tt IllegalArgumentException] that might be thrown

@@ -12,11 +12,13 @@ block content
         public class NoteBook {
             // Fields
             private ArrayList<Note> notes;
+            private int maxNumberOfNotes;
 
             // Constructor
             public NoteBook(int maxNumberOfNotes) {
                 // We don't need to give ArrayList the maxNumberOfNotes here, but we might as well
                 notes = new ArrayList<>(maxNumberOfNotes);
+                this.maxNumberOfNotes = maxNumberOfNotes;
             }
 
             // The ArrayList will be able to count the number of notes for us!
@@ -36,7 +38,9 @@ block content
 
             // ArrayList will handle the adding of the note for us!
             public void addNote(Note note) {
-                notes.add(note);
+                if (notes.size() < maxNumberOfNotes) {
+                    notes.add(note);
+                }
             }
 
             public void addNote(String message) {

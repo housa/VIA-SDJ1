@@ -16,12 +16,15 @@
         <path d="M242 -490 L242 -371 L407 -371 L407 -490 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath5">
-        <path d="M341 -325 L341 -206 L616 -206 L616 -325 Z"/>
+        <path d="M0 0 L0 60 L144 60 L144 0 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath6">
-        <path d="M42 -176 L42 0 L298 0 L298 -176 Z"/>
+        <path d="M341 -325 L341 -206 L616 -206 L616 -325 Z"/>
       </clipPath>
       <clipPath clipPathUnits="userSpaceOnUse" id="clipPath7">
+        <path d="M42 -176 L42 0 L298 0 L298 -176 Z"/>
+      </clipPath>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath8">
         <path d="M30 -317 L30 -214 L311 -214 L311 -317 Z"/>
       </clipPath>
     </defs>
@@ -63,27 +66,34 @@
       <line y2="-464" fill="none" x1="243" clip-path="url(#clipPath4)" x2="406" y1="-464"/>
       <text stroke-linecap="butt" x="247" y="-448.0879" clip-path="url(#clipPath4)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- message : String</text>
       <line y2="-440" fill="none" x1="243" clip-path="url(#clipPath4)" x2="406" y1="-440"/>
-      <text stroke-linecap="butt" x="247" y="-423.9551" clip-path="url(#clipPath4)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ Note(message : String)</text>
-      <text stroke-linecap="butt" x="247" y="-409.8223" clip-path="url(#clipPath4)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getMessage() : String</text>
-      <text stroke-linecap="butt" x="247" y="-395.6895" clip-path="url(#clipPath4)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : Note</text>
-      <text stroke-linecap="butt" x="247" y="-381.5566" clip-path="url(#clipPath4)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
-      <rect x="342" y="-324" clip-path="url(#clipPath2)" fill="rgb(204,255,204)" width="273" height="117" stroke="none"/>
+    </g>
+    <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,197,711) translate(247,-435)" stroke-linecap="butt">
+      <text x="0" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none">+ Note(message : String)</text>
+      <text x="144" xml:space="preserve" y="12" clip-path="url(#clipPath5)" stroke="none"> </text>
+      <text x="0" xml:space="preserve" y="27" clip-path="url(#clipPath5)" stroke="none">+ getMessage() : String</text>
+      <text x="134" xml:space="preserve" y="27" clip-path="url(#clipPath5)" stroke="none"> </text>
+      <text font-style="italic" x="0" xml:space="preserve" y="42" clip-path="url(#clipPath5)" stroke="none">+ copy() : Note</text>
+      <text x="88" xml:space="preserve" y="42" clip-path="url(#clipPath5)" stroke="none"> </text>
+      <text x="0" xml:space="preserve" y="57" clip-path="url(#clipPath5)" stroke="none">+ toString() : String</text>
+    </g>
+    <g fill="rgb(204,255,204)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,197,711)" stroke="rgb(204,255,204)">
+      <rect x="342" width="273" height="117" y="-324" clip-path="url(#clipPath2)" stroke="none"/>
       <rect x="341" y="-325" clip-path="url(#clipPath2)" fill="white" width="1" height="119" stroke="none"/>
       <rect x="342" y="-325" clip-path="url(#clipPath2)" fill="white" width="273" height="1" stroke="none"/>
       <rect x="342" y="-207" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="274" height="1" stroke="none"/>
       <rect x="615" y="-325" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="1" height="118" stroke="none"/>
     </g>
     <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,197,711)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
-      <text x="438.2114" xml:space="preserve" y="-307.4316" clip-path="url(#clipPath5)" stroke="none">PriorityNote</text>
+      <text x="438.2114" xml:space="preserve" y="-307.4316" clip-path="url(#clipPath6)" stroke="none">PriorityNote</text>
     </g>
     <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,197,711)">
-      <line y2="-299" fill="none" x1="342" clip-path="url(#clipPath5)" x2="615" y1="-299"/>
-      <text stroke-linecap="butt" x="346" y="-283.0879" clip-path="url(#clipPath5)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- priority : int</text>
-      <line y2="-275" fill="none" x1="342" clip-path="url(#clipPath5)" x2="615" y1="-275"/>
-      <text stroke-linecap="butt" x="346" y="-258.9551" clip-path="url(#clipPath5)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ PriorityNote(message : String, priority : int)</text>
-      <text stroke-linecap="butt" x="346" y="-244.8223" clip-path="url(#clipPath5)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getPriority() : int</text>
-      <text stroke-linecap="butt" x="346" y="-230.6895" clip-path="url(#clipPath5)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : Note</text>
-      <text stroke-linecap="butt" x="346" y="-216.5566" clip-path="url(#clipPath5)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
+      <line y2="-299" fill="none" x1="342" clip-path="url(#clipPath6)" x2="615" y1="-299"/>
+      <text stroke-linecap="butt" x="346" y="-283.0879" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- priority : int</text>
+      <line y2="-275" fill="none" x1="342" clip-path="url(#clipPath6)" x2="615" y1="-275"/>
+      <text stroke-linecap="butt" x="346" y="-258.9551" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ PriorityNote(message : String, priority : int)</text>
+      <text stroke-linecap="butt" x="346" y="-244.8223" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getPriority() : int</text>
+      <text stroke-linecap="butt" x="346" y="-230.6895" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : Note</text>
+      <text stroke-linecap="butt" x="346" y="-216.5566" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
       <rect x="43" y="-175" clip-path="url(#clipPath2)" fill="rgb(204,255,204)" width="254" height="174" stroke="none"/>
       <rect x="42" y="-176" clip-path="url(#clipPath2)" fill="white" width="1" height="176" stroke="none"/>
       <rect x="43" y="-176" clip-path="url(#clipPath2)" fill="white" width="254" height="1" stroke="none"/>
@@ -91,20 +101,20 @@
       <rect x="297" y="-176" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="1" height="175" stroke="none"/>
     </g>
     <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,197,711)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
-      <text x="145.3918" xml:space="preserve" y="-158.4316" clip-path="url(#clipPath6)" stroke="none">MyDate</text>
+      <text x="145.3918" xml:space="preserve" y="-158.4316" clip-path="url(#clipPath7)" stroke="none">MyDate</text>
     </g>
     <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,197,711)">
-      <line y2="-150" fill="none" x1="43" clip-path="url(#clipPath6)" x2="297" y1="-150"/>
-      <text stroke-linecap="butt" x="47.5" y="-134.0879" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- day : int</text>
-      <text stroke-linecap="butt" x="47.5" y="-119.9551" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- month : int</text>
-      <text stroke-linecap="butt" x="47.5" y="-105.8223" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- year : int</text>
-      <line y2="-98" fill="none" x1="43" clip-path="url(#clipPath6)" x2="297" y1="-98"/>
-      <text stroke-linecap="butt" x="47.5" y="-81.6895" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ MyDate(day : int, month : int, year : int)</text>
-      <text stroke-linecap="butt" x="47.5" y="-67.5566" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getDay() : int</text>
-      <text stroke-linecap="butt" x="47.5" y="-53.4238" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getMonth() : int</text>
-      <text stroke-linecap="butt" x="47.5" y="-39.291" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getYear() : int</text>
-      <text stroke-linecap="butt" x="47.5" y="-25.1582" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : MyDate</text>
-      <text stroke-linecap="butt" x="47.5" y="-11.0254" clip-path="url(#clipPath6)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
+      <line y2="-150" fill="none" x1="43" clip-path="url(#clipPath7)" x2="297" y1="-150"/>
+      <text stroke-linecap="butt" x="47.5" y="-134.0879" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- day : int</text>
+      <text stroke-linecap="butt" x="47.5" y="-119.9551" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- month : int</text>
+      <text stroke-linecap="butt" x="47.5" y="-105.8223" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">- year : int</text>
+      <line y2="-98" fill="none" x1="43" clip-path="url(#clipPath7)" x2="297" y1="-98"/>
+      <text stroke-linecap="butt" x="47.5" y="-81.6895" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ MyDate(day : int, month : int, year : int)</text>
+      <text stroke-linecap="butt" x="47.5" y="-67.5566" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getDay() : int</text>
+      <text stroke-linecap="butt" x="47.5" y="-53.4238" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getMonth() : int</text>
+      <text stroke-linecap="butt" x="47.5" y="-39.291" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ getYear() : int</text>
+      <text stroke-linecap="butt" x="47.5" y="-25.1582" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : MyDate</text>
+      <text stroke-linecap="butt" x="47.5" y="-11.0254" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
       <rect x="31" y="-316" clip-path="url(#clipPath2)" fill="rgb(204,255,204)" width="279" height="101" stroke="none"/>
       <rect x="30" y="-317" clip-path="url(#clipPath2)" fill="white" width="1" height="103" stroke="none"/>
       <rect x="31" y="-317" clip-path="url(#clipPath2)" fill="white" width="279" height="1" stroke="none"/>
@@ -112,15 +122,15 @@
       <rect x="310" y="-317" clip-path="url(#clipPath2)" fill="rgb(142,178,142)" width="1" height="102" stroke="none"/>
     </g>
     <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,197,711)" text-rendering="geometricPrecision" font-family="sans-serif" shape-rendering="geometricPrecision" font-weight="bold" stroke-miterlimit="1.45">
-      <text x="135.1848" xml:space="preserve" y="-299.4316" clip-path="url(#clipPath7)" stroke="none">DatedNote</text>
+      <text x="135.1848" xml:space="preserve" y="-299.4316" clip-path="url(#clipPath8)" stroke="none">DatedNote</text>
     </g>
     <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,197,711)">
-      <line y2="-291" fill="none" x1="31" clip-path="url(#clipPath7)" x2="310" y1="-291"/>
-      <line y2="-281" fill="none" x1="31" clip-path="url(#clipPath7)" x2="310" y1="-281"/>
-      <text stroke-linecap="butt" x="35" y="-265.0879" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ DatedNote(message : String, date : MyDate)</text>
-      <text stroke-linecap="butt" x="35" y="-250.9551" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+getDate() : MyDate</text>
-      <text stroke-linecap="butt" x="35" y="-236.8223" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : Note</text>
-      <text stroke-linecap="butt" x="35" y="-222.6895" clip-path="url(#clipPath7)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
+      <line y2="-291" fill="none" x1="31" clip-path="url(#clipPath8)" x2="310" y1="-291"/>
+      <line y2="-281" fill="none" x1="31" clip-path="url(#clipPath8)" x2="310" y1="-281"/>
+      <text stroke-linecap="butt" x="35" y="-265.0879" clip-path="url(#clipPath8)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ DatedNote(message : String, date : MyDate)</text>
+      <text stroke-linecap="butt" x="35" y="-250.9551" clip-path="url(#clipPath8)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+getDate() : MyDate</text>
+      <text stroke-linecap="butt" x="35" y="-236.8223" clip-path="url(#clipPath8)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ copy() : Note</text>
+      <text stroke-linecap="butt" x="35" y="-222.6895" clip-path="url(#clipPath8)" font-family="sans-serif" stroke="none" stroke-miterlimit="1.45" xml:space="preserve">+ toString() : String</text>
       <path fill="rgb(255,204,153)" d="M-136.5 -460.5 L116.5 -460.5 L116.5 -445.5 L131.5 -445.5 L131.5 -376.5 L-136.5 -376.5 Z" clip-path="url(#clipPath2)" stroke="none"/>
       <path fill="white" d="M116.5 -460.5 L116.5 -445.5 L131.5 -445.5 Z" clip-path="url(#clipPath2)" fill-rule="evenodd" stroke="none"/>
       <path fill="none" stroke-miterlimit="1.45" d="M-136.5 -460.5 L116.5 -460.5 L116.5 -445.5 L131.5 -445.5 L131.5 -376.5 L-136.5 -376.5 Z" clip-path="url(#clipPath2)" stroke-linecap="butt"/>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="619" height="465">
+	<desc>UML diagram model</desc>
+	<g id="_NvuS8YNgEDSpfLH3PknkIw">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EEEEEE" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="0.4" />
+				
+			</linearGradient>
+			<linearGradient id="executionSpecificationGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="_LhsDMINiEDSpfLH3PknkIw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="159,190 159,260 289,260 289,205 274,190 " />
+			<text x="163" y="195" fill="#2D2D2D">
+				<tspan x="163" y="207" font-size="12">Dashed arrows</tspan>
+				<tspan x="163" y="219" font-size="12">indicate that a</tspan>
+				<tspan x="163" y="231" font-size="12">method returns</tspan>
+				<tspan x="163" y="243" font-size="12">something</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="274,190 274,205 289,205 " />
+			
+		</g>
+		<g id="_QMkd8INiEDSpfLH3PknkIw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="109,305 109,365 284,365 284,320 269,305 " />
+			<text x="113" y="310" fill="#2D2D2D">
+				<tspan x="113" y="322" font-size="12">Guard / condition, only if</tspan>
+				<tspan x="113" y="334" font-size="12">there is new email, download</tspan>
+				<tspan x="113" y="346" font-size="12">it</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="269,305 269,320 284,320 " />
+			
+		</g>
+		<g id="_Qde5sINgEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="308,36  308,415 " />
+			<rect x="249" y="15" width="117" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="266" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="318" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">:Computer</text>
+			
+		</g>
+		<g id="_SKnw8INgEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="521,36  521,415 " />
+			<rect x="473" y="15" width="96" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="490" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="531" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">:Server</text>
+			
+		</g>
+		<g id="_mL8KMINgEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="100,36  100,415 " />
+			<rect x="50" y="15" width="100" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="68" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="110" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">:Person</text>
+			
+		</g>
+		<g id="_COcysoNhEDSpfLH3PknkIw">
+			<rect x="300" y="82" width="16" height="321" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_GNVqIoNhEDSpfLH3PknkIw">
+			<rect x="513" y="95" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_OSDugINhEDSpfLH3PknkIw">
+			<rect x="513" y="155" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_Yf40c4NhEDSpfLH3PknkIw">
+			<rect x="513" y="242" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_gxv884NhEDSpfLH3PknkIw">
+			<rect x="513" y="338" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_COdZwYNhEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="100,82 300,82" />
+			<g id="_COdZwYNhEDSpfLH3PknkIw">
+				<text x="168" y="72" font-style="normal" fill="black">checkEmail</text>
+				
+			</g>
+			<g transform="translate(300,82)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_GNWRMINhEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="316,95 513,95" />
+			<g id="_GNWRMINhEDSpfLH3PknkIw">
+				<text x="361" y="85" font-style="normal" fill="black">sendUnsentEmail</text>
+				
+			</g>
+			<g transform="translate(513,95)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_OSDugYNhEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="513,205 316,205" />
+			<g transform="translate(316,205)">
+				<g transform="rotate(-90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-5,10 0,0 5,10" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_OSFjsINhEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="316,155 513,155" />
+			<g id="_OSFjsINhEDSpfLH3PknkIw">
+				<text x="380" y="146" font-style="normal" fill="black">newEmail</text>
+				
+			</g>
+			<g transform="translate(513,155)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_Yf5bgINhEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="513,292 316,292" />
+			<g transform="translate(316,292)">
+				<g transform="rotate(-90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-5,10 0,0 5,10" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_Yf5bgYNhEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="316,242 513,242" />
+			<g id="_Yf5bgYNhEDSpfLH3PknkIw">
+				<text x="329" y="233" font-style="normal" fill="black">[newEmail] downloadEmail</text>
+				
+			</g>
+			<g transform="translate(513,242)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_gxwkAYNhEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="316,338 513,338" />
+			<g id="_gxwkAYNhEDSpfLH3PknkIw">
+				<text x="368" y="328" font-style="normal" fill="black">deleteOldEmail</text>
+				
+			</g>
+			<g transform="translate(513,338)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<text x="391" y="200" fill="#000000">response</text>
+		<text x="399" y="286" fill="#000000">emails</text>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="385,200 284,215" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="392,241 257,305" />
+			
+		</g>
+		
+	</g>
+	
+</svg>

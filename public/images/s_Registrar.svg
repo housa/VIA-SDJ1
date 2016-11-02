@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="754" height="434">
+	<desc>UML diagram model</desc>
+	<g id="_w_bK86EtEeawbN_F_HFDxg">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EEEEEE" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="0.4" />
+				
+			</linearGradient>
+			<linearGradient id="executionSpecificationGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="_MZJo8INdEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="50,86 50,146 155,146 155,101 140,86 " />
+			<text x="54" y="91" fill="#2D2D2D">
+				<tspan x="54" y="103" font-size="12">The registrar</tspan>
+				<tspan x="54" y="115" font-size="12">selects &quot;add</tspan>
+				<tspan x="54" y="127" font-size="12">course&quot;</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="140,86 140,101 155,101 " />
+			
+		</g>
+		<g id="_jj0YwINdEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="584,55 584,95 709,95 709,70 694,55 " />
+			<text x="588" y="60" fill="#2D2D2D">
+				<tspan x="588" y="72" font-size="12">The instance of a</tspan>
+				<tspan x="588" y="84" font-size="12">class or role</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="694,55 694,70 709,70 " />
+			
+		</g>
+		<g id="_z6tusINdEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="323,344 323,384 428,384 428,359 413,344 " />
+			<text x="327" y="349" fill="#2D2D2D">
+				<tspan x="327" y="361" font-size="12">Object lifeline</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="413,344 413,359 428,359 " />
+			
+		</g>
+		<g id="_5Y0WIINdEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="454,275 454,315 559,315 559,290 544,275 " />
+			<text x="458" y="280" fill="#2D2D2D">
+				<tspan x="458" y="292" font-size="12">Message flow</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="544,275 544,290 559,290 " />
+			
+		</g>
+		<g id="_8U3QgINdEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="260,190 260,230 365,230 365,205 350,190 " />
+			<text x="264" y="195" fill="#2D2D2D">
+				<tspan x="264" y="207" font-size="12">Message</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="350,190 350,205 365,205 " />
+			
+		</g>
+		<g id="_Fw00oINeEDS8I4H1clHBuw">
+			<polygon fill="#FFFFFF" stroke-width="1" stroke="#BBBBBB" points="438,80 438,140 563,140 563,95 548,80 " />
+			<text x="442" y="85" fill="#2D2D2D">
+				<tspan x="442" y="97" font-size="12">Focus of control,</tspan>
+				<tspan x="442" y="109" font-size="12">also known as</tspan>
+				<tspan x="442" y="121" font-size="12">activation</tspan>
+				
+			</text>
+			<polygon fill="#BBBBBB" stroke-width="1" stroke="#BBBBBB" points="548,80 548,95 563,95 " />
+			
+		</g>
+		<g id="_JYo6wINcEDS8I4H1clHBuw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="236,36  236,315 " />
+			<rect x="182" y="15" width="108" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="199" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="246" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Registrar</text>
+			
+		</g>
+		<g id="_Owz5UINcEDS8I4H1clHBuw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="395,36  395,315 " />
+			<rect x="302" y="15" width="185" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="319" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="405" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">:RegistrationManager</text>
+			
+		</g>
+		<g id="_RPPDkINcEDS8I4H1clHBuw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="566,215  566,314 " />
+			<rect x="503" y="194" width="125" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="520" y="205" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="576" y="217" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Uml:Course</text>
+			
+		</g>
+		<g id="_oZ_6AoNcEDS8I4H1clHBuw">
+			<rect x="387" y="113" width="16" height="86" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="592,194 635,95" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="378,315 375,344" />
+			
+		</g>
+		<g id="_oaAhEYNcEDS8I4H1clHBuw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="236,113 387,113" />
+			<g id="_oaAhEYNcEDS8I4H1clHBuw">
+				<text x="252" y="103" font-style="normal" fill="black">addCourse(&quot;UML&quot;)</text>
+				
+			</g>
+			<g transform="translate(387,113)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_GPkbkINdEDS8I4H1clHBuw">
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="403,194 503,194" />
+			<g id="_GPkbkINdEDS8I4H1clHBuw">
+				<text x="427" y="185" font-style="normal" fill="black">create</text>
+				
+			</g>
+			<g transform="translate(503,194)">
+				<g transform="rotate(90)">
+					<polyline fill="none" stroke-width="1" stroke="#000000" points="-5,10 0,0 5,10" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="403,152 438,136" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="252,105 150,112" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="456,193 494,275" />
+			
+		</g>
+		<g>
+			<polyline stroke-dasharray="1, 2" fill="none" stroke-width="1" stroke="#000000" points="313,111 310,190" />
+			
+		</g>
+		
+	</g>
+	
+</svg>

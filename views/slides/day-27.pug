@@ -1,0 +1,417 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 27
+  section
+    h2 Agenda
+    ul
+      li Sequence diagrams
+      li Saving data
+      li Saving text to files
+      li Saving primitve data to files
+      li Saving objects to files
+  section
+    section
+      h2 Sequence diagrams
+      ul
+        li Sequence diagrams are #[emph interaction diagrams]
+        li They depict some objects and the interactions between them
+        li Going from top to bottom, you can see what objects call what methods at the various points in time
+    section.small-text
+      h2 Example: Add course use case
+      dl
+        dt Name:
+        dd Add course
+        dt Actors:
+        dd Registrar
+        dt Summary:
+        dd The registrar adds a new course
+        dt Preconditions:
+        dd Registrar is logged into the System
+        dt Primary scenario:
+        dd
+          ul
+            li The registrar selects "add course"
+            li The system accepts the name of the new course
+            li The system creates a new course
+        dt Postconditions:
+        dd A new course has been added
+    section
+      h2 Add course sequence diagram
+      img(src="/static/images/s_Registrar.svg")
+    section
+      h2 Example: Check email
+      img(src="/static/images/s_CheckEmail.svg")
+    section
+      h2 Example: Eating at a restaurant
+      img(src="/static/images/s_CheckEmail.svg")
+    section
+      h2 Class Person
+      pre
+        code.Java.
+          public class Person {
+            private String name;
+            private String address;
+            private MyDate birthday;
+            private Brain brain;
+
+            // Rest of class
+
+            public int getIQ() {
+              // When the Person needs to return its IQ, it delegates it to the brain
+              return brain.getIQ();
+            }
+
+            public void rememberThis(String topic) {
+              // Again, when a Person needs to remember, it delegates it to the brain
+              if (brain.recall(topic)) {
+                brain.refreshMemory(topic);
+              } else {
+                brain.remember(topic);
+              }
+            }
+          }
+    section
+      h2 Sequence diagram
+      img(src="/static/images/s_PersonIQ.svg")
+  section
+    section
+      h1 Files
+    section
+      h2 Saving information
+      ul.small-text
+        li So far, all the data we have saved, has been saved in variables
+        li Data in variables is stored in the RAM, and is cleared as soon as our program stops running
+        li Often in programs, we want to store data persistently so we have access to it the next time we run the program
+        li Two common solutions:
+          ul
+            li Store information in files:
+              ul
+                li OK for small amounts of data
+                li Used by programs like Word, Excel and many other programs
+            li Store information in a database:
+              ul
+                li Useful for large amounts of data
+              li Not a part of this course
+    section
+      h2 What is a file?
+      ul
+        li A physical area on a harddisk, USB drive, etc
+        li You need a path to the file to access it
+        li There are various ways to manipulate files
+          ul
+            li Create, delete, read, write..
+        li The data in a text file is just a collection of bytes
+        li In general we have two types of files:
+          ul
+            li Text files
+            li Binary files
+    section
+      h2 File types
+      ul
+        li Text files
+          ul
+            li Data is written in a way, that can be easily interpreted as text and understood by both human and Machine
+            li Often platform and language independent
+        li Binary files
+          ul
+            li More efficient and compact representation of data
+            li Programs can understand them, but they are note readable
+            li Format can depend on both programming language and OS
+    section
+      h2 Streams
+      ul
+        li In Java, data can be sent between programs and devices using #[emph streams]
+        li We use them all the time:
+          ul
+            li Printing to the console uses the output stream: #[tt System.out]
+            li Reading input, uses the input stream: #[tt System.in]
+        li Streams are also used when writing to and reading from, files
+    section
+      h2 Writing to a text file
+      pre
+        code.Java.
+          // First make an output file stream
+          FileOutputStream fileOut = new FileOutputStream("filename.txt");
+          // Then give the stream to an object which helps you write to it, like the PrintWriter
+          PrintWriter writer = new PrintWriter(fileOut);
+          // A PrintWriter has the same methods as when we write to the screen, but instead it adds text to a file
+          writer.print("abc");
+          writer.println("def");
+          // As usual, when done writing we should close the writer
+          writer.close();
+      ul
+        li We will need to import the necessary classes:
+      pre
+        code.Java.
+          import java.io.FileOutputStream;
+          import java.io.PrintWriter;
+    section
+      h2 Specifying the file location
+      ul
+        li If we just specify a filename, then the created file will be placed inside the project folder in Eclipse:
+      pre
+        code.Java.
+          FileOutputStream fileOut = new FileOutputStream("filename.txt");
+      ul
+        li We can however supply a path, so we can say exactly where the file should be placed
+      pre
+        code.Java.
+          FileOutputStream fileOut = new FileOutputStream("C:/SDJ/filename.txt");
+    section
+      h2 Appending to an existing text file
+      ul
+        li The following code creates a new file with the given name:
+      pre
+        code.Java.
+          FileOutputStream fileOut = new FileOutputStream("filename.txt");
+      ul
+        li If the file already exists, it will be overridden
+        li To open an existing file instead, simply add #[tt true] to the arguments
+      pre
+        code.Java.
+          FileOutputStream fileOut = new FileOutputStream("filename.txt", true);
+      ul
+        li Now we can append data to the existing file
+    section
+      h2 Writing a text file Examples
+      pre
+        code.Java.
+          public class WriteTextFile {
+            public static void main(String[] args) {
+              PrintWriter writer = null;
+
+              try {
+                FileOutputStream fileOut = new FileOutputStream("test.txt");
+                writer = new PrintWriter(fileOut);
+              } catch(FileNotFoundException e) {
+                System.out.println("Either the file was not found, or else it could not be opened");
+                System.exit(1);
+              }
+              System.out.println("Writing data to file");
+
+              writer.println("The first line");
+              writer.println("The second line");
+
+              writer.close();
+              System.out.println("Done writing");
+            }
+          }
+    section
+      h2 Reading from a text file
+      pre
+        code.Java.
+          // First make an input file stream
+          FileInputStream fileIn = new FileInputStream("filename.txt");
+          // Now feed it to a Scanner object
+          Scanner scanner = new Scanner(fileIn);
+          // Now you can read like usual
+          int anInt = scanner.nextInt();
+          String line = scanner.nextLine();
+          // When done, close the scanner
+          scanner.close();
+    section
+      h2 Reading text file example
+      pre
+        code.Java.
+          public class ReadTextFile {
+            public static void main(String[] args) {
+              Scanner scanner = null;
+              try {
+                FileInputStream fileIn = new FileInputStream("test.txt");
+                scanner = new Scanner(fileIn);
+              } catch (FileNotFoundException e) {
+                System.out.println("Either the file was not found, or it could not be opened");
+                System.exit(1);
+              }
+              System.out.println("Text in file: ");
+
+              while(scanner.hasNext()) {
+                System.out.println(scanner.nextLine());
+              }
+              scanner.close();
+            }
+          }
+    section
+      h2 Reading and writing binary files
+      ul.small-text
+        li In Java, we can write objects directly to file using the #[tt ObjectOutputStream] class
+        li Writing to binary files
+          ul
+            li Use #[tt ObjectOutputStream] class instead of the #[tt PrintWriter]
+            li Different methods: #[tt writeInt(), writeDouble(), writeObject()]
+        li Read from binary files
+          ul
+            li Use #[tt ObjectInputStream] class instead of the #[tt Scanner]
+            li Different methods: #[tt readInt(), readDouble(), readObject()]
+    section
+      h2 Binary files: write primitive types
+      pre
+        code.Java.
+          public class WriteBinaryFile {
+            public static void main(String[] args) {
+              try {
+                FileOutputStream fileOut = new FileOutputStream("test.bin");
+                ObjectOutputStream writer = new ObjectOutputStream(fileOut);
+                for (int i = 0; i &lt; 20; i++) {
+                  writer.writeInt(i);
+                  writer.writeDouble(Math.pow(1.5, i));
+                }
+                writer.close();
+              } catch (FileNotFoundException e) {
+                System.out.println("Either file was not found, or it could not be opened");
+                System.exit(1);
+              } catch (IOException e) {
+                System.out.println("IO Error writing to file");
+                System.exit(1);
+              }
+              System.out.println("Done writing");
+            }
+          }
+    section
+      h2 Binary files: read primitve types
+      pre
+        code.Java.
+          public class ReadBinaryFile {
+            public static void main(String[] args) {
+              try {
+                FileInputStream fileIn = new FileInputStream("test.bin");
+                ObjectInputStream reader = new ObjectInputStream(fileIn);
+                while (true) {
+                  try {
+                    int x = reader.readInt();
+                    double y = reader.readDouble();
+                    System.out.println(x + " " + y);
+                  } catch (EOFException eof) {
+                    System.out.println("End of file");
+                    break;
+                  }
+                }
+                reader.close();
+              } catch (FileNotFoundException e) {
+                System.out.println("Either file was not found, or it could not be opened");
+                System.exit(1);
+              } catch (IOException e) {
+                System.out.println("IO Error writing to file");
+                System.exit(1);
+              }
+            }
+          }
+    section
+      h2 Objects in binary files
+      ul.small-text
+        li We are not limited to storing primitives in our binary files, we can also store objects
+        li Before this is possible, objects need to be #[emph serialized], i.e. converted to a series of bytes
+          ul
+            li For most of the classes in the Java API (like String and ArrayList), this is already possible
+            li We have to implement this for our own classes
+        li To enable our own classes to be serializable, they have to #[emph implement] an #[emph interface] called #[tt Serializable]
+          ul
+            li An interface is similar to an abstract class, but instead of #[tt extends] we use #[tt implements]
+            li For example, if we were to make the Person class serializable:
+      pre
+        code.Java.
+          public class Person implements Serializable { }
+    section
+      h2 Serializable objects
+      pre
+        code.Java.
+          import java.io.Serializable;
+
+          public class Person implements Serializable {
+            // When we implement Serializable, all fields have to be of type either
+            // primitives or other classes that implements Serializable
+            private String name;
+            private int age;
+
+            public Person(String name, int age) {
+              this.name = name;
+              this.age = age;
+            }
+
+            // Rest of class
+          }
+    section
+      h2 Serializable objects
+      pre
+        code.Java.
+          import java.io.Serializable;
+
+          public class Person implements Serializable {
+            private String name;
+            private MyDate birthday;
+
+            public Person(String name, MyDate birthday) {
+              this.name = name;
+              this.birthday = birthday.copy();
+            }
+
+            // Rest of class
+          }
+      p.tiny-text Since Person is serializable and it has a field of type MyDate, MyDate has to implement Serializable
+      pre
+        code.Java.
+          public class MyDate implements Serializable {
+            private int day;
+            private int month;
+            private int year;
+
+            // Rest of class
+          }
+    section
+      h2 Binary files: write objects
+      pre
+        code.Java.
+          public class WriteObjectToBinaryFile {
+            public static void main(String[] args) {
+              try {
+                FileOutputStream fileOut = new FileOutputStream("obj.bin");
+                ObjectOutputStream writer = new ObjectOutputStream(fileOut);
+
+                writer.writeObject(new Person("Lukas", new MyDate(13, 8, 1337)));
+                writer.writeObject(new Person("Alexandra", new MyDate(8, 11, 2015)));
+                writer.close();
+              } catch (FileNotFoundException e) {
+                System.out.println("Either file was not found, or it could not be opened");
+                System.exit(1);
+              } catch (IOException e) {
+                System.out.println("IO Error writing to file");
+                System.exit(1);
+              }
+              System.out.println("Done writing");
+            }
+          }
+    section
+      h2 Binary files: read objects
+      pre
+        code.Java.
+          public class ReadObjectFromBinaryFile {
+            public static void main(String[] args) {
+              try {
+                FileInputStream fileIn = new FileInputStream("obj.bin");
+                ObjectInputStream reader = new ObjectInputStream(fileIn);
+                while (true) {
+                  try {
+                    Person person = (Person)reader.readObject();
+                    System.out.println(person);
+                  } catch (EOFException eof) {
+                    System.out.println("End of file");
+                    break;
+                  }
+                }
+                reader.close();
+              } catch (FileNotFoundException e) {
+                System.out.println("Either file was not found, or it could not be opened");
+                System.exit(1);
+              } catch (IOException e) {
+                System.out.println("IO Error writing to file");
+                System.exit(1);
+              } catch (ClassNotFoundException e) {
+                System.out.println("Class not found");
+                System.exit(1);
+              }
+            }
+          }

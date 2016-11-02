@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="Arial" font-size="13" width="720" height="485">
+	<desc>UML diagram model</desc>
+	<g id="_JCj8EYNnEDSpfLH3PknkIw">
+		<defs>
+			<linearGradient id="greyGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EEEEEE" stop-opacity="1" />
+				
+			</linearGradient>
+			<linearGradient id="packageGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="0.4" />
+				
+			</linearGradient>
+			<linearGradient id="executionSpecificationGradient" x1="0%" y1="0%" x2="0%" y2="100%" spreadMethod="pad">
+				<stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+				<stop offset="100%" stop-color="#EFE9DE" stop-opacity="1" />
+				
+			</linearGradient>
+			
+		</defs>
+		<g id="_KpNJwINnEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="116,36  116,435 " />
+			<rect x="50" y="15" width="132" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="67" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="126" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Fred : Patron</text>
+			
+		</g>
+		<g id="_P48lEINnEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="273,36  273,435 " />
+			<rect x="209" y="15" width="128" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="226" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="283" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Bob : Waiter</text>
+			
+		</g>
+		<g id="_P-9GcINnEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="433,36  433,435 " />
+			<rect x="369" y="15" width="127" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="386" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="443" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Hank : Cook</text>
+			
+		</g>
+		<g id="_QG5hgINnEDSpfLH3PknkIw">
+			<polyline stroke-dasharray="10, 5" fill="none" stroke-width="1" stroke="#A29E9E" points="596,36  596,435 " />
+			<rect x="521" y="15" width="149" height="36" rx="2" ry="2" fill="url(#greyGradient)" stroke="#BBBBBB" stroke-width="1" />
+			<image x="538" y="26" width="16" height="16" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAMFBMVEX///9woMRAgLDi8P84e7Dp9P86fLDw9/88fbD3+/89frD+/v8/f7AAUpEAS4XA0+HHhLc3AAAAAXRSTlMAQObYZgAAAAFiS0dEDxi6ANkAAAAHdElNRQffCQcJATn2tNxUAAAAQElEQVQI12NgYFQCAQYGBiZjIDABMUKBIAzEKAeCChBjJhDMAjF2A8EeIAOo6xJYFxA8YICCDzDGAwwGMVIgAADwcBTlv8WhiQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNS0wOS0wN1QwOTowMTo1NyswMjowMF1TVBAAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTUtMDktMDdUMDk6MDE6NTcrMDI6MDAsDuysAAAAAElFTkSuQmCC" />
+			<text x="606" y="38" text-anchor="middle" font-style="normal" font-weight="bold" fill="#033656">Renee : Cashier</text>
+			
+		</g>
+		<g id="_aZUMgoNnEDSpfLH3PknkIw">
+			<rect x="265" y="106" width="16" height="30" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_d5mcYYNnEDSpfLH3PknkIw">
+			<rect x="425" y="118" width="16" height="180" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_jtUug4NnEDSpfLH3PknkIw">
+			<rect x="108" y="217" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_xZnfYoNnEDSpfLH3PknkIw">
+			<rect x="265" y="291" width="16" height="50" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_0PPos4NnEDSpfLH3PknkIw">
+			<rect x="108" y="324" width="16" height="60" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_6iqHgoNnEDSpfLH3PknkIw">
+			<rect x="588" y="379" width="16" height="30" rx="2" ry="2" fill="url(#executionSpecificationGradient)" stroke="#c2b79f" stroke-width="1" />
+			
+		</g>
+		<g id="_aZUzkYNnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="116,106 265,106" />
+			<g id="_aZUzkYNnEDSpfLH3PknkIw">
+				<text x="156" y="98" font-style="normal" fill="black">Order food</text>
+				
+			</g>
+			<g transform="translate(265,106)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_d5qGwINnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="273,118 425,118" />
+			<g id="_d5qGwINnEDSpfLH3PknkIw">
+				<text x="317" y="111" font-style="normal" fill="black">Order food</text>
+				
+			</g>
+			<g transform="translate(425,118)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_jtVVkYNnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="273,217 124,217" />
+			<g id="_jtVVkYNnEDSpfLH3PknkIw">
+				<text x="168" y="204" font-style="normal" fill="black">Serve wine</text>
+				
+			</g>
+			<g transform="translate(124,217)">
+				<g transform="rotate(-90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_xZoGcINnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="433,291 281,291" />
+			<g id="_xZoGcINnEDSpfLH3PknkIw">
+				<text x="334" y="284" font-style="normal" fill="black">Pickup</text>
+				
+			</g>
+			<g transform="translate(281,291)">
+				<g transform="rotate(-90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_0PQ20YNnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="265,324 124,324" />
+			<g id="_0PQ20YNnEDSpfLH3PknkIw">
+				<text x="161" y="315" font-style="normal" fill="black">Serve food</text>
+				
+			</g>
+			<g transform="translate(124,324)">
+				<g transform="rotate(-90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		<g id="_6irVoINnEDSpfLH3PknkIw">
+			<polyline fill="none" stroke-width="1" stroke="#000000" points="124,379 588,379" />
+			<g id="_6irVoINnEDSpfLH3PknkIw">
+				<text x="347" y="372" font-style="normal" fill="black">Pay</text>
+				
+			</g>
+			<g transform="translate(588,379)">
+				<g transform="rotate(90)">
+					<polyline fill="#000000" stroke-width="1" stroke="#000000" points="-4,12 0,0 4,12 -4,12" />
+					
+				</g>
+				
+			</g>
+			
+		</g>
+		
+	</g>
+	
+</svg>

@@ -12,7 +12,7 @@ var router = express.Router();
     });
 });
 
-[1].forEach((current, index) => {
+[1, 2].forEach((current, index) => {
     router.get('/hand-in-' + current, function(req, res, next) {
         res.render('exercises/hand-in-' + current, { title: 'Day ' + current});
     });

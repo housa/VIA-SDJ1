@@ -32,3 +32,42 @@ block content
       Type name of friend: <b>Carl</b>
       Type name of friend: <b>Dave</b>
       Type name of friend: <b>DONE</b>
+    p Now the file “friends.txt” should contain the following:
+    pre.stdout.
+      Bob
+      Carl
+      Dave
+
+    h2 Exercise 27.04
+    p.
+      Write a program that can read and print out all contents of any text file. The program
+      should ask the user for the name of a text file, open this file and then print out every line
+      from the file.
+
+    p.
+      If the file is “friends.txt” from the previous exercise (if that’s what you called the file) the
+      output could be:
+    pre.stdout.
+      Contents of the file friends.txt:
+      Bob
+      Carl
+      Dave
+
+    h2 Exercise 27.05
+    p.
+      Implement a program that generates some random integers and writes them to a binary file.
+      First the program should ask the user to input how many integers it should make.
+    p.
+      Then implement another program that can read the binary file and print its contents to the
+      screen.
+
+    h2 Exercise 27.06
+    p.
+      Create a class #[tt Student], as shown in the class diagram below. The class should be
+      serializable so that objects made from it can be saved in binary files (just add
+      #[tt implements Serializable] in the class definition).
+    object(data="/static/images/Student28.svg", type="image/svg+xml")
+    p.
+      Now create a test class that creates some #[tt Student] objects and saves them to a binary file.
+      Afterwards create another test class that can read the created file and print out the
+      information about the students. You can also do both in the same test class if you prefer.

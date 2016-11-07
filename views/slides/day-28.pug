@@ -1,0 +1,81 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 28
+  section
+    h2 Agenda
+    ul
+      li Model and adaptor
+      li Student application
+      li Model
+      li FileIO
+      li Student/File adapter
+      li Initial data
+      li Running the application
+  section
+    h2 Model and adaptor
+    ul
+      li When we want to create an application, we need to create a model of the problem domain
+        ul
+          li Which classes do we need to write in Java, and which fields and methods do they need to have?
+      li Most often we will also need to save some of the objects, or at least some of the data stored in their fields
+        ul
+          li Either in a database or in files
+          li When creating our application we can make things easier by “hiding” the functionality that saves the data with an adapter class
+            ul
+              li A class placed between the model and the low-level database or file programming
+  section
+    h2 Student application
+    object(data="/static/images/exampleDay28.svg", type="image/svg+xml")
+  section
+    h2 The model
+    object(data="/static/images/d28model.svg", type="image/svg+xml")
+  section
+    h2 Accessing the files
+    object(data="/static/images/d28FileIO.svg", type="image/svg+xml")
+    ul
+      li Live code of MyFileIO
+  section
+    h2 Student/File adaptor
+    ul
+      li Used for adapting data between the files and the model
+        ul
+          li Should contain methods for each specific read and write action we wish to perform on the files
+          li The methods will contain the necessary code for manipulating the files, and will typically get and return data in the form of objects from the model
+      object(data="/static/images/d28StudentFileAdaptor.svg", type="image/svg+xml")
+      li Live code of StudentFileAdaptor
+  section
+    section
+      h2 Initial data
+      ul
+        li Before a system runs it might be necessary to fill it with some initial data
+          ul
+            li E.g. I needed to add the information about all SDJ1 students
+            li This can be done by creating a separate program that runs once and adds the initial data to a database, to some binary files, etc.
+            li The data could simply be manually entered inside the code, or if it exists already, then perhaps just be loaded from the existing source
+    section
+      h2 Text file of students
+      ul
+        li I have a list of students stored as a text file
+          ul
+            li One student on each line
+            li Each student’s data separated by commas
+        li Let’s load that into our system
+          ul
+            li Read the text file
+            li Create a Student object for each student
+            li Add all students to a StudentList object
+            li Save the StudentList to the binary file our system uses
+        li Live code of LoadInitialData
+  section
+    h2 Running the application
+    ul
+      li When the initial data is added, the system is ready to be used
+      li Many systems will get a graphical user interface to let the user interact with the system
+        ul
+          li Uses the methods from the adapter and objects from the model
+      li For now, let’s just use the system in a test class
+      li Live code of TestStudentFileAdaptor

@@ -1,0 +1,33 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercises day 28
+    p.
+      The purpose of today’s exercises is to go through the steps of creating the following Java model, and to make it
+      possible to store it in a binary file.
+    object(data="/static/images/day28.svg", type="image/svg+xml")
+    p.
+      If you need some data to add to the model when it’s finished, then either create some yourself, or use
+      #[a(href="/static/documents/carlist.txt") this] list of cars and their owners
+    h2 Exercise 28.01
+    p Implement the class Owner represented by the following UML class diagram
+    object(data="/static/images/e2801.svg", type="image/svg+xml")
+    h2 Exercise 28.02
+    p Implement the class Car represented by the following UML class diagram
+    object(data="/static/images/e2802.svg", type="image/svg+xml")
+    h2 Exercise 28.03
+    p Implement the class CarList represented by the following UML class diagram
+    object(data="/static/images/e2803.svg", type="image/svg+xml")
+    h2 Exercise 28.04
+    p Implement the class CarFileAdaptor represented by the following UML class diagram
+    object(data="/static/images/e2804.svg", type="image/svg+xml")
+    p.
+      Use the class MyFileIO from the lecture, all the code from the lecture can be found
+      #[a(href="/static/documents/files.zip") here]
+    h2 Exercise 28.05
+    p.
+      Finally create a test class where you test the functionality in the classes you have created.

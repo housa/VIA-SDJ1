@@ -1,0 +1,44 @@
+Adam,Szekely,Hungary
+Alexandru,Simaschevici,Romania
+Ali,Salimi,Afghanistan
+Alvaro,De Castro,Denmark
+Ana Iulia,Chifor,Romania
+Anders,Kruse,Denmark
+Andreea,Carst,Romania
+Bashar,Gabbara,Canada
+Bianca,Sgondea,Romania
+Bogdan,Mitrache,Romania
+Camilla,Madsen,Denmark
+Carla,Larsen,Denmark
+Carlos,Alberto,Portugal
+Cristian,Russu,Romania
+Daniele,Salvo,Italy
+David,Buliga,Romania
+Dimitar,Dimitrov,Bulgaria
+Dimitrie,Sandu,Romania
+Filip,Hudec,Slovakia
+Grazvydas,Stalmokas,Lithuania
+Hubert,Niewiatowski,Poland
+Liudvikas,Radvilavicius,Lithuania
+Marian,Pogor,Romania
+Mark,Ajtay,Hungary
+Mihai Cristian,Pavel,Romania
+Muhammad,Allak,Syria
+Nicholas,Papas,Italy
+Nicolai,Jørgensen,Denmark
+Nikola,Sevo,Hungary
+Nikolay,Tonchev,Bulgaria
+Oleg,Dinchev,Bulgaria
+Palle,Christensen,Denmark
+Peter,Varanic,Romania
+Raluca,Balogh,Romania
+Sergiu,Craciunescu,Romania
+Sergiu,Ivanov,Romania
+Signe,Rasmussen,Denmark
+Spencer,Shaw,United States
+Tamara,Hassan,United Kingdom
+Todor,Gerganov,Bulgaria
+Tomas,Cachojanas,Lithuania
+Tomas,Jakubik,Slovakia
+Victor,Smedegaard,Denmark
+Vito,Ilchev,Bulgaria

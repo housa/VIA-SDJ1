@@ -95,3 +95,8 @@ section .tiny-text {
 .reveal section table.border-table tr:nth-child(even) {
     background: #CCC;
 }
+
+.reveal section input[type=radio] {
+    width: 1.5em;
+    height: 1.5em;
+}

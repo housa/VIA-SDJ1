@@ -8,4 +8,257 @@ block content
   section
     h2 Agenda
     ul
-      li
+      li 
+  section
+    section
+      h2 Creating windows
+      ul
+        li Often, dialog boxes are not enough
+        li We want one or more windows with various components
+        li A window (frame) is a #[emph container] that holds other components
+          ul
+            li In Swing, a frame is created with the #[tt JFrame] class
+            li A frame is a basic window, with a border, a title and buttons for minimizing, maximizing and closing the window
+    section
+      h2 Creating windows
+      div.split-2-3-left
+        pre
+          code.Java.
+            import javax.swing.JFrame;
+            
+            public class SimpleGUI1 extends JFrame {
+              public SimpleGUI1() {
+                super("Window Title here");
+            
+                setSize(250, 100);
+                setVisible(true);
+                
+                // Exit the application when the 
+                // window is closed
+                setDefaultCloseOperation(
+                      JFrame.EXIT_ON_CLOSE);
+
+                // Center window on screen
+                setLocationRelativeTo(null); 
+              }
+            }
+        hr
+        pre
+          code.Java.
+            public class SimpleGUI1Test {
+              public static void main(String[] args) {
+                SimpleGUI1 sgui1 = new SimpleGUI1();
+              }
+            }
+      div.split-1-3-right
+        img(src="/static/images/windows1.png")
+  section
+    section
+      h2 Adding components
+      ul
+        li After we have created a window, we want to populate it with components
+        li A #[tt JFrame] has a #[emph content pane] container, to which every component is added
+        li This is done with the #[tt add] method in the #[tt JFrame] class
+        li Instead of adding every component directly, we often enclose them in #[tt JPanel] objects
+        li #[tt JPanel] objects can contain other #[tt JPanel] objects, thus allowing for advanced GUI structures
+    section
+      h2 Adding components
+      ul
+        li Swing provides many different types of components, which we can add to our GUIs
+        li Three common components are:
+        ul
+          li #[tt JLabel] - An area that can display text
+          li #[tt JTextField] - An area in which the user may type a single line of input from the keyboard
+          li #[tt JButton] - A button that the user can click
+    section
+      h2 Adding components
+      div.split-2-3-left
+        pre
+          code.Java.small-text.
+            import java.awt.Dimension;
+            import javax.swing.*;
+  
+            public class SimpleGUI1 extends JFrame {
+              
+              private JPanel panel1;
+              private JLabel label1;
+            
+              public SimpleGUI1() {
+                super("Window Title here");
+  
+                panel1 = new JPanel();
+            
+                label1 = new JLabel("Text:");
+                label1.setPreferredSize(new Dimension(30, 20));
+                panel1.add(label1);
+  
+                add(panel1);
+                setSize(250, 100);
+                setVisible(true);
+  
+                setDefaultCloseOperation(
+                      JFrame.EXIT_ON_CLOSE);
+                setLocationRelativeTo(null); 
+              }
+            }
+      div.split-1-3-right
+        img(src="/static/images/windows2.png")
+    section
+      h2 Adding components
+      div.split-2-3-left
+        pre
+          code.Java.small-text.
+            import java.awt.Dimension;
+            import javax.swing.*;
+  
+            public class SimpleGUI1 extends JFrame {
+              
+              private JPanel panel1;
+              private JLabel label1;
+              private JTextField textField1;
+            
+              public SimpleGUI1() {
+                super("Window Title here");
+  
+                panel1 = new JPanel();
+            
+                label1 = new JLabel("Text:");
+                label1.setPreferredSize(new Dimension(30, 20));
+                panel1.add(label1);
+            
+                textField1 = new JTextField(10);
+                panel1.add(textField1);
+  
+                add(panel1);
+                setSize(250, 100);
+                setVisible(true);
+  
+                setDefaultCloseOperation(
+                      JFrame.EXIT_ON_CLOSE);
+                setLocationRelativeTo(null); 
+              }
+            }
+      div.split-1-3-right
+        img(src="/static/images/windows3.png")
+    section
+      h2 Adding components
+      div.split-2-3-left
+        pre
+          code.Java.small-text.
+            import java.awt.Dimension;
+            import javax.swing.*;
+            public class SimpleGUI1 extends JFrame {
+              
+              private JPanel panel1;
+              private JLabel label1;
+              private JTextField textField1;
+              private JButton button1;
+            
+              public SimpleGUI1() {
+                super("Window Title here");
+  
+                panel1 = new JPanel();
+            
+                label1 = new JLabel("Text:");
+                label1.setPreferredSize(new Dimension(30, 20));
+                panel1.add(label1);
+                
+                textField1 = new JTextField(10);
+                panel1.add(textField1);
+            
+                button1 = new JButton("Click me");
+                panel1.add(button1);
+  
+                add(panel1);
+                setSize(250, 100);
+                setVisible(true);
+  
+                setDefaultCloseOperation(
+                      JFrame.EXIT_ON_CLOSE);
+                setLocationRelativeTo(null); 
+              }
+            }
+      div.split-1-3-right
+        img(src="/static/images/windows4.png")
+  section
+    section
+      h2 Radio buttons
+      ul
+        li #[emph Radio buttons] allow the user to select one choice from several possible options
+        li The #[tt JRadioButton] is used to create radio buttons, it has two constructors:
+          ul
+            li #[tt JRadioButton(String text)]
+            li #[tt JRadioButton(String text, boolean selected)]
+        li Example:
+      pre
+        code.Java.
+          JRadioButton r1 = new JRadioButton("Choice 1");
+          JRadioButton r2 = new JRadioButton("Choice 2", true);
+      img(src="/static/images/windows5.png")
+    section
+      h2 Radio buttons
+      ul
+        li Radio buttons are usually grouped together
+        li Within each of these groups, only one radio button can be selected
+        li Clicking on another button, deselects the current button and selects the button that was clicked
+      
+      pre
+        code.Java.
+          JRadioButton r1 = new JRadioButton("Choice 1", true);
+          JRadioButton r2 = new JRadioButton("Choice 2");
+          JRadioButton r3 = new JRadioButton("Choice 3");
+          
+          ButtonGroup group = new ButtonGroup();
+          group.add(r1);
+          group.add(r2);
+          group.add(r3);
+    section
+      h2 Radio buttons
+      ul
+        li #[tt ButtonGroup] objects are not containers like #[tt JPanel] objects
+        li If you wish to add the radio buttons to a panel, you must still add each of them individually
+        li You should not add the #[tt ButtonGroup]
+      pre
+        code.Java.
+          panel.add(r1);
+          panel.add(r2);
+          panel.add(r3);
+    section
+      h2 Check boxes
+      ul
+        li Check boxes are just like radio buttons, except you can select several check boxes instead of just one
+        li The #[tt JCheckBox] class, is used to create check boxes
+        li The #[tt JCheckBox] has constructors similar to radio buttons
+      pre
+        code.Java.
+          JCheckBox c1 = new JCheckBox("SDJ1", true);
+          JCheckBox c2 = new JCheckBox("SDJ2");
+      img(src="/static/images/windows6.png")
+    section
+      h2 Colours
+      ul
+        li Many Swing components can change background colour and text (foreground) colour
+        li The methods #[tt setBackground] and #[tt setForeground] both take a #[tt Color] object as argument
+        li The Color class's constructor takes three numbers (0-255) as argument, representing the amount of red, green and blue.
+      pre
+        code.Java.
+          JPanel panel1 = new JPanel();
+          panel1.setBackground(new Color(230, 100, 230));
+      img(src="/static/images/windows7.png")
+    section
+      h2 Borders
+      ul
+        li In addition to colors, we can also add a border to most components.
+        li The #[tt setBorder] method accepts a #[tt Border] object as its argument. There are many different types of borders.
+      
+      pre
+        code.Java.
+          JPanel panel2 = new JPanel();
+          Color col1 = new Color(230, 10, 230);
+          panel2.setBorder(new LineBorder(col1, 2));
+          panel2.add(new JLabel("Text 1"));
+          panel2.add(new JLabel("Text 2"));
+          panel2.add(new JLabel("Text 3"));
+          
+          panel1.add(panel2);
+      img(src="/static/images/windows8.png")

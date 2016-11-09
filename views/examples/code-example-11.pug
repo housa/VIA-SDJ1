@@ -1,0 +1,38 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Files
+    p
+      a(href="#loadinitial") LoadInitialData.java
+  section.column.small-12
+    h2(id="loadinitial") LoadInitialData.java
+    pre
+      code.Java.
+        import java.io.*;
+        import java.util.Scanner;
+
+        public class LoadInitialData {
+          public static void main(String[] args) {
+            try {
+              FileInputStream fis = new FileInputStream("initial.txt");
+              Scanner scanner = new Scanner(fis);
+              StudentList studentList = new StudentList();
+              while(scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] fields = line.split(",");
+                if(fields.length != 3) break;
+
+                Student student = new Student(fields[0], fields[1], fields[2]);
+                studentList.add(student);
+              }
+              StudentFileAdapter adapter = new StudentFileAdapter("test.bin");
+              adapter.saveStudents(studentList);
+            } catch (FileNotFoundException e) {
+              e.printStackTrace();
+            }
+          }
+        }

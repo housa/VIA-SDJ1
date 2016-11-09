@@ -7,32 +7,61 @@ block content
   section.column.small-12
     h2 Files
     p
-      a(href="#loadinitial") LoadInitialData.java
+      a(href="#writetofile") Write Object to file
+    p
+      a(href="#readfromfile") Read Object from file
+    p
+      a(href="#savestudents") Save students with fileIO
+    p
+      a(href="#changecountry") Change country of Student
   section.column.small-12
-    h2(id="loadinitial") LoadInitialData.java
+    h2(id="writetofile") Write Object to file
     pre
       code.Java.
-        import java.io.*;
-        import java.util.Scanner;
-
-        public class LoadInitialData {
-          public static void main(String[] args) {
-            try {
-              FileInputStream fis = new FileInputStream("initial.txt");
-              Scanner scanner = new Scanner(fis);
-              StudentList studentList = new StudentList();
-              while(scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] fields = line.split(",");
-                if(fields.length != 3) break;
-
-                Student student = new Student(fields[0], fields[1], fields[2]);
-                studentList.add(student);
-              }
-              StudentFileAdapter adapter = new StudentFileAdapter("test.bin");
-              adapter.saveStudents(studentList);
-            } catch (FileNotFoundException e) {
-              e.printStackTrace();
-            }
+        public void writeToFile(String fileName, Object obj)
+            throws FileNotFoundException, IOException {
+          FileOutputStream  fos = new FileOutputStream(fileName);
+          ObjectOutputStream oos = new ObjectOutputStream(fos);
+          oos.writeObject(obj);
+          oos.close();
+        }
+  section.column.small-12
+    h2(id="readfromfile") Read Object from file
+    pre
+      code.Java.
+        public Object readObjectFromFile(String fileName)
+            throws FileNotFoundException, IOException, ClassNotFoundException {
+          FileInputStream fis = new FileInputStream(fileName);
+          ObjectInputStream ois = new ObjectInputStream(fis);
+          Object obj = ois.readObject();
+          ois.close();
+          return obj;
+        }
+  section.column.small-12
+    h2(id="savestudents") Save students with fileIO
+    pre
+      code.Java.
+        public void saveStudents(StudentList studentList) {
+          Object[] objs = new Object[studentList.size()];
+          for (int i = 0; i &lt; studentList.size(); i++) {
+            objs[i] = studentList.get(i);
           }
+          try {
+            fileIO.writeToFile(fileName, objs);
+          } catch (FileNotFoundException e) {
+            e.printStackTrace();
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
+
+  section.column.small-12
+    h2(id="changecountry") Change country of Student
+    pre
+      code.Java.
+        public void changeCountry(String firstName, String lastName, String country) {
+          StudentList studentList = getAllStudents();
+          Student student = studentList.get(firstName, lastName);
+          student.setCountry(country);
+          saveStudents(studentList);
         }

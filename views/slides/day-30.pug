@@ -8,7 +8,9 @@ block content
   section
     h2 Agenda
     ul
-      li 
+      li Creating windows
+      li Adding components
+      li Layouts
   section
     section
       h2 Creating windows
@@ -262,3 +264,174 @@ block content
           
           panel1.add(panel2);
       img(src="/static/images/windows8.png")
+  section
+    section
+      h2 Layout managers
+      ul
+        li An important part of designing a GUI application is determining the layout of the components
+          ul
+            li In Java we are not supposed to specify the exact location of a component within a window (although possible)
+            li Instead we should use a layout manager
+            li The layout manager will help control the positions and sizes of components, and makes adjustments when necessary (e.g. when the size of a window is changed)
+        li Java provides several different layout managers, useful for different situations
+    section
+      h2 Layout managers
+      div.small-text
+        ul
+          li Four of the most commonly used layout managers:
+            ul
+              li.
+                FlowLayout - Simply arranges components horizontally in a row. If there
+                is not room for all components in one row, they are distributed across
+                multiple rows. (default for JPanel objects)
+              li BoxLayout - Either places all components horizontally next to each other in a row, or vertically below each other:
+                ul
+                  li BoxLayout.X_AXIS or BoxLayout.Y_AXIS
+              li BorderLayout - Arranges components in five regions: (default for JFrame objects)
+                ul
+                  li North, South, East, West, and Center
+              li GridLayout - Arranges components in a grid with rows and columns
+    section
+      h2 Layout managers
+      ul
+        li A layout manager is added to a component by calling the setLayout method
+          ul
+            li We can add a layout manager to any of the GUI classes that are used to contain other components - e.g. JFrame and JPanel
+            li In a GUI class that extends JFrame we could set the layout of its content pane by calling setLayout in the constructor
+  section
+    section
+      h2 Flow layout
+      ul.small-text
+        li Components will be placed horizontally, from left to right, in the order that they were added
+        li When there is no more room in a row, the next components “flow” to the next row
+        li we can also align all components to the right if we like
+      div.split-2-3-left
+        pre
+          code.java.
+            //flowlayout is default for JPanels
+            JPanel pnl1 = new JPanel();
+            JButton btn1 = new JButton("Button 1");
+            pnl1.add(btn1);
+            JButton btn2 = new JButton("Button 2");
+            pnl1.add(btn2);
+            JButton btn3 = new JButton("Button 3");
+            pnl1.add(btn3);
+            JButton btn4 = new JButton("Button 4");
+            pnl1.add(btn4);
+            JButton btn5 = new JButton("Button 5");
+            pnl1.add(btn5);
+            //the line below align all components to the right if uncommented
+            //pnl1.setLayout(new FlowLayout(FlowLayout.RIGHT));
+      div.split-1-3-right
+        img(src="/static/images/flowLayout.png")
+    section
+      h2 Box layout horizontal
+      ul
+        li In the constructor of the BoxLayout class it’s defined how the components should be arranged (in this case X_AXIS)
+      pre
+        code.java.
+          JPanel pnl1 = new JPanel();
+          pnl1.setLayout(new BoxLayout(pnl1, BoxLayout.X_AXIS));
+          JButton btn1 = new JButton("Button 1");
+          pnl1.add(btn1);
+          JButton btn2 = new JButton("Button 2");
+          pnl1.add(btn2);
+          JButton btn3 = new JButton("Button 3");
+          pnl1.add(btn3);
+          JButton btn4 = new JButton("Button 4");
+          pnl1.add(btn4);
+          JButton btn5 = new JButton("Button 5");
+          pnl1.add(btn5);
+      img(src="/static/images/boxLayout.png")
+    section
+      h2 Box layout vertical
+      ul
+        li In the constructor of the BoxLayout class it’s defined how the components should be arranged (in this case Y_AXIS)
+      div.split-2-3-left
+        pre
+          code.java.
+            JPanel pnl1 = new JPanel();
+            pnl1.setLayout(new BoxLayout(pnl1, BoxLayout.Y_AXIS));
+            JButton btn1 = new JButton("Button 1");
+            pnl1.add(btn1);
+            JButton btn2 = new JButton("Button 2");
+            pnl1.add(btn2);
+            JButton btn3 = new JButton("Button 3");
+            pnl1.add(btn3);
+            JButton btn4 = new JButton("Button 4");
+            pnl1.add(btn4);
+            JButton btn5 = new JButton("Button 5");
+            pnl1.add(btn5);
+      div.split-1-3-right
+        img(src="/static/images/boxLayoutY.png")
+    section
+      h2 Border layout
+      ul
+        li Only one component can be added to each region (North, West, Center, East, South)
+          ul
+            li A JPanel is a component, so the one component in a region can contain many other components
+      div.split-2-3-left
+        pre
+          code.java.
+            //border layout is default for JFrame
+            JButton btn1 = new JButton("Button 1");
+            add(btn1, BorderLayout.NORTH);
+            JButton btn2 = new JButton("Button 2");
+            add(btn2, BorderLayout.WEST);
+            JButton btn3 = new JButton("Button 3");
+            add(btn3, BorderLayout.CENTER);
+            JButton btn4 = new JButton("Button 4");
+            add(btn4, BorderLayout.EAST);
+            JButton btn5 = new JButton("Button 5");
+            add(btn5, BorderLayout.SOUTH);
+      div.split-1-3-right
+        img(src="/static/images/borderLayout.png")
+    section
+      h2 Grid layout
+      ul
+        li One component can be added to each cell
+          ul
+            li The number of rows and columns are given as arguments to the GridLayout constructor
+      div.split-2-3-left
+        pre
+          code.java.
+            //Set grid layout for JFrame
+            setLayout(new GridLayout(3, 2));
+            JButton btn1 = new JButton("Button 1");
+            add(btn1);
+            JButton btn2 = new JButton("Button 2");
+            add(btn2);
+            JButton btn3 = new JButton("Button 3");
+            add(btn3);
+            JButton btn4 = new JButton("Button 4");
+            add(btn4);
+            JButton btn5 = new JButton("Button 5");
+            add(btn5);
+      div.split-1-3-right
+        img(src="/static/images/gridLayout.png")
+    section
+      h2 Null layout
+      div.split-2-3-left
+        pre
+          code.java.
+            public class NullLayoutGUI extends JFrame
+            {
+               private JButton button1;
+               private JPanel panel1;
+               public NullLayoutGUI()
+               {
+                  super("Null layout");
+                  panel1 = new JPanel();
+                  panel1.setLayout(null);
+                  button1 = new JButton("Click me");
+                  panel1.add(button1);
+                  button1.setBounds(30, 80, 120, 25);
+                  add(panel1);
+                  setSize(300, 200);
+                  setVisible(true);
+                  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                  setLocationRelativeTo(null);
+              }
+            }
+      div.split-1-3-right
+        img(src="/static/images/nullLayout.png")

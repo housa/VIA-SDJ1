@@ -1,0 +1,109 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 31
+  section
+    h2 Agenda
+    ul
+      li Last weeks exercises
+      li Event driven programming
+      li Event listener classes
+      li Action listeners
+      li Live code example of action listeners
+      li Radiobuttons and checkboxes
+      li StudentFileAdaptorGUI
+  section
+    h2 Last weeks exercises
+    ul
+      li Show your solutions
+  section
+    h2 Event driven programming
+    ul
+      li Until now our programs have been executed by following the predefined structure we have implemented
+      li Programs with a GUI are instead event-driven
+        ul
+          li The GUI application waits, and only reacts when an event occurs
+      li An event is an action that takes place within a program, such as a user clicking a button or pressing a key on the keyboard
+      li Each event is a trigger for executing a small part of our application
+  section
+    h2 Event listener classes
+    div.small-text
+      ul
+        li When writing GUI applications we have to create event listeners
+          ul
+            li These listeners are attached to the individual GUI components, and their methods are executed when events occur on the component
+            li Event listener classes are usually written as private inner classes in an application
+              ul
+                li An inner class is simply a class created inside another class
+        li All event listener classes must implement a suitable interface
+          ul
+            li An interface is almost like an abstract class and can have some methods that must be implemented
+        li Different listeners are required for different events
+  section
+    section
+      h2 Action listeners
+      div.small-text
+        ul
+          li When a JButton component is clicked it fires an event called an action event
+            ul
+              li To handle this event it requires an action listener class
+          li An action listener inner class must implement a specific interface called ActionListener
+            ul
+              li This interface has a single method named actionPerformed (All action listeners must implement this method)
+      pre
+        code.java.
+          private class MyButtonListener implements ActionListener {
+              public void actionPerformed(ActionEvent e) {
+                //statements to run when the button is clicked
+              }
+          }
+      ul.small-text
+        li Action listeners are attached with the addActionListener method:
+      pre
+        code.java.
+          button.addActionListener(new MyButtonListener());
+    section
+      h2 Live code example of action listeners
+    section
+      h2 Multiple buttons with one listener
+      ul.small-text
+        li It is not necessary to create a separate action listener class for each button
+        li An Action Event object has a getSourcemethod that returns which component fired the event
+          ul
+            li By using that information the same ActionListener can handle events from many components:
+      pre
+        code.java.
+          private class MyButtonListener implements ActionListener {
+              public void actionPerformed(ActionEvent e) {
+                  if(e.getSource() == button1) {
+                      //statements to run when button1 is clicked
+                  } else if(e.getSource() == button2)
+                      //statements to run when button2 is clicked
+                  }
+              }
+          }
+    section
+      h2 Live code example of multiple buttons with one listener
+      ul
+        li Now we have the listener in a field to avoid creating multiple instances of the same class
+  section
+    h2 Radiobuttons and checkboxes
+    ul
+      li.
+        Both JRadioButton and JCheckBox has a isSelected method that returns a boolean value indicating if the
+        radiobutton/checkbox is selected or not
+      li Given radiobuttons or checkboxes b1 and b2
+    pre
+      code.java.
+        if (b1.isSelected()) {
+            // Code to execute if the r1 radio button is selected
+        } else if (b2.isSelected()) {
+            // Code to execute if the r2 radio button is selected
+        }
+  section
+    h2 StudentFileAdaptorGUI
+    ul
+      li live code example

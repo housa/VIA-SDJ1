@@ -1,0 +1,47 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercises day 31
+    h3 Exercise 31.01
+    p.
+      Add calculator functionality to the GUI you created in Exercise 30.01 by adding action listeners to the buttons.
+    p.
+      When you've finished this exercise, your calculator should work as a standard calculator.
+    h3 Exercise 31.02
+    p.
+      Add a new tab to the GUI in the “StudentFileAdapterGUI” example (can be found here).
+      The name of the new tab should be “Students from Country”, and it should contain a JLabel, a JTextField, a
+      JTextArea (with JScrollPane) and a JButton.
+    ul
+      li The text in the JLabel should be something like “Country:”
+      li The JTextField should be used to enter the name of a country
+      li The JTextArea should be able to display a list of students
+      li.
+        The text on the JButton should be something like “Get Students”, and when it is clicked, it should use the
+        StudentFileAdapter class to retrieve a list of all students from the country specified by the text in the
+        JTextField.
+    h3 Exercise 31.03
+    p Add functionality to the GUI that you created in Exercise 30.02, by adding action listeners to the buttons.
+    p The functionality should be like this:
+    ul
+      li.
+        If you click on “Cancel” and the checkbox “Exit on Cancel” is selected, then the program
+        should exit (the statement System.exit(0) will take care of that)
+      li.
+        If you click on “Ok” the program should display a message dialog with the x and y values
+        listed in the two text fields (JOptionPane.showMessageDialog(null, “Message”)) and only if
+        the checkbox “Exit on OK” is selected, the program should then exit.
+      li.
+        If you click on ”Clear” the values typed in the two text fields should be deleted (set to empty strings)
+    h3 Exercise 31.04
+    p Create an application with a GUI that can calculate the area and circumference of a circle.
+    ul
+      li Create a GUI by making a class that inherits from JFrame
+      li Add a JTextField, a JButton, and two JLabels to the window
+      li.
+        Implement an action listener for the button, so that when the user clicks the button, the two
+        labels will display the area and circumference of a circle with the radius given in the JTextField.

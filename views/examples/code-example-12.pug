@@ -1,0 +1,126 @@
+extends layout
+
+block header
+  h2 Code-example from: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 A complicated GUI
+    pre
+      code.Java.
+        import javax.swing.*;
+        import javax.swing.border.TitledBorder;
+
+        import java.awt.*;
+
+        public class AComplicatedWindow extends JFrame {
+
+            private JPanel panelNorth;
+            private JPanel panelSouth;
+            private JPanel panelWest;
+            private JPanel panelCenter;
+            private JPanel panelEast;
+            private JLabel labelNorth;
+            private JLabel labelWest;
+            private JLabel labelChange;
+            private JPanel panelName;
+            private JPanel panelPhone;
+            private JPanel panelAge;
+            private JLabel personName;
+            private JLabel personPhone;
+            private JLabel personAge;
+            private JTextField name;
+            private JTextField phone;
+            private JTextField age;
+
+            public AComplicatedWindow() {
+                super("A Complicated Window 1");
+
+                //North
+                panelNorth = new JPanel();
+                labelNorth = new JLabel("This is a text in a label");
+                Font headerFont = new Font(labelNorth.getFont().getFamily(), Font.PLAIN, 20);
+                labelNorth.setFont(headerFont);
+                panelNorth.add(labelNorth);
+
+                //West
+                panelWest = new JPanel();
+                panelWest.setLayout(new BoxLayout(panelWest, BoxLayout.Y_AXIS));
+                panelWest.setBorder(new TitledBorder("Text format"));
+                labelWest = new JLabel("Change the style of:");
+                labelChange = new JLabel("Some text");
+                Font changeFont = new Font(labelChange.getFont().getFamily(), Font.PLAIN, 15);
+                labelChange.setFont(changeFont);
+                JCheckBox cbbold = new JCheckBox("Bold");
+                JCheckBox cbitalic = new JCheckBox("Italic");
+                panelWest.add(labelWest);
+                panelWest.add(labelChange);
+                panelWest.add(cbbold);
+                panelWest.add(cbitalic);
+
+                //Center
+                panelCenter = new JPanel();
+                panelCenter.setLayout(new BoxLayout(panelCenter, BoxLayout.Y_AXIS));
+                panelCenter.setBorder(new TitledBorder("Change background"));
+                JRadioButton redrb = new JRadioButton("Red");
+                JRadioButton greenrb = new JRadioButton("Green");
+                JRadioButton bluerb = new JRadioButton("Blue");
+                JRadioButton normalrb = new JRadioButton("Normal background", true);
+                panelCenter.add(redrb);
+                panelCenter.add(greenrb);
+                panelCenter.add(bluerb);
+                panelCenter.add(normalrb);
+
+                //East
+                panelEast = new JPanel();
+                panelEast.setLayout(new BoxLayout(panelEast, BoxLayout.Y_AXIS));
+                panelEast.setBorder(new TitledBorder("Person data"));
+                panelName = new JPanel();
+                panelName.setLayout(new FlowLayout(FlowLayout.LEFT));
+                panelPhone = new JPanel();
+                panelPhone.setLayout(new FlowLayout(FlowLayout.LEFT));
+                panelAge = new JPanel();
+                panelAge.setLayout(new FlowLayout(FlowLayout.LEFT));
+                personName = new JLabel("Name");
+                name = new JTextField(20);
+                panelName.add(personName);
+                panelName.add(name);
+                personPhone = new JLabel("Phone");
+                phone = new JTextField(10);
+                panelPhone.add(personPhone);
+                panelPhone.add(phone);
+                personAge = new JLabel("Age");
+                age = new JTextField(3);
+                panelAge.add(personAge);
+                panelAge.add(age);
+                panelEast.add(panelName);
+                panelEast.add(panelPhone);
+                panelEast.add(panelAge);
+
+                //South
+                panelSouth = new JPanel();
+                panelSouth.setLayout(new FlowLayout(FlowLayout.RIGHT));
+                JButton exitButton = new JButton("Exit");
+                JButton resultButton = new JButton("Show result");
+                panelSouth.add(exitButton);
+                panelSouth.add(resultButton);
+
+
+                add(panelNorth, BorderLayout.NORTH);
+                add(panelWest, BorderLayout.WEST);
+                add(panelCenter, BorderLayout.CENTER);
+                add(panelEast, BorderLayout.EAST);
+                add(panelSouth, BorderLayout.SOUTH);
+                setSize(700, 230);
+                setVisible(true);
+
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                setLocationRelativeTo(null);
+            }
+
+            public static void main(String[] args) {
+                AComplicatedWindow a = new AComplicatedWindow();
+            }
+        }
+

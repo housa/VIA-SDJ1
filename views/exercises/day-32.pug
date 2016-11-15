@@ -1,0 +1,30 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Exercises day 32
+    h3 Exercise 32.01
+    p.
+      For this exercise you will need the code for StudentFileAdaptoGUI2 which can be found
+      #[a(href="/static/documents/StudentFileAdaptorGUI.zip") here]. Be aware that the students.txt file might have to
+      be moved to a different folder to make it work, and that you of course have to run the loadInitialData part in
+      order to generate the required file for the application.
+    p.
+      Add a new method called getAllCountries to the StudentFileAdapter class in the “StudentFileAdapterGUI2” example.
+      The method should use the MyFileIO class to retrieve all the different countries of the students
+      (without duplicates). The method should return the countries in a String[].
+    p.
+      Then add a new JComboBox to the “Change Country” tab in the StudentFileAdapterGUI2 class. The combo box should use
+      the new getAllCountries method in the StudentFileAdapter class to display all the countries. When a new country is
+      selected in the combo box, then the text in the countryField should be set to this country.
+    p.
+      Now make the countryField read-only, but add a new JCheckBoxMenuItem to the edit menu where the user can choose
+      whether or not it should be possible to write in the countryField. We might want to change the country to one that
+      no current student already has, so this option to allow writing in the countryfield is necessary.
+    h3 Exercise 32.02
+    p.
+      We are getting to the end of the course, so if there are any exercises you haven’t started on yet, don’t know how
+      to do, need help to find errors in, etc. then now is the time.

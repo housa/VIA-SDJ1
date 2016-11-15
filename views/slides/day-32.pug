@@ -1,0 +1,255 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 31
+  section
+    h2 Agenda
+    ul
+      li 
+  section
+    h2 Read only text fields/areas
+    ul
+      li The text in #[tt JTextField] and #[tt JTextArea] can be edited
+      li We might want to prevent the user from editing this text
+    pre
+      code.Java.
+        JTextField firstNameField = new JTextField(15);
+        firstNameField.setEditable(false);
+  section
+    section
+      h2 Combo-boxes
+      ul
+        li A combo-box is a drop-down list of items
+        li We can create a combo-box with the #[tt JComboBox] class
+        li The combo-box works similarly to an ArrayList
+        li Combo-boxes contains items, and we specify the type of objects with #[tt <T>]
+        li We can pass the items as an array to the constructor:
+      pre
+        code.Java.
+          String[] names = { "Lukas", "Alexandra", "Jens", "Bob" };
+          JComboBox&lt;String&gt; nameBox = new JComboBox&lt;String&gt;(names);
+      img(src="/static/images/combo-1.png")
+    section
+      h2 Combo-boxes
+      ul
+        li Just like with ArrayLists, we can start with an empty combo-box
+      pre
+        code.Java.
+          JComboBox&lt;String&gt; nameBox = new JComboBox&lt;String&gt;();
+      ul
+        li And then add items to it later
+      pre
+        code.Java.
+          nameBox.addItem("Lukas");
+          nameBox.addItem("Alexandra");
+      ul
+        li Remove a single item
+      pre
+        code.Java.
+          nameBox.removeItem("Lukas");
+      ul
+        li And remove all items
+      pre
+        code.Java.
+          nameBox.removeAllItems();
+    section
+      h2 Combo-boxes
+      ul
+        li When an item in a #[tt JComboBox] is selected, it will generate an action event
+        ul
+          li Just like with #[tt JButton] we can add an action listener to a #[tt JComboBox] and use #[tt actionPerformed] to execute statements when an item is selected
+          li To find out which item is selected, we have two different methods:
+          li #[tt getSelectedItem] - Returns a reference to the selected item
+          li #[tt getSelectedIndex] - Returns the index of the selected item
+    section
+      h2 Combo-boxes - Example
+      pre
+        code.Java.
+          public class ComboBoxTest extends JFrame {
+              private JComboBox&lt;String&gt; nameBox;
+              public ComboBoxTest() {
+                  super("Title");
+          
+                  nameBox = new JComboBox&lt;String&gt;();
+                  nameBox.addItem("Anne");
+                  nameBox.addItem("Bob");
+                  nameBox.addActionListener(new MyListener());
+                  add(panel);
+          
+                  setSize(250, 150);
+                  setVisible(true);
+                  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                  setLocationRelativeTo(null);
+              }
+  
+              private class MyListener implements ActionListener {
+                  @Override
+                  public void actionPerformed(ActionEvent e) {
+                      if(e.getSource() == nameBox) {
+                          String selected = (String) nameBox.getSelectedItem();
+                          System.out.println(selected + " was selected!");
+                      }
+                  }
+              }
+          }
+  section
+    section
+      h2 Displaying images
+      ul
+        li To display images in our GUIs, we can use the #[tt ImageIcon] class
+        li We simply give it the name and path of an image file to load
+        li It supports JPEG, GIF and PNG
+        li When we run our programs in Eclipse, the path starts at the project folder
+        li To load an image named "foo.png" in the project folder:
+      pre
+        code.Java.
+          ImageIcon icon = new ImageIcon("foo.png");
+      ul
+        li #[tt ImageIcon] cannot be shown directly, but must be added to another component
+    section
+      h2 Displaying images in labels
+      ul
+        li We can display an image by adding it to a #[tt JLabel]
+        li Simply pass it to the #[tt JLabel] constructor
+      pre
+        code.Java.
+          JLabel label = new JLabel(icon);
+      ul
+        li Or we can use the setIcon method:
+      pre
+        code.Java.
+          JLabel label = new JLabel();
+          label.setIcon(icon);
+      img(src="/static/images/image-1.png")
+    section
+      pre
+        code.Java.
+          public class ImageIconTest extends JFrame {
+
+              public ImageIconTest() {
+                  super("Title");
+                  setLayout(new FlowLayout());
+
+                  ImageIcon fishIcon = new ImageIcon("img/fish.png");
+                  JLabel label = new JLabel();
+                  label.setIcon(fishIcon);
+
+                  add(label);
+                  setSize(200, 200);
+                  setVisible(true);
+
+                  setDefaultCloseOperation(
+                          JFrame.EXIT_ON_CLOSE);
+                  setLocationRelativeTo(null);
+              }
+          }
+    section
+      h2 Displaying images in buttons
+      ul
+        li It works very much the same way for buttons
+      img(src="/static/images/image-2.png")
+    section
+      pre
+        code.Java.
+          public class ImageIconTest2 extends JFrame {
+
+              public ImageIconTest2() {
+                  super("Title");
+                  setLayout(new FlowLayout());
+
+                  ImageIcon fishIcon = new ImageIcon("img/fish.png");
+                  JButton button = new JButton();
+                  button.setIcon(fishIcon);
+                  button.setText("Hello!");
+
+                  add(button);
+                  setSize(200, 200);
+                  setVisible(true);
+
+                  setDefaultCloseOperation(
+                          JFrame.EXIT_ON_CLOSE);
+                  setLocationRelativeTo(null);
+              }
+          }
+  section
+    section
+      h2 Menus
+      ul
+        li We can add a #[emph menu system] to our Java GUI
+        li In Java, a menu commonly consists of:
+        ul
+          li #[tt JMenuBar] - Lists the name of one or more menus
+          li #[tt JMenu] - A drop-down list of menu items
+          li #[tt JMenuItem] - Similar to a button
+          li #[tt JCheckBoxMenuItem] - Similar to a #[tt JCheckBox]
+          li #[tt Separator bar] - A horizontal bar to separate groups of items on a menu
+    section
+      h2 Menus
+      object(data="/static/images/MenuComponents.svg", type="image/svg+xml")
+    section
+      pre
+        code.Java.
+          public class Menu extends JFrame {
+
+              private JMenuBar menuBar;
+
+              private JMenu fileMenu;
+              private JMenuItem newMenuItem;
+              private JMenuItem openMenuItem;
+              private JMenuItem saveMenuItem;
+              private JCheckBoxMenuItem confirmExitItem;
+              private JMenuItem exitMenuItem;
+
+              private JMenuItem aboutMenu;
+              private JMenuItem aboutMenuItem;
+
+              public Menu() {
+                  super("Title");
+                  setLayout(new FlowLayout());
+
+                  menuBar = new JMenuBar();
+
+                  fileMenu = new JMenu("File");
+
+                  newMenuItem = new JMenuItem("New");
+                  openMenuItem = new JMenuItem("Open");
+                  saveMenuItem = new JMenuItem("Save");
+
+                  confirmExitItem = new JCheckBoxMenuItem("Confirm Exit", false);
+                  exitMenuItem = new JMenuItem("Exit");
+
+                  fileMenu.add(newMenuItem);
+                  fileMenu.add(openMenuItem);
+                  fileMenu.add(saveMenuItem);
+
+                  fileMenu.addSeparator();
+
+                  fileMenu.add(confirmExitItem);
+                  fileMenu.add(exitMenuItem);
+
+                  aboutMenu = new JMenu("About");
+
+                  aboutMenuItem = new JMenuItem("About");
+
+                  aboutMenu.add(aboutMenuItem);
+
+                  menuBar.add(fileMenu);
+                  menuBar.add(aboutMenu);
+
+                  setJMenuBar(menuBar);
+
+                  setSize(200, 200);
+                  setVisible(true);
+
+                  setDefaultCloseOperation(
+                          JFrame.EXIT_ON_CLOSE);
+                  setLocationRelativeTo(null);
+              }
+
+              public static void main(String[] args) {
+                  Menu c = new Menu();
+              }
+          }

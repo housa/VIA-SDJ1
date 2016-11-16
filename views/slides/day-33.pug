@@ -1,0 +1,101 @@
+
+extends layout
+
+block content
+  section
+    h2 Software Development with UML and Java
+    i Day 33
+  section
+    h2 Agenda
+    ul
+      li Exercises from yesterday
+      li Javadocs
+        ul
+          li Accessing Javadocs
+          li Documenting code with Javadocs
+          li Writing Javadocs
+          li Generating Javadocs
+  section
+    h2 Exercises from yesterday
+    ul
+      li Show and tell
+  section
+    h2 Javadocs
+    ul
+      li Java comes with full documentation of all API classes in html format
+      li We can document our own classes in the same format as the API classes
+  section
+    h2 Accessing the Javadocs
+    ul
+      li Hover over the class to be inspected
+        ul
+          li If you want to look at Strings hover over a place where it says String
+      li Click the "Open attached Javadoc in a browser" button
+      li You now have the javadoc for the class String open
+      li You can also go to https://docs.oracle.com/javase/7/docs/api/
+  section
+    section
+      h2 Documenting code with Javadocs
+      ul
+        li When we install the Java SDK, we also get a Javadoc tool that can generate Javadocs for our own classes
+          ul
+            li All we need to do is add some special comments in our source code
+        li Professional looking documentation
+        li Other people can understand what our classes do without looking through all the source code
+        li You saw an example of this in the handed out code for the Pacman game
+    section
+      h2 Documenting code with Javadocs
+      div.small-text
+        ul
+          li For each of our classes we should write:
+            ul
+              li A comment describing the overall purpose and characteristics of the class
+              li The name(s) of the author(s)
+              li A version number
+              li Documentation for every constructor and public method
+                ul
+                  li Usually Javadocs is only generated for public methods, however it’s still a good idea to write comments for the private methods in case someone looks at the source code
+    section
+      h2 Documenting code with Javadocs
+      ul
+        li The documentation for the constructors and methods should include:
+          ul
+            li A description of the purpose and function of the method
+            li A description of each parameter (if there are any)
+            li A description of the return value (if there is one)
+            li A list of the checked exceptions that the method can throw (if any)
+  section
+    section
+      h2 Writing Javadocs
+      ul
+        li Javadoc comments are written directly in the source code using a special block comment syntax
+          ul
+            li Javadoc blocks start with /** and ends with */
+            li Inside the blocks we use special tags, including:
+      ul
+        li @author   The name of the programmer
+        li @version  The version of the class
+        li @param    Description of parameters for a method
+        li @return   Description of what is returned from a method
+        li @throws   Description of the exceptions thrown by the method
+    section
+      h2 Javadocs example
+      ul
+        li Live code example of adding Javadocs to an already known class
+  section
+    h2 Generating Javadocs
+    ul
+      li Choose "Generate Javadoc.." from the Project menu
+      li Choose the project you wish to generate Javadocs for
+      li Choose the folder where the generated Javadocs will be stored
+      li Click Finish
+      li You can now locate the Javadocs for your project in the folder you have specified
+  section
+    h2 About the exam
+    ul
+      li Remember to send emails to Alexandra if you would like some focus on a particular subject on Monday
+      li Remember to comment your handin so we know which methods was the most difficult to implement
+      li We will look at exam-question examples on Monday with specific focus on:
+        ul
+          li Subjects requested by email
+          li Things that was found difficult in the hand in

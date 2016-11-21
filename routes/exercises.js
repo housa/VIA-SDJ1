@@ -6,7 +6,7 @@ var router = express.Router();
 
 /* GET home page. */
 
-[1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34].forEach((current, index) => {
+[1, 2, 3, 4, 5, 8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35].forEach((current, index) => {
     router.get('/day-' + current, function(req, res, next) {
         res.render('exercises/day-' + current, { title: 'Day ' + current});
     });

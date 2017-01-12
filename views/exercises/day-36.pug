@@ -1,0 +1,27 @@
+extends layout
+
+block header
+  h2 Course page for: #[strong SDJ1]
+
+block content
+  section.column.small-12
+    h2 Tips tricks and tests for the example exam questions
+    h3 Testing with the available test classes
+    p.
+      To help you figure out if your solutions are good a test class will be made available for each exam question.
+      To use it simply save the file to the folder your solution is located, and run the test class.
+    p.
+      For each testcase i, the test class will output "Test i: True" or "Test i: False", all should be true.
+      If you see one saying false, check which print statement writes the number for that test, and what it checks, you
+      most likely have implemented this a bit wrong.
+    h3 Question 1
+    p.
+      Example solution can be found #[a(href="/static/documents/examQ1solution.zip") here], including a test class, if
+      if you use this class with your own code be aware that i've implemented additional methods (equals) in several
+      classes, to test it properly.
+    h3 Question 2
+    p A test class will be available here shortly.
+    h3 Question 3
+    p A test class will be available here at some point.
+    h3 Question 4
+    p A test class will be available here at some point.
